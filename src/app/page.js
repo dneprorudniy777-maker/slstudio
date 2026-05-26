@@ -21,13 +21,13 @@ export const metadata = {
     description:
       "Your sound, elevated. Professional mixing and mastering services for modern artists.",
     alternates: {
-      // canonical: "https://slstudio-dev.vercel.app"
+      canonical: "https://www.slstudio.pro"
     },  
     type: "website",
-    url: "https://slstudio-dev.vercel.app",
+    url: "https://www.slstudio.pro",
     images: [
       {
-        url: "/images/og-home.jpg",
+        // url: "/images/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "SL Studio - Mixing & Mastering",

@@ -5,7 +5,7 @@ import Section2 from "../components/pages/mixing-mastering/Section2";
 export const metadata = {
     title: "Mixing & Mastering | SL Studio",
     alternates: {
-        // canonical: "https://slstudio-dev.vercel.app/mixing-mastering"
+        canonical: "https://www.slstudio.pro/mixing-mastering"
     },
     description:
         "Professional mixing and mastering services. Bass, drums, vocals, and guitars balanced with precision to create space, depth, and clarity in every track.",
@@ -25,7 +25,7 @@ export const metadata = {
         description:
             "When every instrument finally finds its place. Professional mixing and mastering for modern music production.",
         type: "website",
-        // url: "https://slstudio-dev.vercel.app/mixing-mastering",
+        url: "https://www.slstudio.pro/mixing-mastering",
         images: [
             {
                 url: "/images/og-mixing-mastering.jpg",
