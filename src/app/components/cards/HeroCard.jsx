@@ -4,13 +4,13 @@ import { ArrowRight } from "lucide-react"
 export default function HeroCard({ icon: Icon, title, description, href }) {
     return (
         <div className="
-            p-5 rounded-xl
-            bg-transparent
-            border border-white/5
-            hover:border-white/10
-            transition
-            flex flex-col gap-3"
-        >
+    p-5 rounded-xl
+    bg-transparent
+    border border-white/5
+    hover:border-white/10
+    transition
+    flex flex-col gap-3 h-full min-h-[280px]"
+>
             {/* Header */}
             <div className="flex items-center gap-3">
                 <Icon className="text-white/70 w-5 h-5" />
@@ -19,7 +19,7 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
                 </h2>
             </div>
             {/* Description */}
-            <p className="text-white/60 text-sm leading-relaxed max-w-[520px]">
+            <p className="text-white/60 text-sm leading-relaxed">
                 {description}
             </p>
             <Link

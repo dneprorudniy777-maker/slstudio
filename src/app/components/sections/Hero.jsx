@@ -17,7 +17,7 @@ export default function Hero() {
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
                         Professional Audio Services
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
                         {servicesData.map(el => (
                             <HeroCard
                                 key={el.id} 

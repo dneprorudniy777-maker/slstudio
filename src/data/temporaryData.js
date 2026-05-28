@@ -18,30 +18,16 @@ export const youTubeData = [
 export const servicesData = [
     {
         id: 1,
-        icon: Shuffle, 
+        icon: Shuffle,
         title: "Mixing & Mastering",
-        description: "From raw multi-tracks to a finished, radio-ready sound. Every element placed, balanced, and polished to compete on any platform.",
+        description: "You recorded something. Maybe it's rough, maybe it's almost there — but it doesn't yet sound the way you hear it in your head. I balance every instrument, shape the frequencies, control the dynamics, and master the result so it competes on any platform. Stems, rough mix, or old studio recording — send what you have.",
         href: "/mixing-mastering"
     },
     {
         id: 2,
-        icon: AudioLines, 
+        icon: AudioLines,
         title: "Arrangement & Production",
-        description: "Your ideas deserve a full arrangement. I add instruments, build dynamics, and create the sonic landscape your music needs.",
-        href: "#"
-    },
-    {
-        id: 3,
-        icon: AudioWaveform, 
-        title: "Sound Enhancement",
-        description: "Got a demo or rehearsal recording? I extract the best from what you have and build it into something you'll be proud to share.",
-        href: "#"
-    },
-    {
-        id: 4,
-        icon: Shuffle, 
-        title: "Mixing & Mastering",
-        description: "From raw multi-tracks to a finished, radio-ready sound. Every element placed, balanced, and polished to compete on any platform.",
-        href: "#"
+        description: "A guitar riff, a voice memo, a rehearsal recording — that's enough to start. I build complete arrangements around your ideas: guitars, bass, keys, drums, strings, any genre. Whether you want to add one instrument or create a full orchestral sound, I work with your vision and bring it to life.",
+        href: "/arrangement"
     },
 ];
