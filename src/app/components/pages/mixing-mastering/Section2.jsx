@@ -1,69 +1,88 @@
+import BeforeAfterCard from "../../cards/BeforeAfterCard";
+
+const faqs = [
+    {
+        q: "What files do I need to send you?",
+        a: "Ideally — separate tracks (stems) for each instrument. But if you only have a rough stereo mix or even a single recording, that works too. Send what you have and we'll figure it out."
+    },
+    {
+        q: "How long does it take?",
+        a: "Usually 3–5 business days for a single track. Albums and larger projects are discussed individually."
+    },
+    {
+        q: "How many revisions are included?",
+        a: "Up to three rounds of revisions. In practice, one or two is usually enough — we discuss what you want before I start, so I'm already heading in the right direction."
+    },
+    {
+        q: "I have an old studio recording from ten years ago. Can you give it a new sound?",
+        a: "Yes — and this is one of the most interesting requests I get. Same song, same vocals, same instruments — but with fresh mixing and modern mastering it sounds completely different. Many artists re-release older material this way."
+    },
+    {
+        q: "Will my track sound good on phone speakers and headphones?",
+        a: "I check every track on multiple systems — studio monitors, regular headphones, and a phone speaker. It's only done when it sounds right on all of them."
+    },
+    {
+        q: "What if I don't like the result?",
+        a: "This rarely happens because we discuss the direction before I start. But if something isn't right — revisions are included, and I keep working until it is."
+    },
+    {
+        q: "Do you work with low-quality recordings?",
+        a: "Yes. A poor recording quality is not a death sentence. I've worked with recordings from garages, rehearsal rooms, and phones. What matters is that the performance is alive — the sound I can fix."
+    },
+];
+
 export default function Section2() {
     return (
-        <section className="mt-20">
-            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 items-stretch">
-                <div className="
-                    rounded-2xl
-                    border border-white/5
-                    bg-white/[0.03]
-                    p-8 md:p-10
-                    flex flex-col gap-8
-                ">
-                    <div className="flex flex-col gap-3">
-                        <span className="
-                            text-white/30
-                            text-xs
-                            uppercase
-                            tracking-[0.3em]
-                        ">
-                            Section Placeholder
-                        </span>
-                    </div>
+        <section className="mt-20 flex flex-col gap-16">
 
-                    <div className="
-                        flex flex-col gap-6
-                        text-white/70
-                        text-[15px]
-                        leading-relaxed
-                    ">
-                        <p>
-                            Sometimes a track is missing a layer that was never recorded. Atmosphere, texture, a subtle percussive accent somewhere in the background. This is where I sometimes turn to modern AI tools — not to replace live instruments, but to add that one detail that's missing. Like a painter who puts down the brush and uses their fingers instead — simply because it's more precise that way.
-                        </p>
-                    </div>
+            {/* Before / After */}
+            <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                        Before & After
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+                        Hear the Difference
+                    </h2>
                 </div>
-
-                <div className="
-                    rounded-2xl
-                    border border-white/5
-                    bg-white/[0.03]
-                    p-8 md:p-10
-                    flex flex-col gap-8
-                ">
-                    <div className="flex flex-col gap-3">
-                        <span className="
-                            text-white/30
-                            text-xs
-                            uppercase
-                            tracking-[0.3em]
-                        ">
-                            Section Placeholder
-                        </span>
-                    </div>
-                    <div className="
-                        flex flex-col gap-6
-                        text-white/70
-                        text-[15px]
-                        leading-relaxed
-                    ">
-                        <p>
-                            Mastering is the final look before stepping on stage. I check the track on three different systems — studio monitors, regular headphones, and a phone speaker. Because your listener will be exactly there — in headphones on the subway or in a car on the way home. If it sounds good there, it's done.
-                        </p>
-                        <p>
-                            And if it doesn't — I go back and keep working until it does. Simply because I don't know how to do it any other way.
-                        </p>
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <BeforeAfterCard
+                        title="Demo 1"
+                        before="01-before.mp3"
+                        after="01-after.mp3"
+                    />
+                    <BeforeAfterCard
+                        title="Demo 2"
+                        before="02-before.mp3"
+                        after="02-after.mp3"
+                    />
                 </div>
             </div>
+
+            {/* FAQ */}
+            <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-2">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                        FAQ
+                    </span>
+                    <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
+                        Frequently Asked Questions
+                    </h2>
+                </div>
+                <div className="flex flex-col divide-y divide-white/5">
+                    {faqs.map((item, i) => (
+                        <div key={i} className="py-6 flex flex-col gap-3">
+                            <p className="text-white/90 font-medium text-base">
+                                {item.q}
+                            </p>
+                            <p className="text-white/60 text-[15px] leading-relaxed">
+                                {item.a}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
         </section>
     )
 }
