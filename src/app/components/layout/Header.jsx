@@ -37,7 +37,15 @@ export default function Header() {
                     </li>
                     <li>
                         <Link
-                            href="#"
+                            href="/arrangement"
+                            className="hover:text-gold2 transition"
+                        >
+                            Arrangement
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            href="/contact"
                             className="hover:text-gold2 transition"
                         >
                             Contact
