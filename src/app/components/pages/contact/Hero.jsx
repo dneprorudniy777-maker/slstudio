@@ -1,6 +1,24 @@
 "use client";
 import { useState } from "react";
-import { Mail, Send, Music2 } from "lucide-react";
+import { Mail, Send } from "lucide-react";
+
+const TelegramIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold2 fill-current">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 13.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/>
+    </svg>
+);
+
+const InstagramIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold2 fill-current">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+    </svg>
+);
+
+const FacebookIcon = () => (
+    <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold2 fill-current">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    </svg>
+);
 
 export default function Hero() {
     const [sent, setSent] = useState(false);
@@ -22,39 +40,46 @@ export default function Hero() {
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div className="flex flex-col gap-8">
-                    <div className="flex flex-col gap-4">
-                        <a href="mailto:sl.studio.music@gmail.com" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
-                            <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                                <Mail className="w-5 h-5 text-gold2" />
-                            </div>
-                            <div>
-                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</p>
-                                <p className="text-white/80 text-sm">sl.studio.music@gmail.com</p>
-                            </div>
-                        </a>
-                        <a href="https://www.youtube.com/@SLStudio_Guitar" target="_blank" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
-                            <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                                <Music2 className="w-5 h-5 text-gold2" />
-                            </div>
-                            <div>
-                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">YouTube</p>
-                                <p className="text-white/80 text-sm">@SLStudio_Guitar</p>
-                            </div>
-                        </a>
-                        <a href="https://t.me/serhii_lazariev" target="_blank" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
-                            <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
-                                <Send className="w-5 h-5 text-gold2" />
-                            </div>
-                            <div>
-                                <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Telegram</p>
-                                <p className="text-white/80 text-sm">@serhii_lazariev</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="p-6 rounded-xl border border-white/5 bg-white/[0.03]">
-                        <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Response time</p>
-                        <p className="text-white/70 text-sm leading-relaxed">I usually respond within 24 hours. For urgent projects feel free to reach out via Telegram.</p>
+                <div className="flex flex-col gap-4">
+                    <a href="https://t.me/serhii_lazariev" target="_blank" className="flex items-center gap-4 p-4 rounded-xl border border-gold2/30 bg-gold2/5 hover:border-gold2/60 transition">
+                        <div className="w-10 h-10 rounded-lg bg-gold2/10 flex items-center justify-center flex-shrink-0">
+                            <TelegramIcon />
+                        </div>
+                        <div>
+                            <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Telegram — fastest response</p>
+                            <p className="text-white/90 text-sm font-medium">@serhii_lazariev</p>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/lazarev_serhii_sl" target="_blank" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
+                        <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                            <InstagramIcon />
+                        </div>
+                        <div>
+                            <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Instagram</p>
+                            <p className="text-white/80 text-sm">@lazarev_serhii_sl</p>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100044130441850" target="_blank" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
+                        <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                            <FacebookIcon />
+                        </div>
+                        <div>
+                            <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Facebook</p>
+                            <p className="text-white/80 text-sm">Serhii Lazariev</p>
+                        </div>
+                    </a>
+                    <a href="mailto:serhiiguitarlessons@gmail.com" className="flex items-center gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.03] hover:border-white/10 transition">
+                        <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0">
+                            <Mail className="w-5 h-5 text-gold2" />
+                        </div>
+                        <div>
+                            <p className="text-white/40 text-xs uppercase tracking-widest mb-1">Email</p>
+                            <p className="text-white/80 text-sm">serhiiguitarlessons@gmail.com</p>
+                        </div>
+                    </a>
+                    <div className="p-4 rounded-xl border border-white/5 bg-white/[0.03]">
+                        <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Response time</p>
+                        <p className="text-white/60 text-sm">Usually within 24 hours. Telegram is fastest.</p>
                     </div>
                 </div>
                 <div>
@@ -71,16 +96,16 @@ export default function Hero() {
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">Name</label>
-                                    <input type="text" placeholder="John Smith" required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white/80 placeholder:text-white/20 focus:outline-none focus:border-white/20 transition" />
+                                    <input type="text" placeholder="John Smith" required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-white/20 transition" />
                                 </div>
                                 <div className="flex flex-col gap-2">
                                     <label className="text-white/40 text-xs uppercase tracking-widest">Email</label>
-                                    <input type="email" placeholder="john@email.com" required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white/80 placeholder:text-white/20 focus:outline-none focus:border-white/20 transition" />
+                                    <input type="email" placeholder="john@email.com" required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-white/20 transition" />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-white/40 text-xs uppercase tracking-widest">Service</label>
-                                <select required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white/80 focus:outline-none focus:border-white/20 transition">
+                                <select required style={{colorScheme: "dark"}} className="bg-[#1b1b1b] border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-white/20 transition">
                                     <option value="">Select a service...</option>
                                     <option>Mixing and Mastering</option>
                                     <option>Arrangement and Production</option>
@@ -90,7 +115,7 @@ export default function Hero() {
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-white/40 text-xs uppercase tracking-widest">About your project</label>
-                                <textarea rows={5} placeholder="Genre, what you have recorded, what you are going for..." required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white/80 placeholder:text-white/20 focus:outline-none focus:border-white/20 transition resize-none" />
+                                <textarea rows={5} placeholder="Genre, what you have recorded, what you are going for..." required className="bg-white/[0.03] border border-white/5 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-white/20 transition resize-none" />
                             </div>
                             <button type="submit" className="mt-2 bg-gold2 text-black font-medium text-sm px-6 py-3 rounded-xl hover:opacity-90 transition flex items-center justify-center gap-2">
                                 Send Message
