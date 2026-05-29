@@ -2,6 +2,7 @@ import Hero from "./components/sections/Hero";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import YouTube from "./components/sections/YouTube";
 import HowItWorks from "./components/sections/HowItWorks";
+import Testimonials from "./components/sections/Testimonials";
 
 export const metadata = {
   title: "SL Studio | Mixing, Mastering & Music Production",
@@ -48,6 +49,7 @@ export default function Home() {
       <BeforeAfter />
       <YouTube />
       <HowItWorks />
+      <Testimonials />
     </>
   );
 }
