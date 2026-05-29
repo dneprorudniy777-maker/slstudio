@@ -40,13 +40,14 @@ export default function Hero() {
                         <div className="mt-4">
                             <Link
                                 href="/contact"
-                                className="
-                                    inline-flex items-center gap-2
-                                    bg-gold2 text-black
-                                    px-6 py-3 rounded-xl
-                                    font-medium text-sm
-                                    hover:opacity-90 transition
-                                "
+                               className="
+    inline-flex items-center gap-2
+    text-black
+    px-6 py-3 rounded-xl
+    font-medium text-sm
+    hover:opacity-90 transition
+"
+style={{backgroundColor: "#C9A84C"}}
                             >
                                 Send Your Idea →
                             </Link>

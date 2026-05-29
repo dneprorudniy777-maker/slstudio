@@ -1,6 +1,7 @@
 import Hero from "./components/sections/Hero";
 import BeforeAfter from "./components/sections/BeforeAfter";
 import YouTube from "./components/sections/YouTube";
+import HowItWorks from "./components/sections/HowItWorks";
 
 export const metadata = {
   title: "SL Studio | Mixing, Mastering & Music Production",
@@ -22,12 +23,11 @@ export const metadata = {
       "Your sound, elevated. Professional mixing and mastering services for modern artists.",
     alternates: {
       canonical: "https://www.slstudio.pro"
-    },  
+    },
     type: "website",
     url: "https://www.slstudio.pro",
     images: [
       {
-        // url: "/images/og-home.jpg",
         width: 1200,
         height: 630,
         alt: "SL Studio - Mixing & Mastering",
@@ -38,7 +38,6 @@ export const metadata = {
     card: "summary_large_image",
     title: "SL Studio | Mixing & Mastering",
     description: "Professional music production, mixing and mastering services.",
-    // images: ["/images/og-home.jpg"],
   },
 };
 
@@ -48,6 +47,7 @@ export default function Home() {
       <Hero />
       <BeforeAfter />
       <YouTube />
+      <HowItWorks />
     </>
   );
 }
