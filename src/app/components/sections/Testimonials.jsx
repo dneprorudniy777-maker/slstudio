@@ -35,7 +35,7 @@ export default function Testimonials() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {testimonials.map((t, i) => (
-                    <div key={i} className="rounded-2xl border border-white/5 bg-white/[0.03] p-8 flex flex-col gap-6">
+                    <div key={i} className="rounded-2xl border border-white/5 bg-white/[0.03] p-8 flex flex-col gap-6 overflow-hidden" style={{borderLeft: "3px solid #C9A84C"}}>
                         <div className="flex gap-1">
                             {[...Array(5)].map((_, j) => (
                                 <span key={j} style={{color: "#C9A84C"}} className="text-sm">★</span>

@@ -52,12 +52,12 @@ export default function Section2() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <BeforeAfterCard
-                        title="Demo 1"
+                        title="Rock Fragment — Mixing & Mastering"
                         before="01-before.mp3"
                         after="01-after.mp3"
                     />
                     <BeforeAfterCard
-                        title="Demo 2"
+                        title="Folk Session — Sound Enhancement"
                         before="02-before.mp3"
                         after="02-after.mp3"
                     />
