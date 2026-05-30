@@ -3,6 +3,30 @@ import { useState } from "react";
 
 const posts = [
     {
+        href: "/blog/is-online-mixing-mastering-worth-it",
+        image: "/images/blog-online-mix-cover.jpg",
+        category: "Tutorials",
+        date: "September 10, 2025",
+        title: "Is Online Mixing and Mastering Worth It in 2026?",
+        excerpt: "Between AI bots and cheap Fiverr gigs, it is hard to know what is legit. An honest look at whether online mixing and mastering is worth it — and what to look for."
+    },
+    {
+        href: "/blog/spotify-lufs-mastering-tips",
+        image: "/images/blog-lufs-cover.png",
+        category: "Mixing & Mastering",
+        date: "August 22, 2025",
+        title: "Why Your Master Sounds Quiet on Spotify — 4 Tips for Competitive Loudness",
+        excerpt: "Spotify normalizes to -14 LUFS — but commercial masters are still hitting -8 to -9. Here is why, and how to achieve competitive loudness without destroying your dynamics."
+    },
+    {
+        href: "/blog/kiive-kstrip-review",
+        image: "/images/blog-kstrip-cover.png",
+        category: "Review",
+        date: "July 15, 2025",
+        title: "Kiive Audio KStrip Review — Three Console Flavors in One Plugin",
+        excerpt: "Neve warmth, API punch, SSL precision — all inside a single channel strip. A detailed look at how KStrip holds up in real mixing sessions."
+    },
+    {
         href: "/blog/mixing-with-free-plugins",
         image: "/images/blog-free-plugins-cover.jpg",
         category: "Mixing & Mastering",
@@ -53,13 +77,23 @@ const posts = [
 ];
 
 const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering"];
+const PER_PAGE = 6;
 
 export default function BlogPage() {
     const [active, setActive] = useState("All");
+    const [page, setPage] = useState(1);
 
     const filtered = active === "All"
         ? posts
         : posts.filter(p => p.category === active);
+
+    const totalPages = Math.ceil(filtered.length / PER_PAGE);
+    const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+
+    const handleCategory = (cat) => {
+        setActive(cat);
+        setPage(1);
+    };
 
     return (
         <div className="mt-16 mb-20">
@@ -80,7 +114,7 @@ export default function BlogPage() {
                     {categories.map(cat => (
                         <button
                             key={cat}
-                            onClick={() => setActive(cat)}
+                            onClick={() => handleCategory(cat)}
                             className="px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-widest transition"
                             style={{
                                 backgroundColor: active === cat ? "#C9A84C" : "rgba(255,255,255,0.05)",
@@ -94,14 +128,14 @@ export default function BlogPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {filtered.map((post, i) => (
+                    {paginated.map((post, i) => (
                         <a key={i} href={post.href}
                            className="group rounded-xl border border-white/5 bg-white/[0.03] overflow-hidden hover:border-white/10 transition flex flex-col"
                            style={{borderLeft: "3px solid #C9A84C"}}>
                             <img
                                 src={post.image}
                                 alt={post.title}
-                                style={{width: "100%", height: "200px", objectFit: "cover"}}
+                                style={{width: "100%", height: "260px", objectFit: "cover"}}
                             />
                             <div className="p-5 flex flex-col gap-3 flex-1">
                                 <div className="flex items-center gap-2">
@@ -124,6 +158,51 @@ export default function BlogPage() {
                 {filtered.length === 0 && (
                     <div className="text-center py-20 text-white/30 text-sm">
                         No articles in this category yet.
+                    </div>
+                )}
+
+                {totalPages > 1 && (
+                    <div className="flex items-center justify-center gap-2 mt-12">
+                        <button
+                            onClick={() => setPage(p => Math.max(1, p - 1))}
+                            disabled={page === 1}
+                            className="px-4 py-2 rounded-lg text-sm transition"
+                            style={{
+                                backgroundColor: "rgba(255,255,255,0.05)",
+                                color: page === 1 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.6)",
+                                border: "1px solid rgba(255,255,255,0.05)",
+                                cursor: page === 1 ? "not-allowed" : "pointer"
+                            }}
+                        >
+                            ←
+                        </button>
+                        {Array.from({length: totalPages}, (_, i) => i + 1).map(num => (
+                            <button
+                                key={num}
+                                onClick={() => setPage(num)}
+                                className="w-9 h-9 rounded-lg text-sm font-medium transition"
+                                style={{
+                                    backgroundColor: page === num ? "#C9A84C" : "rgba(255,255,255,0.05)",
+                                    color: page === num ? "#000" : "rgba(255,255,255,0.5)",
+                                    border: page === num ? "1px solid #C9A84C" : "1px solid rgba(255,255,255,0.05)"
+                                }}
+                            >
+                                {num}
+                            </button>
+                        ))}
+                        <button
+                            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                            disabled={page === totalPages}
+                            className="px-4 py-2 rounded-lg text-sm transition"
+                            style={{
+                                backgroundColor: "rgba(255,255,255,0.05)",
+                                color: page === totalPages ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.6)",
+                                border: "1px solid rgba(255,255,255,0.05)",
+                                cursor: page === totalPages ? "not-allowed" : "pointer"
+                            }}
+                        >
+                            →
+                        </button>
                     </div>
                 )}
             </div>
