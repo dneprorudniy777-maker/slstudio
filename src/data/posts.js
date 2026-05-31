@@ -1,5 +1,13 @@
 export const posts = [
     {
+        href: "/blog/will-ai-destroy-music",
+        image: "/images/blog-ai-music-cover.jpg",
+        category: "Industry Insights",
+        date: "December 5, 2025",
+        title: "Will Generative AI Destroy Music and the Music Industry?",
+        excerpt: "Every disruptive technology in music was supposed to end the musician. None did. But generative AI is different enough to take seriously — here is an honest look."
+    },
+    {
         href: "/blog/how-long-does-mastering-take",
         image: "/images/blog-mastering-time-cover.jpg",
         category: "Mixing & Mastering",
