@@ -1,3 +1,5 @@
+import BlogHeader from "@/app/components/blog/BlogHeader";
+
 export const metadata = {
     title: "Best Music Distribution Services in 2025 — Honest Comparison | SL Studio",
     alternates: {
@@ -20,21 +22,13 @@ export default function MusicDistributionPage() {
     return (
         <div className="mt-16 mb-20">
             <div className="max-w-3xl mx-auto">
-
-                {/* Header */}
-                <div className="mb-12">
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="text-white/30 text-xs uppercase tracking-widest">Industry Insights</span>
-                        <span className="text-white/20 text-xs">·</span>
-                        <span className="text-white/30 text-xs">May 2, 2025</span>
-                    </div>
-                    <h1 className="text-3xl md:text-5xl font-semibold tracking-wide leading-tight mb-6">
-                        Best Music Distribution Services in 2025 — The Good, The Bad & The Ugly
-                    </h1>
-                    <p className="text-white/50 text-lg leading-relaxed">
-                        Not all music distributors are equal. Some take a cut of your earnings, some limit your audio quality, and only a few are genuinely transparent about what you are getting. Here is an honest breakdown.
-                    </p>
-                </div>
+                
+                <BlogHeader 
+                    date="May 2, 2025" 
+                    topic="Industry Insights"
+                    title="Best Music Distribution Services in 2025 — The Good, The Bad & The Ugly"
+                    description="Not all music distributors are equal. Some take a cut of your earnings, some limit your audio quality, and only a few are genuinely transparent about what you are getting. Here is an honest breakdown."
+                />
 
                 <div className="flex flex-col gap-10 text-white/70 text-[15px] leading-relaxed">
 
