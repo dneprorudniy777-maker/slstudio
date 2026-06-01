@@ -1,5 +1,13 @@
 export const posts = [
     {
+        href: "/blog/vovious-review",
+        image: "/images/blog-vovious-cover.jpg",
+        category: "Review",
+        date: "January 15, 2026",
+        title: "Vovious Review — Is It Better Than Melodyne?",
+        excerpt: "Vovious launched in December 2025 at $229 vs Melodyne Studio's $699. After using it on real sessions, here is what actually matters."
+    },
+    {
         href: "/blog/will-ai-destroy-music",
         image: "/images/blog-ai-music-cover.jpg",
         category: "Industry Insights",
