@@ -1,5 +1,13 @@
 export const posts = [
     {
+        href: "/blog/suno-guide-2026-ru",
+        image: "/images/blog-suno-cover-ru.png",
+        category: "Tutorials",
+        date: "May 1, 2026",
+        title: "Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026",
+        excerpt: "Перестань гадать с AI-музыкой. Полный практический гайд по Suno AI — промпты, структура, теги, настройки и рабочий процесс, который реально даёт результат."
+    },
+    {
         href: "/blog/suno-guide-2026",
         image: "/images/blog-suno-cover.png",
         category: "Tutorials",
