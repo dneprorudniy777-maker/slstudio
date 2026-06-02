@@ -12,8 +12,16 @@ export const posts = [
         image: "/images/blog-suno-cover.png",
         category: "Tutorials",
         date: "April 10, 2026",
-        title: "How to Use Suno AI Like a Pro — Genre & Tag Guide 2026",
+        title: "Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026",
         excerpt: "Stop gambling with AI music. A complete practical guide to Suno AI — prompts, structure, tags, settings, and workflow that actually produces results."
+    },
+    {
+        href: "/blog/vocal-reverb-delay-chain",
+        image: "/images/blog-vocal-fx-cover.jpg",
+        category: "Mixing & Mastering",
+        date: "March 20, 2026",
+        title: "My Reverb & Delay Chain for Vocals — The Setup I Use on Every Mix",
+        excerpt: "Five sends, zero guesswork. The exact reverb and delay chain I use on vocal mixes — room, plate, microshift, delay, chamber. How it works and why."
     },
     {
         href: "/blog/best-mixing-plugins-2026",
