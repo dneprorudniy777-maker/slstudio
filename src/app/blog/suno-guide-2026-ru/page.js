@@ -54,6 +54,7 @@ const TOC = [
     { id: "extend-cover-upload", label: "Extend, Cover, Upload" },
     { id: "personas",            label: "Personas — твой звук под замком" },
     { id: "demo-machine",        label: "Suno делает демо. Хорошие демо." },
+    { id: "v55-update",          label: "Обновление v5.5 — голос, стиль, вкус" },
     { id: "checklist",           label: "Чеклист перед генерацией" },
 ];
 
@@ -467,7 +468,104 @@ export default function SunoGuidePageRu() {
                         <p>Suno — отличная отправная точка. Не финиш. Следующий шаг — стемы, баланс, вокальная обработка, детали <a href="/arrangement" style={{ color: "#C9A84C", textDecoration: "underline" }}>аранжировки</a> — всё то, что переводит демо в то, что реально бьёт.</p>
                         <BackToTop />
                     </div>
+{/* v5.5 Update */}
+                    <div id="v55-update" className="flex flex-col gap-5">
+                        <div className="flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>🆕</span>
+                            <h2 className="text-xl md:text-2xl font-semibold text-white">Обновление v5.5 — голос, стиль и вкус</h2>
+                        </div>
 
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                            <span className="text-lg flex-shrink-0">📅</span>
+                            <p className="text-white/60 text-sm leading-relaxed">Suno v5.5 вышел 26 марта 2026. Это не улучшение движка — это смена философии. Предыдущие версии соревновались за качество звука. v5.5 соревнуется за идентичность. Три новые функции: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
+                        </div>
+
+                        {/* Voices */}
+                        <div className="flex flex-col gap-4">
+                            <h3 className="text-lg font-semibold text-white">🎤 Voices — твой голос в треке</h3>
+                            <p>Это была самая ожидаемая функция за всю историю Suno. Теперь можно загрузить запись своего голоса — и Suno будет генерировать треки именно с ним. Не со случайным вокалистом, а именно с тобой.</p>
+                            <p>Для певцов это означает: можно набросать демо новой песни без микрофона и студии — просто напеть в Suno и услышать себя в полноценном треке. Для непевцов — впервые услышать свой голос в реальной музыке, что само по себе довольно неожиданный опыт.</p>
+
+                            <div className="rounded-2xl overflow-hidden border border-white/5">
+                                <img src="/images/suno-ru-16.png" alt="Voices в Suno v5.5 — клонирование голоса" className="w-full object-cover" />
+                            </div>
+
+                            <p><strong className="text-white">Как активировать:</strong></p>
+                            <div className="flex flex-col gap-3">
+                                {[
+                                    { step: "01", title: "Запись голоса", desc: "Загружаешь аудио со своим голосом — поёшь или говоришь. Формат: WAV или MP3. Достаточно 30–60 секунд чистого материала." },
+                                    { step: "02", title: "Верификация", desc: "Suno даёт случайную фразу — ты читаешь её вслух и записываешь. Система сравнивает с загруженным аудио и убеждается, что это действительно твой голос." },
+                                    { step: "03", title: "Голос в панели", desc: "После верификации голос появляется в твоём аккаунте. При генерации треков выбираешь его вместо случайного вокалиста." },
+                                ].map((item, i) => (
+                                    <div key={i} className="rounded-xl p-4 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                        <span className="text-2xl font-bold flex-shrink-0" style={{ color: "rgba(201,168,76,0.25)" }}>{item.step}</span>
+                                        <div>
+                                            <p className="text-white font-medium text-sm">{item.title}</p>
+                                            <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
+                                <p className="text-white font-semibold text-sm">🎙️ Почему качество записи критично</p>
+                                <p className="text-white/60 text-sm leading-relaxed">Suno обучает голосовую модель на том материале, который ты ей даёшь. Если в записи есть шум кондиционера, эхо от стен, фоновая музыка или соседи за стеной — всё это войдёт в модель. Результат: при генерации трека голос будет звучать нечётко, с артефактами и искажениями. Никакой алгоритм не сможет «убрать» шум, который уже зашит в модель.</p>
+                                <p className="text-white/60 text-sm leading-relaxed mt-1">Оптимальные условия: тихая комната, студийный микрофон или хотя бы качественные наушники с микрофоном, минимальное расстояние от губ до источника записи. Запись ранним утром или поздно ночью когда улица тихая — не шутка, это реально работает.</p>
+                                <p className="text-white/60 text-sm leading-relaxed mt-1">Одна хорошая запись голоса сделанная один раз — это инвестиция. Плохая запись не исправляется никакими настройками после.</p>
+                            </div>
+
+                            <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,80,0.06)", border: "1px solid rgba(255,100,80,0.2)" }}>
+                                <span className="text-lg flex-shrink-0">⚠️</span>
+                                <div>
+                                    <p className="text-white font-semibold text-sm mb-1">Важно перед активацией</p>
+                                    <p className="text-white/60 text-sm leading-relaxed">При включении Voices нужно поставить галочку согласия на использование твоих голосовых данных для обучения модели Suno — не только твоей личной версии, но и общей модели платформы. Без этого функция не включается. Это не опционально. Решай осознанно.</p>
+                                </div>
+                            </div>
+
+                            <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <span className="text-lg">🔒</span>
+                                <p className="text-white/60 text-sm leading-relaxed">Голос по умолчанию приватный — только ты можешь его использовать для генерации. Функция совместного доступа к голосу анонсирована, но пока недоступна. Только для аккаунтов <strong className="text-white">Pro и Premier</strong>.</p>
+                            </div>
+                        </div>
+
+                        {/* Custom Models */}
+                        <div className="flex flex-col gap-4 pt-2">
+                            <h3 className="text-lg font-semibold text-white">🎛️ Custom Models — Suno обученный на твоей музыке</h3>
+                            <p>Загружаешь свои треки сделанные вне Suno — и модель обучается на твоём стиле. После этого генерирует музыку, которая звучит как ты, а не как усреднённый AI.</p>
+                            <p>Логика та же, что у пресетов и шаблонов в DAW — только вместо настроек плагинов ты загружаешь свои треки как обучающий материал. Модель улавливает твои жанровые предпочтения, характерные инструментальные решения, динамику и звуковую эстетику.</p>
+
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
+                                <p className="text-white font-semibold text-sm">Что важно понимать</p>
+                                <p className="text-white/60 text-sm leading-relaxed">Custom Models хорошо улавливают поверхностные характеристики — тембр, жанровые маркеры, инструментальную текстуру. С более глубокими compositional tendencies — аранжировочными решениями, паузами, динамическими контрастами — модель справляется хуже. Чем самобытнее твой стиль, тем интереснее результат. Если твоя музыка звучит как большинство — особого смысла в Custom Model нет.</p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                                    <p className="text-white font-semibold text-xs uppercase tracking-widest">Доступно</p>
+                                    <p className="text-white/60 text-sm">До 3 кастомных моделей на аккаунт. Только Pro и Premier.</p>
+                                </div>
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                    <p className="text-white font-semibold text-xs uppercase tracking-widest">Лучший сценарий</p>
+                                    <p className="text-white/60 text-sm">YouTube-канал, альбом, клиентский проект — где нужен единый, узнаваемый звук.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* My Taste */}
+                        <div className="flex flex-col gap-4 pt-2">
+                            <h3 className="text-lg font-semibold text-white">✨ My Taste — Suno который тебя запоминает</h3>
+                            <p>Бесплатно для всех пользователей. Suno отслеживает что ты генерируешь, какие жанры и настроения выбираешь, что лайкаешь и что пропускаешь — и постепенно накапливает профиль твоих предпочтений.</p>
+                            <p>Когда нажимаешь на волшебную палочку при генерации — My Taste применяет накопленный контекст. Результаты начинают смещаться в сторону того, что тебе обычно нравится, без явных инструкций в промпте.</p>
+
+                            <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <span className="text-lg">💡</span>
+                                <p className="text-white/60 text-sm leading-relaxed">Работает тем лучше, чем больше ты используешь Suno — и чем последовательнее в своих оценках. Лайкаешь блюз-рок и дизлайкаешь поп — My Taste это замечает. Лайкаешь всё подряд — система не понимает что ты хочешь и помогает меньше. Фильтруй Library честно.</p>
+                            </div>
+                        </div>
+
+                        <ProTip>v5.5 — это аддитивное обновление. Всё что работало в v5 работает и сейчас. Voices, Custom Models и My Taste — дополнительные слои поверх того же движка. Начни с My Taste прямо сейчас, это бесплатно. Voices и Custom Models — когда будет готова качественная запись голоса и накоплен собственный музыкальный каталог.</ProTip>
+                        <BackToTop />
+                    </div>
                     <div id="checklist" className="flex flex-col gap-5">
                         <div className="flex items-center gap-3">
                             <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>✓</span>

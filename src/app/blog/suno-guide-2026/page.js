@@ -2,7 +2,7 @@ import BlogHeader from "@/app/components/blog/BlogHeader";
 import InteractiveChecklist from "./InteractiveChecklist";
 
 export const metadata = {
-    title: "How to Use Suno AI Like a Pro — Genre & Tag Guide 2026 | SL Studio",
+    title: "Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026 | SL Studio",
     alternates: {
         canonical: "https://www.slstudio.pro/blog/suno-guide-2026"
     },
@@ -64,6 +64,7 @@ const TOC = [
     { id: "extend-cover-upload",  label: "Extend, Cover & Upload" },
     { id: "personas",             label: "Personas" },
     { id: "demo-machine",         label: "Suno Is a Demo Machine" },
+    { id: "v55-update",           label: "What's New in v5.5" },
     { id: "checklist",            label: "Pre-Generation Checklist" },
 ];
 
@@ -100,7 +101,7 @@ export default function SunoGuidePage() {
                 <BlogHeader
                     topic="Tutorials"
                     date="April 10, 2026"
-                    title="How to Use Suno AI Like a Pro — Genre & Tag Guide 2026"
+                    title="Suno AI: Complete Guide for Musicians — Genres, Tags & Prompts 2026"
                     description="If your current workflow is: open Suno → type something → hit Generate → hope for the best — you are not using this tool. You are playing a slot machine with audio. This guide fixes that."
                 />
 
@@ -512,6 +513,100 @@ export default function SunoGuidePage() {
                         </div>
                         <p>Listeners do not care how a track was made. They only care how it sounds. A Suno-generated track with professional <a href="/mixing-mastering" style={{ color: "#C9A84C", textDecoration: "underline" }}>mixing and mastering</a> sounds better than a traditionally recorded track that was never properly mixed. The tools do not matter. The result does.</p>
                         <p>Suno is a spectacular starting point. It is not the finish line. The next step after Suno is stems, balance, vocal treatment, arrangement detail — all the things that separate a demo from something that actually hits the way you intended.</p>
+                        <BackToTop />
+                    </div>
+
+                    {/* ── v5.5 Update ── */}
+                    <div id="v55-update" className="flex flex-col gap-5">
+                        <div className="flex items-center gap-3">
+                            <span className="w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold flex-shrink-0" style={{ background: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>🆕</span>
+                            <h2 className="text-xl md:text-2xl font-semibold text-white">What's New in v5.5 — Voice, Style & Taste</h2>
+                        </div>
+
+                        <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)" }}>
+                            <span className="text-lg flex-shrink-0">📅</span>
+                            <p className="text-white/60 text-sm leading-relaxed">Suno v5.5 released March 26, 2026. This is not an audio engine update — it is a philosophy shift. Previous versions competed on sound quality. v5.5 competes on identity. Three new features: <strong className="text-white">Voices, Custom Models, My Taste</strong>.</p>
+                        </div>
+
+                        {/* Voices */}
+                        <div className="flex flex-col gap-4">
+                            <h3 className="text-lg font-semibold text-white">🎤 Voices — Your Voice in Your Tracks</h3>
+                            <p>The single most requested feature in Suno's history. You can now upload a recording of your own voice — and Suno will generate tracks using it. Not a random AI vocalist. You.</p>
+                            <p>For singers, this means demoing new songs without setting up a mic session — just hum an idea into Suno and hear yourself in a full production. For non-singers, it is a chance to hear your own voice in music for the first time, which is a genuinely surprising experience.</p>
+
+                            <div className="rounded-2xl overflow-hidden border border-white/5">
+                                <img src="/images/suno-16.png" alt="Voices in Suno v5.5 — voice cloning" className="w-full object-cover" />
+                            </div>
+
+                            <p><strong className="text-white">How to activate:</strong></p>
+                            <div className="flex flex-col gap-3">
+                                {[
+                                    { step: "01", title: "Record your voice", desc: "Upload audio of yourself singing or speaking. WAV or MP3. 30–60 seconds of clean material is enough to build a solid voice model." },
+                                    { step: "02", title: "Verification", desc: "Suno gives you a random phrase to read aloud. You record it and the system compares it against your uploaded audio to confirm it is actually your voice." },
+                                    { step: "03", title: "Voice appears in your panel", desc: "Once verified, your voice shows up in your account. Select it when generating instead of a random AI vocalist. Only you can see and use it." },
+                                ].map((item, i) => (
+                                    <div key={i} className="rounded-xl p-4 flex gap-4 items-start" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                        <span className="text-2xl font-bold flex-shrink-0" style={{ color: "rgba(201,168,76,0.25)" }}>{item.step}</span>
+                                        <div>
+                                            <p className="text-white font-medium text-sm">{item.title}</p>
+                                            <p className="text-white/50 text-sm mt-1 leading-relaxed">{item.desc}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div className="rounded-xl p-5 flex flex-col gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)", borderLeft: "3px solid #C9A84C" }}>
+                                <p className="text-white font-semibold text-sm">🎙️ Why recording quality matters more than you think</p>
+                                <p className="text-white/60 text-sm leading-relaxed">Suno trains the voice model on whatever audio you give it. If your recording has air conditioning hum, room reverb, background music, or street noise — all of that gets baked into the model. The result: when the model generates your voice in a track, it carries those artifacts with it. The vocal sounds muddy, unstable, or artificially processed in ways you cannot fix after the fact.</p>
+                                <p className="text-white/60 text-sm leading-relaxed mt-1">This is not a post-processing problem — it is a training data problem. No algorithm can remove noise that is already part of the model. The only fix is a clean source recording.</p>
+                                <p className="text-white/60 text-sm leading-relaxed mt-1">Optimal conditions: a quiet room, a decent microphone or quality headset, close mic placement. Recording early in the morning or late at night when street noise is minimal is not overthinking it — it actually makes a difference. One good voice recording made once is an investment. A noisy recording is a limitation you carry into every track you make with it.</p>
+                            </div>
+
+                            <div className="rounded-xl p-4 flex gap-3 items-start" style={{ background: "rgba(255,100,80,0.06)", border: "1px solid rgba(255,100,80,0.2)" }}>
+                                <span className="text-lg flex-shrink-0">⚠️</span>
+                                <div>
+                                    <p className="text-white font-semibold text-sm mb-1">Read this before activating</p>
+                                    <p className="text-white/60 text-sm leading-relaxed">Activating Voices requires checking a consent box that grants Suno permission to use your voice data to train their models broadly — not just your private instance. This is not optional. Without it, the feature does not activate. Decide consciously. Pro and Premier accounts only.</p>
+                                </div>
+                            </div>
+
+                            <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <span className="text-lg">🔒</span>
+                                <p className="text-white/60 text-sm leading-relaxed">Your voice is private by default — only your account can use it to generate songs. Voice sharing is listed as a future feature but is not live yet.</p>
+                            </div>
+                        </div>
+
+                        {/* Custom Models */}
+                        <div className="flex flex-col gap-4 pt-2">
+                            <h3 className="text-lg font-semibold text-white">🎛️ Custom Models — Suno Trained on Your Music</h3>
+                            <p>Upload your own tracks made outside Suno and the model learns your style. After training, it generates music that sounds more like you — your genre preferences, your characteristic instrument choices, your sonic aesthetic — rather than a generic AI average.</p>
+                            <p>The logic is similar to DAW presets and templates, except instead of saving plugin settings you are curating a training set. The model picks up surface-level characteristics — timbre, genre markers, instrumental texture — reliably. Deeper compositional tendencies like arrangement restraint, timing, and dynamic contrast are harder to encode. The more distinctive your style, the more interesting the result.</p>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.15)" }}>
+                                    <p className="text-white font-semibold text-xs uppercase tracking-widest">Availability</p>
+                                    <p className="text-white/60 text-sm">Up to 3 custom models per account. Pro and Premier only.</p>
+                                </div>
+                                <div className="rounded-xl p-4 flex flex-col gap-2" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                    <p className="text-white font-semibold text-xs uppercase tracking-widest">Best use case</p>
+                                    <p className="text-white/60 text-sm">YouTube channel, album project, client work — anywhere you need a consistent, recognizable sound across multiple tracks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* My Taste */}
+                        <div className="flex flex-col gap-4 pt-2">
+                            <h3 className="text-lg font-semibold text-white">✨ My Taste — Suno That Learns You</h3>
+                            <p>Free for all users. Suno tracks what you generate, which genres and moods you choose, what you like and what you skip — and gradually builds a preference profile. When you hit the magic wand during generation, My Taste applies that accumulated context and nudges results toward what you typically enjoy, without any explicit instructions in the prompt.</p>
+                            <p>It works better the more consistently you use Suno — and the more honest you are in your Library filtering. Like blues rock and dislike pop → My Taste notices. Like everything indiscriminately → the system cannot figure out what you actually want and helps less. Filter your Library honestly. It feeds directly into this.</p>
+
+                            <div className="rounded-xl p-4 flex gap-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                                <span className="text-lg">💡</span>
+                                <p className="text-white/60 text-sm leading-relaxed">My Taste is the easiest way to start getting more personalised results from Suno immediately — no setup, no uploads, no subscription tier required. It just needs time and consistent use to build up.</p>
+                            </div>
+                        </div>
+
+                        <ProTip>v5.5 is an additive update. Everything that worked in v5 still works. Voices, Custom Models, and My Taste are layers on top of the same engine. Start with My Taste right now — it is free and starts working immediately. Come back to Voices and Custom Models once you have a quality voice recording and a musical catalog worth training on.</ProTip>
                         <BackToTop />
                     </div>
 
