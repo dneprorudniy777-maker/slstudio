@@ -18,7 +18,7 @@ export default function Header() {
                 <Link href="/" className={`${bebasNeue.className} text-gold2 text-2xl tracking-widest`}>
                     SL STUDIO
                 </Link>
-                <ul className="flex items-center gap-8 text-white/70 text-[15px] font-medium tracking-wide">
+                <ul className="flex items-center gap-8 text-white/70 text-[15px] font-medium tracking-wide max-[768px]:hidden">
                     <li><Link href="/" className="hover:text-gold2 transition">Home</Link></li>
                     <li><Link href="/mixing-mastering" className="hover:text-gold2 transition">Mixing & Mastering</Link></li>
                     <li><Link href="/arrangement" className="hover:text-gold2 transition">Arrangement</Link></li>
@@ -29,7 +29,7 @@ export default function Header() {
                         </Link>
                     </li>
                 </ul>
-                <button onClick={() => setOpen(!open)} className="md:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8" aria-label="Menu">
+                <button onClick={() => setOpen(!open)} className="min-[769px]:hidden flex flex-col justify-center items-center gap-[5px] w-8 h-8" aria-label="Menu">
                     <span className="block w-6 h-0.5 bg-white/70 transition-all duration-300" style={open ? {transform: "translateY(7px) rotate(45deg)"} : {}}/>
                     <span className="block w-6 h-0.5 bg-white/70 transition-all duration-300" style={open ? {opacity: 0} : {}}/>
                     <span className="block w-6 h-0.5 bg-white/70 transition-all duration-300" style={open ? {transform: "translateY(-7px) rotate(-45deg)"} : {}}/>
