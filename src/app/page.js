@@ -6,6 +6,7 @@ import Testimonials from "./components/sections/Testimonials";
 import WhyChoose from "./components/sections/WhyChoose";
 import Pricing from "./components/sections/Pricing";
 import FinalCTA from "./components/sections/FinalCTA";
+import BlogPreview from "./components/sections/BlogPreview";
 
 export const metadata = {
   title: "SL Studio | Mixing, Mastering & Music Production",
@@ -54,6 +55,7 @@ export default function Home() {
       <HowItWorks />
       <Testimonials />
       <WhyChoose />
+      <BlogPreview />
       <Pricing />
       <FinalCTA />
     </>
