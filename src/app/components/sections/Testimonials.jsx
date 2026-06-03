@@ -2,22 +2,22 @@ import Image from "next/image";
 
 const testimonials = [
     {
-        name: "Andrei Malinowski",
+        name: "Andrii Holikov",
         role: "Guitarist & Musician",
-        photo: "/images/review-andrei.png",
-        text: "Brought Serhii recordings I was honestly embarrassed to share — heavy stuff tracked in pretty rough conditions. Got back something I actually want to listen to. The arrangements came out so good that me and my friend kept replaying them just for fun."
+        photo: "/images/review-andrei3.png",
+        text: "Total bomb. Keep this one, don't change a thing. I keep hitting replay. Maestro, bravo."
     },
     {
-        name: "Luis Mesquita",
+        name: "Oleg Volos",
         role: "Singer & Songwriter",
-        photo: "/images/review-luis.png",
-        text: "I had songs recorded in an old studio — tracks I'd kind of grown cold to. After Serhii reworked them, I found myself listening differently. Same words, same melody — but they started hitting harder than when I first wrote them."
+        photo: "/images/review-luis2.png",
+        text: "Sitting alone in front of the speakers, celebrating my son's 30th birthday — listening to what we made together. Feelings just hit me. No words. Thank you."
     },
     {
-        name: "Anna Kowalska",
+        name: "Olga Lalum",
         role: "Vocalist & Composer",
-        photo: "/images/review-anna.png",
-        text: "I write songs on guitar and honestly didn't expect them to end up sounding like a full band. Serhii catches details I miss myself — and doesn't stop until everything falls into place. My vocal parts finally sound the way I always heard them in my head."
+        photo: "/images/review-anna2.png",
+        text: "Beautiful music — it just gives you wings. ❤️❤️❤️❤️❤️❤️❤️"
     },
 ];
 
