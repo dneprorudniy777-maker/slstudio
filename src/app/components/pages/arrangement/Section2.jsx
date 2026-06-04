@@ -37,7 +37,7 @@ export default function Section2() {
     const [openIndex, setOpenIndex] = useState(null);
 
     return (
-        <section className="mt-20 flex flex-col gap-16">
+        <section className="mt-10 flex flex-col gap-16">
             <div className="flex flex-col gap-6">
                 <div className="flex items-center gap-3">
                     <HelpCircle className="text-gold2 w-6 h-6" />

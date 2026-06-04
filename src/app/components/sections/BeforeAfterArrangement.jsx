@@ -15,7 +15,7 @@ export default async function BeforeAfterArrangement() {
     if (enhancements.length === 0) return null;
 
     return (
-        <section className="py-10">
+        <section className="pb-10">
             <div className="mb-10">
                 <div className="text-white/40 mb-4 flex items-center gap-2">
                     <AudioWaveform size={16} />
