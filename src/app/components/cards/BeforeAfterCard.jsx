@@ -3,10 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { Play, Pause } from "lucide-react";
 import WaveSurfer from "wavesurfer.js";
 
+const STOP_EVENT = "slstudio:stop-all";
+
 export default function BeforeAfterCard({title, before, after}) {
     const [mode, setMode] = useState("before");
     const [isPlaying, setIsPlaying] = useState(false);
     const [hovered, setHovered] = useState(false);
+    const cardId = useRef(Math.random().toString(36).slice(2));
 
     const beforeRef = useRef(null);
     const afterRef = useRef(null);
@@ -42,7 +45,18 @@ export default function BeforeAfterCard({title, before, after}) {
         beforeWS.current.load(sources.before);
         afterWS.current.load(sources.after);
 
+        // Слушаем событие остановки от других карточек
+        const handleStopAll = (e) => {
+            if (e.detail.id !== cardId.current) {
+                beforeWS.current?.pause();
+                afterWS.current?.pause();
+                setIsPlaying(false);
+            }
+        };
+        window.addEventListener(STOP_EVENT, handleStopAll);
+
         return () => {
+            window.removeEventListener(STOP_EVENT, handleStopAll);
             setTimeout(() => {
                 beforeWS.current?.destroy();
                 afterWS.current?.destroy();
@@ -55,6 +69,12 @@ export default function BeforeAfterCard({title, before, after}) {
     const togglePlay = () => {
         const active = getActive();
         const inactive = mode === "before" ? afterWS.current : beforeWS.current;
+
+        if (!active.isPlaying()) {
+            // Останавливаем все остальные карточки
+            window.dispatchEvent(new CustomEvent(STOP_EVENT, { detail: { id: cardId.current } }));
+        }
+
         inactive.pause();
         active.playPause();
         setIsPlaying(active.isPlaying());
