@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { Bebas_Neue } from "next/font/google";
 import { useState } from "react";
+
+const bebasNeue = Bebas_Neue({
+    weight: "400",
+    subsets: ["latin"],
+})
 
 export default function Header() {
     const [open, setOpen] = useState(false);
@@ -9,12 +15,8 @@ export default function Header() {
     return (
         <nav className="sticky top-0 z-50 bg-[#1b1b1b]/80 backdrop-blur-xs border-b border-white/5">
             <div className="container py-4 flex items-center justify-between">
-                <Link href="/">
-                    <img
-                        src="/images/logo-animated.svg"
-                        alt="SL Studio"
-                        style={{ height: "27px"}}
-                    />
+                <Link href="/" className={`${bebasNeue.className} text-gold2 text-2xl tracking-widest`}>
+                    SL STUDIO
                 </Link>
                 <ul className="flex items-center gap-8 text-white/70 text-[15px] font-medium tracking-wide max-[768px]:hidden">
                     <li><Link href="/" className="hover:text-gold2 transition">Home</Link></li>
