@@ -116,7 +116,7 @@ export default function Hero() {
                         </div>
                     ) : (
                         <div className="rounded-2xl p-6 flex flex-col gap-4" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.015)"}}>
-                            <p className="text-white/25 text-xs uppercase tracking-widest">Send a message</p>
+                            <p className="text-white/50 text-xs uppercase tracking-widest">Send a message</p>
                             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="flex flex-col gap-2">
@@ -147,7 +147,7 @@ export default function Hero() {
                                     <p className="text-red-400 text-xs">{error}</p>
                                 )}
 
-                                <button type="submit" disabled={loading} className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-black transition hover:opacity-90 disabled:opacity-60" style={{background:"linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",backgroundSize:"200% auto"}} onMouseEnter={e=>!loading&&(e.currentTarget.style.backgroundPosition="right center")} onMouseLeave={e=>e.currentTarget.style.backgroundPosition="left center"}>
+                                <button type="submit" disabled={loading} className="flex items-center justify-center gap-2 py-3 rounded-xl text-sm font-semibold text-black transition hover:opacity-90 disabled:opacity-60" style={{background:"#C9A84C",backgroundSize:"200% auto"}} onMouseEnter={e=>!loading&&(e.currentTarget.style.backgroundPosition="right center")} onMouseLeave={e=>e.currentTarget.style.backgroundPosition="left center"}>
                                     {loading ? <><Loader2 size={14} className="animate-spin"/> Sending...</> : <><Send size={14}/> Send Message</>}
                                 </button>
                             </form>
