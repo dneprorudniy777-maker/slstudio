@@ -3,7 +3,7 @@ import HeroCard from "../cards/HeroCard";
 import { servicesData } from "@/data/temporaryData";
 
 const stats = [
-    { value: "200+", label: "Tracks Mixed & Mastered" },
+    { value: "300+", label: "Tracks Mixed & Mastered" },
     { value: "10+", label: "Years Behind the Board" },
     { value: "Any Genre", label: "From Blues to Electronic" },
 ];
