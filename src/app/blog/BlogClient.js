@@ -24,7 +24,7 @@ export default function BlogPage() {
 
     return (
         <div className="mt-16 mb-20">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-5xl mx-auto">
                 <div className="mb-10">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                         Studio Notes

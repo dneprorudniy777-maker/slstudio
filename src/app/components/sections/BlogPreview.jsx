@@ -86,8 +86,8 @@ export default function BlogPreview() {
                         href={post.href}
                         className="group flex flex-col rounded-xl overflow-hidden transition-all duration-300"
                         style={{
-                            background: "rgba(255,255,255,0.02)",
-                            border: "1px solid rgba(255,255,255,0.06)",
+                            background: "rgba(255,255,255,0.05)",
+                            border: "1px solid rgba(255,255,255,0.1)",
                         }}
                         onMouseEnter={e => {
                             e.currentTarget.style.background = "rgba(201,168,76,0.04)";
@@ -96,8 +96,8 @@ export default function BlogPreview() {
                             e.currentTarget.style.boxShadow = "0 8px 32px rgba(201,168,76,0.08)";
                         }}
                         onMouseLeave={e => {
-                            e.currentTarget.style.background = "rgba(255,255,255,0.02)";
-                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.06)";
+                            e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                            e.currentTarget.style.border = "1px solid rgba(255,255,255,0.1)";
                             e.currentTarget.style.transform = "translateY(0)";
                             e.currentTarget.style.boxShadow = "none";
                         }}
