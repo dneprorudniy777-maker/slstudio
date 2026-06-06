@@ -12,7 +12,7 @@ const featured = FEATURED_SLUGS.map(slug => posts.find(p => p.href === slug)).fi
 
 export default function BlogPreview() {
     return (
-        <section className="py-16 border-t border-white/5">
+        <section className="py-12 border-t border-white/5">
             <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
                 <div>
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">

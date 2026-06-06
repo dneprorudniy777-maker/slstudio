@@ -42,7 +42,7 @@ const payment = [
 
 export default function Pricing() {
     return (
-        <section className="py-16 border-t border-white/5">
+        <section className="py-12 border-t border-white/5">
             <div className="max-w-4xl mx-auto">
                 <div className="mb-10 text-center">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
