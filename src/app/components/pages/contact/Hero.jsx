@@ -101,7 +101,7 @@ export default function Hero() {
                     <img
                         src="/images/logo-animated.svg"
                         alt="SL Studio"
-                        style={{width:"82%",display:"block",mixBlendMode:"lighten"}}
+                        style={{width:"100%",display:"block",mixBlendMode:"lighten"}}
                     />
 
                     {sent ? (
