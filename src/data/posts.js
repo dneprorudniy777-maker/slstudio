@@ -52,8 +52,8 @@ export const posts = [
         image: "/images/blog-ai-mixing-cover.jpg",
         category: "Industry Insights",
         date: "February 18, 2026",
-        title: "I Tested an AI Mixing Service. Here Is What Happened.",
-        excerpt: "AI mixing platforms promise studio-quality results in minutes. I uploaded a real 30-track session to find out. Spoiler: it crashed twice."
+        title: "AI Mixing and Mastering in 2026 — Tested on a Real Session",
+        excerpt: "Can AI mix and master a song? I uploaded a real 30-track session to find out — then mapped the whole 2026 landscape. Spoiler: the platform crashed twice."
     },
     {
         href: "/blog/vovious-review",
