@@ -43,7 +43,7 @@ export default function Hero() {
                             }}
                         >
                             <p className="text-white/70 text-md md:text-lg leading-relaxed">
-                                A Warsaw studio for mixing, mastering, arrangement and production — where your track gets real ears, honest taste, and the time it deserves.
+                                A Warsaw studio for mixing, mastering, arrangement and production — for artists who can hear the difference.
                             </p>
                         </div>
                         <div className="flex items-center gap-6 flex-wrap">
