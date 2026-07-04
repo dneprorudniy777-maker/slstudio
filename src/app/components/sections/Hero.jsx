@@ -18,7 +18,7 @@ export default function Hero() {
                     {/* Headline block — tight rhythm, no dead gaps */}
                     <div className="flex flex-col gap-6">
                         <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-                            Welcome to the <span className="text-[#f5b942]">Creative Studio.</span>
+                            Welcome to the <span className="text-[#f5b942]">Creative Studio</span>
                         </h1>
                         {/* Living waveform — mirrored around a center line like a real DAW
                             waveform, trailing off toward the photo on desktop */}
