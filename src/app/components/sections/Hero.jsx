@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { User, RefreshCw, Clock } from "lucide-react";
 import HeroCard from "../cards/HeroCard";
 import { servicesData } from "@/data/temporaryData";
 
@@ -7,6 +8,15 @@ const stats = [
     { value: "300+", label: "Tracks Mixed & Mastered" },
     { value: "10+", label: "Years Behind the Board" },
     { value: "Any Genre", label: "From Blues to Electronic" },
+];
+
+// Same facts already stated in the Why Choose section below — surfaced
+// here too, compact, to fill out row 2 next to the (naturally taller)
+// About Me column instead of leaving it empty.
+const trustBullets = [
+    { icon: User, text: "Direct access to a real producer — no agencies, no middlemen" },
+    { icon: RefreshCw, text: "Revisions included until you're happy" },
+    { icon: Clock, text: "Most projects delivered in 3–5 business days" },
 ];
 
 export default function Hero() {
@@ -91,29 +101,48 @@ export default function Hero() {
                 </div>
             </div>
 
-            {/* Row 2 — stats vs. About Me. Independent of row 1; doesn't need
-                to match cards/photo height, just flows naturally below. */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
-                {/* Stats + price clarifier — moved here from the old CTA row */}
-                <div className="flex flex-col gap-4 [@media(max-width:767px)]:order-4">
-                    <p className="text-white/45 text-xs uppercase tracking-widest">
-                        For independent artists · from $25 per track · remote, worldwide
-                    </p>
-                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-                        {stats.map((s, i) => (
-                            <div key={i} className="flex flex-col gap-1">
-                                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
-                                    {s.value}
-                                </span>
-                                <span className="text-white/55 text-xs uppercase tracking-widest">
-                                    {s.label}
-                                </span>
+            {/* Row 2 — stats+trust vs. About Me. items-stretch + justify-between
+                on the left mirrors row 1's trick: clarifier/stats pinned to the
+                top, trust bullets pinned to the bottom, matching whatever height
+                About Me's (naturally taller) paragraphs end up needing. */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10 items-stretch">
+                <div className="flex flex-col gap-6 md:justify-between [@media(max-width:767px)]:order-4">
+                    {/* Price clarifier + stats — moved here from the old CTA row */}
+                    <div className="flex flex-col gap-4">
+                        <p className="text-white/45 text-xs uppercase tracking-widest">
+                            For independent artists · from $25 per track · remote, worldwide
+                        </p>
+                        <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
+                            {stats.map((s, i) => (
+                                <div key={i} className="flex flex-col gap-1">
+                                    <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
+                                        {s.value}
+                                    </span>
+                                    <span className="text-white/55 text-xs uppercase tracking-widest">
+                                        {s.label}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    {/* Trust bullets — fills the space that used to sit empty
+                        beside About Me */}
+                    <div className="flex flex-col gap-3">
+                        {trustBullets.map(({ icon: Icon, text }, i) => (
+                            <div key={i} className="flex items-center gap-3">
+                                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
+                                    style={{ backgroundColor: "rgba(201,168,76,0.1)" }}>
+                                    <Icon className="w-4 h-4" style={{ color: "#C9A84C" }} />
+                                </div>
+                                <span className="text-white/65 text-sm">{text}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* About me */}
+                {/* About me — full column width now (was max-w-md), so the same
+                    copy wraps into fewer, longer lines and the block reads
+                    shorter/less stretched next to the photo above it */}
                 <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
                         Guitarist · Producer · Engineer
@@ -121,16 +150,16 @@ export default function Hero() {
                     <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
                         About me
                     </h2>
-                    <p className="text-white/70 leading-relaxed max-w-md">
+                    <p className="text-white/70 leading-relaxed">
                         I'm Serhii Lazariev - guitarist, vocalist, and music producer based in Warsaw, Poland.
                         Blues-rock, funk, jazz-rock, indie — I've been in it long enough to know what makes a recording feel alive.
                     </p>
-                    <p className="text-white/70 leading-relaxed max-w-md">
+                    <p className="text-white/70 leading-relaxed">
                         Send me what you have — a phone recording, a guitar sketch, a half-finished demo.
                         We figure out together what the track actually needs. Mixing, mastering, arrangement, new parts.
                         Sometimes a full overhaul, sometimes just a few touches.
                     </p>
-                    <a href="/contact" className="text-[#f5b942] hover:opacity-75 transition leading-relaxed max-w-md">
+                    <a href="/contact" className="text-[#f5b942] hover:opacity-75 transition leading-relaxed">
                         Send me what you've got.
                     </a>
                 </div>
