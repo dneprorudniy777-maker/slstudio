@@ -12,11 +12,11 @@ const stats = [
 export default function Hero() {
     return (
         <section className="mt-16 mb-10">
+            {/* Row 1 — pitch + services vs. photo. The two are independently
+                aligned: cards' bottom lands exactly on the photo's bottom,
+                regardless of what comes after in row 2. */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                {/* Left — stretched to match the (now taller) right column;
-                    justify-between pins the pitch to the top and the services
-                    block to the bottom instead of leaving dead space below it */}
-                <div className="flex flex-col gap-10 md:self-stretch md:justify-between mobile-reflow">
+                <div className="flex flex-col gap-10 md:justify-between mobile-reflow">
                     {/* Headline block — tight rhythm, no dead gaps */}
                     <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-1">
                         <div>
@@ -57,7 +57,8 @@ export default function Hero() {
                     </div>
                     {/* Services block — promoted right under the pitch, doing the
                         job the old CTA buttons used to do (each card is its own
-                        call to action) */}
+                        call to action). justify-between on the parent pins this
+                        to the bottom of row 1, matching the photo's bottom. */}
                     <div className="flex flex-col gap-6 [@media(max-width:767px)]:order-3">
                         <h2 className="text-2xl md:text-3xl font-semibold">
                             Professional Audio Services
@@ -76,60 +77,62 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right — stretches to match the left column, photo absorbs the height */}
-                <div className="flex flex-col gap-6 md:self-stretch mobile-reflow">
-                    <div className="w-full aspect-[16/9] md:aspect-auto md:flex-1 md:min-h-[320px] relative rounded-xl overflow-hidden [@media(max-width:767px)]:order-2">
-                        <Image
-                            src="/images/Serhii-Lazariev.webp"
-                            alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
-                            fill
-                            className="object-cover object-top"
-                            sizes="(max-width: 768px) 100vw, 1024px"
-                            loading="eager"
-                        />
-                    </div>
+                {/* Photo — already a direct row-1 grid item, no unwrapping
+                    needed; grid stretch fills row 1's height automatically */}
+                <div className="w-full h-full aspect-[16/9] md:aspect-auto relative rounded-xl overflow-hidden [@media(max-width:767px)]:order-2">
+                    <Image
+                        src="/images/Serhii-Lazariev.webp"
+                        alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 1024px"
+                        loading="eager"
+                    />
+                </div>
+            </div>
 
-                    {/* Audience/price clarifier + stats — now living under the photo
-                        instead of under the (removed) hero buttons */}
-                    <div className="flex flex-col gap-4 [@media(max-width:767px)]:order-4">
-                        <p className="text-white/45 text-xs uppercase tracking-widest">
-                            For independent artists · from $25 per track · remote, worldwide
-                        </p>
-                        <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-                            {stats.map((s, i) => (
-                                <div key={i} className="flex flex-col gap-1">
-                                    <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
-                                        {s.value}
-                                    </span>
-                                    <span className="text-white/55 text-xs uppercase tracking-widest">
-                                        {s.label}
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+            {/* Row 2 — stats vs. About Me. Independent of row 1; doesn't need
+                to match cards/photo height, just flows naturally below. */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-10">
+                {/* Stats + price clarifier — moved here from the old CTA row */}
+                <div className="flex flex-col gap-4 [@media(max-width:767px)]:order-4">
+                    <p className="text-white/45 text-xs uppercase tracking-widest">
+                        For independent artists · from $25 per track · remote, worldwide
+                    </p>
+                    <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
+                        {stats.map((s, i) => (
+                            <div key={i} className="flex flex-col gap-1">
+                                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
+                                    {s.value}
+                                </span>
+                                <span className="text-white/55 text-xs uppercase tracking-widest">
+                                    {s.label}
+                                </span>
+                            </div>
+                        ))}
                     </div>
+                </div>
 
-                    {/* About me */}
-                    <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
-                        <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                            Guitarist · Producer · Engineer
-                        </span>
-                        <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
-                            About me
-                        </h2>
-                        <p className="text-white/70 leading-relaxed max-w-md">
-                            I'm Serhii Lazariev - guitarist, vocalist, and music producer based in Warsaw, Poland.
-                            Blues-rock, funk, jazz-rock, indie — I've been in it long enough to know what makes a recording feel alive.
-                        </p>
-                        <p className="text-white/70 leading-relaxed max-w-md">
-                            Send me what you have — a phone recording, a guitar sketch, a half-finished demo.
-                            We figure out together what the track actually needs. Mixing, mastering, arrangement, new parts.
-                            Sometimes a full overhaul, sometimes just a few touches.
-                        </p>
-                        <a href="/contact" className="text-[#f5b942] hover:opacity-75 transition leading-relaxed max-w-md">
-                            Send me what you've got.
-                        </a>
-                    </div>
+                {/* About me */}
+                <div className="flex flex-col gap-3 [@media(max-width:767px)]:order-5">
+                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                        Guitarist · Producer · Engineer
+                    </span>
+                    <h2 className="text-xl md:text-2xl font-semibold tracking-wide">
+                        About me
+                    </h2>
+                    <p className="text-white/70 leading-relaxed max-w-md">
+                        I'm Serhii Lazariev - guitarist, vocalist, and music producer based in Warsaw, Poland.
+                        Blues-rock, funk, jazz-rock, indie — I've been in it long enough to know what makes a recording feel alive.
+                    </p>
+                    <p className="text-white/70 leading-relaxed max-w-md">
+                        Send me what you have — a phone recording, a guitar sketch, a half-finished demo.
+                        We figure out together what the track actually needs. Mixing, mastering, arrangement, new parts.
+                        Sometimes a full overhaul, sometimes just a few touches.
+                    </p>
+                    <a href="/contact" className="text-[#f5b942] hover:opacity-75 transition leading-relaxed max-w-md">
+                        Send me what you've got.
+                    </a>
                 </div>
             </div>
         </section>
