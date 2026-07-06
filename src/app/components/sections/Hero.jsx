@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { User, RefreshCw, Clock } from "lucide-react";
 import HeroCard from "../cards/HeroCard";
+import HeroWave from "../common/HeroWave";
 import { servicesData } from "@/data/temporaryData";
 
 const stats = [
@@ -40,28 +41,9 @@ export default function Hero() {
                                 </h1>
                             </div>
                         </div>
-                        {/* Living waveform — calm and understated: fewer, wider-spaced
-                            bars, gentle amplitude, slow breathing motion instead of a
-                            busy travelling equalizer */}
-                        <div className="hero-wave relative flex items-center gap-1 w-full" style={{ height: "36px" }} aria-hidden="true">
-                            {Array.from({ length: 56 }).map((_, i) => {
-                                const organic =
-                                    Math.abs(Math.sin(i * 0.35)) * 30 +
-                                    Math.abs(Math.sin(i * 1.3)) * 15 +
-                                    ((i * 5) % 8);
-                                return (
-                                    <span
-                                        key={i}
-                                        style={{
-                                            height: `${Math.round(24 + Math.min(organic, 55))}%`,
-                                            // negative phase shift => one smooth crest travels
-                                            // left-to-right, no per-bar jitter
-                                            animationDelay: `${(-i * 0.16).toFixed(3)}s`,
-                                        }}
-                                    />
-                                );
-                            })}
-                        </div>
+                        {/* Living waveform — shared component, also used on the
+                            Mixing & Mastering and Arrangement hero pages */}
+                        <HeroWave />
                         <p className="text-white/70 text-md md:text-lg leading-relaxed">
                             A Warsaw studio for mixing, mastering, arrangement and production — a place where your music comes alive.
                         </p>
