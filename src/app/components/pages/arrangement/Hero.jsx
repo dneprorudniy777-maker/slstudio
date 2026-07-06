@@ -31,7 +31,9 @@ export default function Hero() {
                                 </span>
                             </h1>
                         </div>
-                        <HeroWave />
+                        <div className="max-w-2xl">
+                            <HeroWave />
+                        </div>
                         <p className="
                             text-xl md:text-2xl
                             text-white/60

@@ -7,7 +7,7 @@ export default function Hero() {
         <section className="mt-16 mb-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                 <div className="flex flex-col gap-6 md:justify-between">
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-10">
                         <span className="
                             text-white/40
                             text-xs
@@ -31,7 +31,9 @@ export default function Hero() {
                                 </span>
                             </h1>
                         </div>
-                        <HeroWave />
+                        <div className="max-w-2xl">
+                            <HeroWave />
+                        </div>
                         <p className="
                             text-xl md:text-2xl
                             text-white/60

@@ -22,7 +22,7 @@ const trustBullets = [
 
 export default function Hero() {
     return (
-        <section className="mt-16 mb-10">
+        <section className="mt-12 mb-10">
             {/* Row 1 — pitch + services vs. photo. The two are independently
                 aligned: cards' bottom lands exactly on the photo's bottom,
                 regardless of what comes after in row 2. */}
