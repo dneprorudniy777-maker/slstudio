@@ -1,108 +1,220 @@
 "use client";
-import { useState } from "react";
+import { useMemo, useState, useEffect } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { posts } from "@/data/posts";
 import PostCard from "@/app/components/blog/PostCard";
 import NumberBtn from "@/app/components/pagination/NumberBtn";
+
 const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering", "Industry Insights"];
+const languages = [
+    { value: "all", label: "All languages" },
+    { value: "en", label: "EN" },
+    { value: "ru", label: "RU" },
+];
 const PER_PAGE = 6;
 
-export default function BlogPage() {
-    const [active, setActive] = useState("All");
-    const [page, setPage] = useState(1);
+export default function BlogClient() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
 
-    const filtered = active === "All"
-        ? posts
-        : posts.filter(p => p.category === active);
+    const active = searchParams.get("category") || "All";
+    const lang = searchParams.get("lang") || "all";
+    const page = Math.max(1, Number(searchParams.get("page")) || 1);
+    const urlQuery = searchParams.get("q") || "";
 
-    const totalPages = Math.ceil(filtered.length / PER_PAGE);
-    const paginated = filtered.slice((page - 1) * PER_PAGE, page * PER_PAGE);
+    const [query, setQuery] = useState(urlQuery);
+
+    // keep input in sync when URL changes externally (back/forward)
+    useEffect(() => {
+        setQuery(urlQuery);
+    }, [urlQuery]);
+
+    const setParams = (updates, { scrollTop = false } = {}) => {
+        const params = new URLSearchParams(searchParams.toString());
+        Object.entries(updates).forEach(([key, value]) => {
+            if (value === null || value === "" || value === undefined) {
+                params.delete(key);
+            } else {
+                params.set(key, value);
+            }
+        });
+        const qs = params.toString();
+        router.replace(qs ? `/blog?${qs}` : "/blog", { scroll: false });
+        if (scrollTop && typeof window !== "undefined") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
+
+    const filtered = useMemo(() => {
+        const q = urlQuery.trim().toLowerCase();
+        return posts.filter((p) => {
+            if (active !== "All" && p.category !== active) return false;
+            if (lang !== "all" && (p.lang || "en") !== lang) return false;
+            if (q && !`${p.title} ${p.excerpt} ${p.category}`.toLowerCase().includes(q)) return false;
+            return true;
+        });
+    }, [active, lang, urlQuery]);
+
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+    const safePage = Math.min(page, totalPages);
+
+    // page 1 shows the newest post as a full-width hero card
+    const featured = safePage === 1 ? filtered[0] : null;
+    const paginated = safePage === 1
+        ? filtered.slice(1, PER_PAGE)
+        : filtered.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
 
     const handleCategory = (cat) => {
-        setActive(cat);
-        setPage(1);
+        setParams({ category: cat === "All" ? null : cat, page: null });
+    };
+
+    const handleLang = (value) => {
+        setParams({ lang: value === "all" ? null : value, page: null });
+    };
+
+    const handleSearch = (value) => {
+        setQuery(value);
+        setParams({ q: value || null, page: null });
+    };
+
+    const handlePage = (num) => {
+        setParams({ page: num === 1 ? null : String(num) }, { scrollTop: true });
     };
 
     return (
         <div className="mt-16 mb-20">
-            <div className="max-w-5xl mx-auto">
+            <div className="max-w-6xl mx-auto px-4">
                 <div className="mb-10">
-                    <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+                    <span className="text-white/60 text-xs uppercase tracking-[0.3em]">
                         Studio Notes
                     </span>
-                    <h1 className="text-4xl md:text-5xl font-semibold tracking-wide mt-2">
-                        Blog
-                    </h1>
-                    <p className="text-white/40 text-base mt-4 max-w-xl">
-                        Tutorials, tips, and honest insights on mixing, mastering, and music production.
+                    <div className="relative mt-2 w-fit">
+                        <div className="hero-title-glow" aria-hidden="true" />
+                        <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
+                            Blog
+                        </h1>
+                    </div>
+                    <p className="text-white/65 text-base mt-4 max-w-xl leading-relaxed">
+                        Tutorials, honest reviews, and practical tips on mixing, mastering, plugins, and music production.
                     </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mb-8">
-                    {categories.map(cat => (
+                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div className="relative flex-1 max-w-md">
+                        <input
+                            type="search"
+                            value={query}
+                            onChange={(e) => handleSearch(e.target.value)}
+                            placeholder="Search articles..."
+                            aria-label="Search articles"
+                            className="w-full px-4 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 placeholder:text-white/40 focus:outline-none focus:border-gold/60 transition"
+                        />
+                    </div>
+                    <div className="flex gap-2" role="group" aria-label="Filter by language">
+                        {languages.map((l) => (
+                            <button
+                                key={l.value}
+                                onClick={() => handleLang(l.value)}
+                                aria-pressed={lang === l.value}
+                                className={`px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-widest transition border ${
+                                    lang === l.value
+                                        ? "bg-gold text-black border-gold"
+                                        : "bg-white/5 text-white/60 border-white/5 hover:text-white/80"
+                                }`}
+                            >
+                                {l.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                <div
+                    className="flex gap-2 mb-8 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:overflow-visible md:pb-0"
+                    role="group"
+                    aria-label="Filter by category"
+                >
+                    {categories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => handleCategory(cat)}
-                            className="px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-widest transition"
-                            style={{
-                                backgroundColor: active === cat ? "#C9A84C" : "rgba(255,255,255,0.05)",
-                                color: active === cat ? "#000" : "rgba(255,255,255,0.5)",
-                                border: active === cat ? "1px solid #C9A84C" : "1px solid rgba(255,255,255,0.05)"
-                            }}
+                            aria-pressed={active === cat}
+                            className={`shrink-0 px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-widest whitespace-nowrap transition border ${
+                                active === cat
+                                    ? "bg-gold text-black border-gold"
+                                    : "bg-white/5 text-white/60 border-white/5 hover:text-white/80"
+                            }`}
                         >
                             {cat}
                         </button>
                     ))}
                 </div>
 
+                {featured && (
+                    <div className="mb-6">
+                        <PostCard post={featured} featured />
+                    </div>
+                )}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
                     {paginated.map((post, i) => (
-                        <PostCard key={i} post={post} />
+                        <PostCard key={post.href} post={post} eager={safePage === 1 && i < 2} />
                     ))}
                 </div>
 
                 {filtered.length === 0 && (
-                    <div className="text-center py-20 text-white/30 text-sm">
-                        No articles in this category yet.
+                    <div className="text-center py-20 text-white/60 text-sm">
+                        {urlQuery
+                            ? `No articles found for "${urlQuery}".`
+                            : "No articles in this category yet."}
                     </div>
                 )}
 
                 {totalPages > 1 && (
-                    <div className="flex items-center justify-center gap-2 mt-12">
+                    <nav className="flex items-center justify-center gap-2 mt-12" aria-label="Blog pagination">
                         <button
-                            onClick={() => setPage(p => Math.max(1, p - 1))}
-                            disabled={page === 1}
-                            className="px-4 py-2 rounded-lg text-sm transition"
+                            onClick={() => handlePage(Math.max(1, safePage - 1))}
+                            disabled={safePage === 1}
+                            aria-label="Previous page"
+                            className={`btn-gold group w-10 h-10 rounded-full flex items-center justify-center transition ${
+                                safePage === 1 ? "opacity-30 cursor-not-allowed" : ""
+                            }`}
                             style={{
-                                backgroundColor: "rgba(255,255,255,0.05)",
-                                color: page === 1 ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.6)",
-                                border: "1px solid rgba(255,255,255,0.05)",
-                                cursor: page === 1 ? "not-allowed" : "pointer"
+                                background: "rgba(201,168,76,0.08)",
+                                border: "1px solid rgba(201,168,76,0.25)",
                             }}
                         >
-                            ←
+                            <ChevronLeft
+                                className="w-4 h-4 transition-transform group-hover:-translate-x-0.5"
+                                style={{ color: "#C9A84C" }}
+                            />
                         </button>
-                        {Array.from({length: totalPages}, (_, i) => i + 1).map(el => (
+                        {Array.from({ length: totalPages }, (_, i) => i + 1).map((el) => (
                             <NumberBtn
                                 key={el}
-                                page={page}  
-                                onClick={() => setPage(el)}  
-                                num={el} 
+                                page={safePage}
+                                onClick={() => handlePage(el)}
+                                num={el}
                             />
-                       ))}
+                        ))}
                         <button
-                            onClick={() => setPage(p => Math.min(totalPages, p + 1))}
-                            disabled={page === totalPages}
-                            className="px-4 py-2 rounded-lg text-sm transition"
+                            onClick={() => handlePage(Math.min(totalPages, safePage + 1))}
+                            disabled={safePage === totalPages}
+                            aria-label="Next page"
+                            className={`btn-gold group w-10 h-10 rounded-full flex items-center justify-center transition ${
+                                safePage === totalPages ? "opacity-30 cursor-not-allowed" : ""
+                            }`}
                             style={{
-                                backgroundColor: "rgba(255,255,255,0.05)",
-                                color: page === totalPages ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.6)",
-                                border: "1px solid rgba(255,255,255,0.05)",
-                                cursor: page === totalPages ? "not-allowed" : "pointer"
+                                background: "rgba(201,168,76,0.08)",
+                                border: "1px solid rgba(201,168,76,0.25)",
                             }}
                         >
-                            →
+                            <ChevronRight
+                                className="w-4 h-4 transition-transform group-hover:translate-x-0.5"
+                                style={{ color: "#C9A84C" }}
+                            />
                         </button>
-                    </div>
+                    </nav>
                 )}
             </div>
         </div>

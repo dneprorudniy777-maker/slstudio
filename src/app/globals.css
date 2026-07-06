@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* Brand color tokens — use text-gold / bg-gold / border-gold utilities
+   instead of hardcoding #C9A84C in components. --color-gold-bright is
+   the hover/accent variant (same value as legacy .text-gold2). */
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-bright: #f5b942;
+}
+
 html, body {
   margin: 0;
   padding: 0;

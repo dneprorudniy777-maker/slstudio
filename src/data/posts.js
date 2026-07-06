@@ -4,6 +4,7 @@ export const posts = [
         image: "/images/blog-suno-studio-cover-ru.webp",
         category: "Tutorials",
         date: "July 2, 2026",
+        lang: "ru",
         title: "Suno AI Часть 2: Suno Studio — полный гайд для музыкантов",
         excerpt: "Таймлайн, Extend, Cover, Replace, формула G.M.I.V. и экспорт стемов. От демки до чистового проекта для DAW — пошагово."
     },
@@ -20,6 +21,7 @@ export const posts = [
         image: "/images/blog-suno-cover-ru.webp",
         category: "Tutorials",
         date: "May 1, 2026",
+        lang: "ru",
         title: "Suno AI: полный гайд для музыкантов — жанры, теги и промпты 2026",
         excerpt: "Перестань гадать с AI-музыкой. Полный практический гайд по Suno AI — промпты, структура, теги, настройки и рабочий процесс, который реально даёт результат."
     },

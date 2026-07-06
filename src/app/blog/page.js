@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import BlogClient from "./BlogClient";
 
 export const metadata = {
@@ -28,5 +29,9 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-    return <BlogClient />;
+    return (
+        <Suspense>
+            <BlogClient />
+        </Suspense>
+    );
 }
