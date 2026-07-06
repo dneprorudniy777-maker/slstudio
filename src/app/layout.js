@@ -2,6 +2,7 @@ import Script from 'next/script';
 import { Outfit, Playfair_Display } from 'next/font/google'
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import ScrollToTop from "./components/common/ScrollToTop";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
     return (
         <html lang="en">
             <body className={`${outfit.className} ${playfair.variable} min-h-screen flex flex-col`}>
+                <ScrollToTop />
                 <Script
                     src="https://www.googletagmanager.com/gtag/js?id=G-4N695F98F0"
                     strategy="afterInteractive"
