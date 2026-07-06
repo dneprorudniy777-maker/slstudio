@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 function slugify(text) {
     return text
@@ -14,13 +15,20 @@ function slugify(text) {
 // Self-contained: scans the article for <h2> headings and builds its own
 // dot-indicator from them. No per-article setup — works on any article
 // that renders a ".blog-prose" body with two or more sections. Mounted
-// once in src/app/blog/layout.js so every current and future article
-// picks it up automatically.
+// once in src/app/blog/layout.js, which persists across navigations
+// between blog pages (Next.js doesn't remount a shared layout on route
+// change within the same segment) — so the scan must re-run on every
+// pathname change, not just once on first mount, or dots from the
+// previous article stick around until a hard reload.
 export default function SectionIndicator() {
+    const pathname = usePathname();
     const [sections, setSections] = useState([]);
     const [activeId, setActiveId] = useState(null);
 
     useEffect(() => {
+        setSections([]);
+        setActiveId(null);
+
         const root = document.querySelector(".blog-prose");
         if (!root) return;
         const headings = [...root.querySelectorAll("h2")];
@@ -60,7 +68,7 @@ export default function SectionIndicator() {
         );
         headings.forEach((h) => observer.observe(h));
         return () => observer.disconnect();
-    }, []);
+    }, [pathname]);
 
     if (sections.length < 2) return null;
 
