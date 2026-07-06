@@ -52,7 +52,7 @@ export default function ProToolsVsStudioOnePage() {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
+                <div className="blog-prose flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <h2 className="text-xl md:text-2xl font-semibold text-white">Pro Tools vs Studio One: The Overview</h2>

@@ -49,7 +49,7 @@ export default function VoviousReviewPage() {
                     description="Tested on real sessions alongside Melodyne, RePitch 2 and VariAudio. Here is what actually happened."
                 />
 
-                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
+                <div className="blog-prose flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     {/* Intro */}
                     <div className="flex flex-col gap-4">

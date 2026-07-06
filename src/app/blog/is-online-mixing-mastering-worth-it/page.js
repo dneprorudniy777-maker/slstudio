@@ -52,7 +52,7 @@ export default function OnlineMixingPage() {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
+                <div className="blog-prose flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Online <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mixing and mastering</a> is not a trend anymore. It is the way most music gets finished — whether you are an independent artist releasing from your bedroom or a signed act sending files across continents. The workflow has shifted permanently, and for good reasons.</p>

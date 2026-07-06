@@ -52,7 +52,7 @@ export default function SpotifyLufsPage() {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
+                <div className="blog-prose flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Yes, <a href="https://spotify.com" target="_blank" style={{color: "#C9A84C", textDecoration: "underline"}}>Spotify</a> will turn your track down to -14 LUFS if it is louder than that. But if you master AT -14 LUFS thinking you are following the rules, your song will sound significantly quieter and less impactful than every professionally mastered track on the platform. The platform turns loud tracks down — it does not turn quiet tracks up.</p>

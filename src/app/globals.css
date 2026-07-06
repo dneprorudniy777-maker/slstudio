@@ -9,6 +9,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Blog article body copy — one shared rule for long-form reading comfort,
+   applied via the .blog-prose marker on each article's root text wrapper.
+   font-size/line-height/color inherit to plain <p> tags; headings, badges
+   and callout micro-text keep their own explicit sizing/color so they're
+   unaffected. New articles inherit this automatically as long as they
+   reuse the same root-wrapper convention (copy an existing article). */
+.blog-prose {
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Paragraph-to-paragraph spacing within a section — only takes effect on
+   direct children that are already Tailwind's gap-4 flex columns (the
+   consecutive-paragraph groups); inert on non-flex children like image
+   wrappers or callout boxes, so it can't leak into unrelated layouts. */
+.blog-prose > div.gap-4 {
+  gap: 1.25rem;
+}
+
 /* Home hero: on mobile, unwrap the two desktop columns so their children
    become direct siblings and can be reordered via order-* utilities —
    lets the portrait photo surface right after the pitch instead of after

@@ -85,7 +85,7 @@ export default function MasteringTimePage() {
                     </p>
                 </div>
 
-                <div className="flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
+                <div className="blog-prose flex flex-col gap-10 text-white/70 text-[16px] leading-relaxed">
 
                     <div className="flex flex-col gap-4">
                         <p>Professional <a href="/mixing-mastering" style={{color: "#C9A84C", textDecoration: "underline"}}>mastering</a> typically takes one to three hours of focused work per song. The total timeline from sending files to receiving the finished master is usually three to five business days. This might seem longer than expected, but there are specific reasons why rushing the process almost always compromises the result.</p>
