@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { posts } from "@/data/posts";
 import PostCard from "@/app/components/blog/PostCard";
 import NumberBtn from "@/app/components/pagination/NumberBtn";
+import HeroWave from "@/app/components/common/HeroWave";
 
 const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering", "Industry Insights"];
 const languages = [
@@ -13,6 +14,7 @@ const languages = [
     { value: "ru", label: "RU" },
 ];
 const PER_PAGE = 6;
+const FIRST_PAGE_COUNT = 7; // 1 featured + 6 grid cards, keeps page 1's grid even
 
 export default function BlogClient() {
     const router = useRouter();
@@ -56,14 +58,20 @@ export default function BlogClient() {
         });
     }, [active, lang, urlQuery]);
 
-    const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+    const totalPages =
+        filtered.length <= FIRST_PAGE_COUNT
+            ? 1
+            : 1 + Math.ceil((filtered.length - FIRST_PAGE_COUNT) / PER_PAGE);
     const safePage = Math.min(page, totalPages);
 
-    // page 1 shows the newest post as a full-width hero card
+    // page 1 shows the newest post as a full-width hero card + 6 grid cards (7 total)
     const featured = safePage === 1 ? filtered[0] : null;
     const paginated = safePage === 1
-        ? filtered.slice(1, PER_PAGE)
-        : filtered.slice((safePage - 1) * PER_PAGE, safePage * PER_PAGE);
+        ? filtered.slice(1, FIRST_PAGE_COUNT)
+        : filtered.slice(
+              FIRST_PAGE_COUNT + (safePage - 2) * PER_PAGE,
+              FIRST_PAGE_COUNT + (safePage - 1) * PER_PAGE
+          );
 
     const handleCategory = (cat) => {
         setParams({ category: cat === "All" ? null : cat, page: null });
@@ -89,11 +97,14 @@ export default function BlogClient() {
                     <span className="text-white/60 text-xs uppercase tracking-[0.3em]">
                         Studio Notes
                     </span>
-                    <div className="relative mt-2 w-fit">
+                    <div className="relative mt-2">
                         <div className="hero-title-glow" aria-hidden="true" />
                         <h1 className="relative text-4xl md:text-5xl font-semibold tracking-wide">
                             Blog
                         </h1>
+                    </div>
+                    <div className="max-w-xl mt-6">
+                        <HeroWave />
                     </div>
                     <p className="text-white/65 text-base mt-4 max-w-xl leading-relaxed">
                         Tutorials, honest reviews, and practical tips on mixing, mastering, plugins, and music production.
