@@ -75,7 +75,11 @@ export default function SectionIndicator() {
 
     if (sections.length < 2) return null;
 
-    const activeIndex = Math.max(0, sections.findIndex((s) => s.id === activeId));
+    // Before the first heading crosses the active band (i.e. at the very top
+    // of the article) no section is intersecting yet — fall back to the first
+    // one so a label is always shown, per the "active label always visible" UX.
+    const effectiveActiveId = activeId ?? sections[0]?.id;
+    const activeIndex = Math.max(0, sections.findIndex((s) => s.id === effectiveActiveId));
     // progress line fills up to the centre of the active dot
     const progressPct = ((activeIndex + 0.5) / sections.length) * 100;
 
@@ -89,6 +93,8 @@ export default function SectionIndicator() {
                 .section-dot:hover .section-dot-marker {
                     background: rgba(201,168,76,0.55) !important;
                 }
+                /* keep hovered dot's label above its neighbours */
+                .section-dot:hover { z-index: 2; }
                 .side-toc a:hover { color: rgba(255,255,255,0.85) !important; }
             `}</style>
 
@@ -116,7 +122,7 @@ export default function SectionIndicator() {
                 </p>
                 <ol className="flex flex-col" style={{ gap: "2px" }}>
                     {sections.map((s) => {
-                        const active = activeId === s.id;
+                        const active = effectiveActiveId === s.id;
                         return (
                             <li key={s.id}>
                                 <a
@@ -180,7 +186,7 @@ export default function SectionIndicator() {
                     }}
                 />
                 {sections.map((s) => {
-                    const active = activeId === s.id;
+                    const active = effectiveActiveId === s.id;
                     return (
                         <a
                             key={s.id}
@@ -192,19 +198,27 @@ export default function SectionIndicator() {
                             <span
                                 className="section-dot-label"
                                 style={{
-                                    marginRight: "14px",
+                                    // anchored to the RIGHT of the dot, opening into the
+                                    // empty margin — never over the article text
+                                    position: "absolute",
+                                    left: "100%",
+                                    marginLeft: "14px",
                                     fontSize: "12px",
-                                    color: "rgba(255,255,255,0.75)",
+                                    color: active ? "#C9A84C" : "rgba(255,255,255,0.75)",
                                     whiteSpace: "nowrap",
-                                    opacity: 0,
-                                    transform: "translateX(4px)",
+                                    // active section's label stays visible; others on hover
+                                    opacity: active ? 1 : 0,
+                                    transform: active ? "translateX(0)" : "translateX(-6px)",
                                     transition: "opacity 0.2s ease, transform 0.2s ease",
-                                    maxWidth: "240px",
+                                    // clamp to the free space on the right so it can never
+                                    // run off the screen edge on any viewport width
+                                    maxWidth: "min(320px, calc((100vw - 768px) / 2 - 88px - 20px))",
                                     overflow: "hidden",
                                     textOverflow: "ellipsis",
-                                    // solid pill: labels can overlap article text now
                                     background: "#1f1f1f",
-                                    border: "1px solid rgba(255,255,255,0.1)",
+                                    border: active
+                                        ? "1px solid rgba(201,168,76,0.4)"
+                                        : "1px solid rgba(255,255,255,0.1)",
                                     borderRadius: "8px",
                                     padding: "4px 10px",
                                     pointerEvents: "none",
