@@ -75,11 +75,7 @@ export default function SectionIndicator() {
 
     if (sections.length < 2) return null;
 
-    // Before the first heading crosses the active band (i.e. at the very top
-    // of the article) no section is intersecting yet — fall back to the first
-    // one so a label is always shown, per the "active label always visible" UX.
-    const effectiveActiveId = activeId ?? sections[0]?.id;
-    const activeIndex = Math.max(0, sections.findIndex((s) => s.id === effectiveActiveId));
+    const activeIndex = Math.max(0, sections.findIndex((s) => s.id === activeId));
     // progress line fills up to the centre of the active dot
     const progressPct = ((activeIndex + 0.5) / sections.length) * 100;
 
@@ -122,7 +118,7 @@ export default function SectionIndicator() {
                 </p>
                 <ol className="flex flex-col" style={{ gap: "2px" }}>
                     {sections.map((s) => {
-                        const active = effectiveActiveId === s.id;
+                        const active = activeId === s.id;
                         return (
                             <li key={s.id}>
                                 <a
@@ -186,7 +182,7 @@ export default function SectionIndicator() {
                     }}
                 />
                 {sections.map((s) => {
-                    const active = effectiveActiveId === s.id;
+                    const active = activeId === s.id;
                     return (
                         <a
                             key={s.id}
@@ -204,11 +200,10 @@ export default function SectionIndicator() {
                                     left: "100%",
                                     marginLeft: "14px",
                                     fontSize: "12px",
-                                    color: active ? "#C9A84C" : "rgba(255,255,255,0.75)",
+                                    color: "rgba(255,255,255,0.75)",
                                     whiteSpace: "nowrap",
-                                    // active section's label stays visible; others on hover
-                                    opacity: active ? 1 : 0,
-                                    transform: active ? "translateX(0)" : "translateX(-6px)",
+                                    opacity: 0,
+                                    transform: "translateX(-4px)",
                                     transition: "opacity 0.2s ease, transform 0.2s ease",
                                     // clamp to the free space on the right so it can never
                                     // run off the screen edge on any viewport width
@@ -216,9 +211,7 @@ export default function SectionIndicator() {
                                     overflow: "hidden",
                                     textOverflow: "ellipsis",
                                     background: "#1f1f1f",
-                                    border: active
-                                        ? "1px solid rgba(201,168,76,0.4)"
-                                        : "1px solid rgba(255,255,255,0.1)",
+                                    border: "1px solid rgba(255,255,255,0.1)",
                                     borderRadius: "8px",
                                     padding: "4px 10px",
                                     pointerEvents: "none",
