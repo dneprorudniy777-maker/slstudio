@@ -96,13 +96,15 @@ export default function SectionIndicator() {
 
             {/* ── Left rail: sticky text TOC ── */}
             <nav
-                className="side-toc hidden [@media(min-width:1400px)]:flex flex-col"
+                className="side-toc hidden [@media(min-width:1280px)]:flex flex-col"
                 style={{
                     position: "fixed",
-                    left: "calc((100vw - 768px) / 2 - 268px)",
+                    // hangs into the left margin; max() clamp keeps it from ever
+                    // sliding off-screen on the tightest supported laptop widths
+                    left: "max(20px, calc((100vw - 768px) / 2 - 240px))",
                     top: "50%",
                     transform: "translateY(-50%)",
-                    width: "220px",
+                    width: "200px",
                     maxHeight: "72vh",
                     overflowY: "auto",
                     zIndex: 30,
@@ -146,7 +148,7 @@ export default function SectionIndicator() {
 
             {/* ── Right rail: dots + reading-progress line ── */}
             <nav
-                className="section-indicator hidden [@media(min-width:1400px)]:flex flex-col gap-3"
+                className="section-indicator hidden [@media(min-width:1280px)]:flex flex-col gap-3"
                 style={{
                     position: "fixed",
                     right: "calc((100vw - 768px) / 2 - 88px)",

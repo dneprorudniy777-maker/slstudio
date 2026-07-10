@@ -160,7 +160,7 @@ export default function SunoGuidePage() {
                     </div>
 
                     {/* Table of Contents */}
-                    <TableOfContents />
+                    <div className="[@media(min-width:1280px)]:hidden"><TableOfContents /></div>
 
                     {/* ── THE CORE IDEA ── */}
                     <div

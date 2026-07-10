@@ -110,7 +110,7 @@ export default function SunoStudioGuidePage() {
                         <p className="text-white/65 text-base">Haven't read Part 1 yet? Start with <a href="/blog/suno-guide-2026" style={{ color: "#C9A84C", textDecoration: "underline" }}>Suno AI: Complete Guide — Genres, Tags & Prompts 2026</a>.</p>
                     </div>
 
-                    <TableOfContents />
+                    <div className="[@media(min-width:1280px)]:hidden"><TableOfContents /></div>
 
                     {/* Three stages */}
                     <div className="rounded-2xl p-8 flex flex-col gap-3 text-center"

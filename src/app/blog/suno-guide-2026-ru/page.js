@@ -106,7 +106,7 @@ export default function SunoGuidePageRu() {
                         </div>
                     </div>
 
-                    <TableOfContents />
+                    <div className="[@media(min-width:1280px)]:hidden"><TableOfContents /></div>
 
                     <div className="rounded-2xl p-8 flex flex-col gap-3 text-center"
                         style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.1) 0%, rgba(201,168,76,0.04) 100%)", border: "1px solid rgba(201,168,76,0.3)" }}>

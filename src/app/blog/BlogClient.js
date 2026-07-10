@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { posts } from "@/data/posts";
 import PostCard from "@/app/components/blog/PostCard";
 import NumberBtn from "@/app/components/pagination/NumberBtn";
@@ -9,7 +9,7 @@ import HeroWave from "@/app/components/common/HeroWave";
 
 const categories = ["All", "Technics", "Review", "Tutorials", "Mixing & Mastering", "Industry Insights"];
 const languages = [
-    { value: "all", label: "All languages" },
+    { value: "all", label: "All" },
     { value: "en", label: "EN" },
     { value: "ru", label: "RU" },
 ];
@@ -90,6 +90,8 @@ export default function BlogClient() {
         setParams({ page: num === 1 ? null : String(num) }, { scrollTop: true });
     };
 
+    const hasFilter = active !== "All" || lang !== "all" || urlQuery.trim() !== "";
+
     return (
         <div className="mt-16 mb-20">
             <div className="max-w-6xl mx-auto px-4">
@@ -111,7 +113,7 @@ export default function BlogClient() {
                     </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
                     <div className="relative flex-1 max-w-md">
                         <input
                             type="search"
@@ -119,19 +121,32 @@ export default function BlogClient() {
                             onChange={(e) => handleSearch(e.target.value)}
                             placeholder="Search articles..."
                             aria-label="Search articles"
-                            className="w-full px-4 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 placeholder:text-white/40 focus:outline-none focus:border-gold/60 transition"
+                            className="w-full pl-4 pr-10 py-2.5 rounded-lg text-sm bg-white/5 border border-white/10 text-white/80 placeholder:text-white/40 focus:outline-none focus:border-gold/60 transition [&::-webkit-search-cancel-button]:appearance-none"
                         />
+                        {query && (
+                            <button
+                                onClick={() => handleSearch("")}
+                                aria-label="Clear search"
+                                className="absolute right-2.5 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center rounded-full text-white/40 hover:text-white/80 hover:bg-white/10 transition"
+                            >
+                                <X className="w-3.5 h-3.5" />
+                            </button>
+                        )}
                     </div>
-                    <div className="flex gap-2" role="group" aria-label="Filter by language">
+                    <div
+                        className="inline-flex self-start sm:self-auto rounded-lg border border-white/10 bg-white/5 p-0.5"
+                        role="group"
+                        aria-label="Filter by language"
+                    >
                         {languages.map((l) => (
                             <button
                                 key={l.value}
                                 onClick={() => handleLang(l.value)}
                                 aria-pressed={lang === l.value}
-                                className={`px-4 py-2 rounded-lg text-xs font-medium uppercase tracking-widest transition border ${
+                                className={`px-3.5 py-1.5 rounded-md text-xs font-medium uppercase tracking-widest transition ${
                                     lang === l.value
-                                        ? "bg-gold text-black border-gold"
-                                        : "bg-white/5 text-white/60 border-white/5 hover:text-white/80"
+                                        ? "bg-gold text-black"
+                                        : "text-white/55 hover:text-white/80"
                                 }`}
                             >
                                 {l.label}
@@ -160,6 +175,16 @@ export default function BlogClient() {
                         </button>
                     ))}
                 </div>
+
+                {filtered.length > 0 && (
+                    <p className="text-xs text-white/45 mb-6" aria-live="polite">
+                        {filtered.length} {filtered.length === 1 ? "article" : "articles"}
+                        {hasFilter ? " found" : ""}
+                        {urlQuery.trim() && (
+                            <> for “<span className="text-white/70">{urlQuery.trim()}</span>”</>
+                        )}
+                    </p>
+                )}
 
                 {featured && (
                     <div className="mb-6">
