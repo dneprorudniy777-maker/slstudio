@@ -590,11 +590,11 @@ export default function SunoGuidePageRu() {
 
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                         style={{ background: "rgba(201,168,76,0.07)", border: "1px solid rgba(201,168,76,0.25)" }}>
-                        <h3 className="text-xl font-semibold text-white">Демо из Suno готово — что дальше?</h3>
-                        <p className="text-white/65 text-base max-w-md">Присылай трек — стемы, черновой микс или прямой экспорт из Suno. Доведём до релизного состояния. Первая консультация бесплатно.</p>
-                        <a href="/contact" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+                        <h3 className="text-xl font-semibold text-white">Не уверены, что нужно вашему треку?</h3>
+                        <p className="text-white/65 text-base max-w-md">Пришлите его и услышьте бесплатное превью — обработанный фрагмент на 60 секунд, честную оценку и точную цену. Без обязательств.</p>
+                        <a href="/free-track-preview" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                             style={{ backgroundColor: "#C9A84C" }}>
-                            Написать →
+                            Получить бесплатное превью →
                         </a>
                     </div>
 

@@ -172,12 +172,12 @@ export default function OzoneReviewPage() {
                     {/* CTA */}
                     <div className="rounded-2xl p-8 text-center flex flex-col items-center gap-4"
                          style={{background: "rgba(201,168,76,0.06)", border: "1px solid rgba(201,168,76,0.2)"}}>
-                        <h3 className="text-xl font-semibold text-white">Need professional mastering for your track?</h3>
-                        <p className="text-white/50 text-sm max-w-md">The tools matter — but so does the engineer using them. First consultation is always free.</p>
-                        <a href="/contact"
+                        <h3 className="text-xl font-semibold text-white">Not sure what your track needs?</h3>
+                        <p className="text-white/50 text-sm max-w-md">Send it and hear a free 60-second preview — an honest assessment and an exact price, no commitment.</p>
+                        <a href="/free-track-preview"
                            className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
                            style={{backgroundColor: "#C9A84C"}}>
-                            Get in Touch →
+                            Get a Free Preview →
                         </a>
                     </div>
 
