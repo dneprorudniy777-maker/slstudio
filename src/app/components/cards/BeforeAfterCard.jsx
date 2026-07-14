@@ -12,7 +12,19 @@ const PLACEHOLDER_BARS = Array.from({ length: 64 }, (_, i) => {
     return Math.round(h);
 });
 
-export default function BeforeAfterCard({title, before, after}) {
+export default function BeforeAfterCard({title, before, after, labels}) {
+    // UI labels default to English; Polish pages pass a translated set.
+    const L = {
+        raw: "Raw Recording",
+        final: "Final Mix",
+        live: "Live",
+        before: "Before",
+        after: "After",
+        loading: "Loading audio...",
+        playingRaw: "Playing raw",
+        playingFinal: "Playing final mix",
+        ...labels,
+    };
     const [mode, setMode] = useState("before");
     const [isPlaying, setIsPlaying] = useState(false);
     const [hovered, setHovered] = useState(false);
@@ -184,12 +196,12 @@ export default function BeforeAfterCard({title, before, after}) {
                     <h3 className="font-semibold text-base text-white">{title}</h3>
                     <div className="flex items-center gap-2 mt-1">
                         <span className="text-white/30 text-xs uppercase tracking-widest">
-                            {mode === "before" ? "Raw Recording" : "Final Mix"}
+                            {mode === "before" ? L.raw : L.final}
                         </span>
                         {isPlaying && (
                             <span className="flex items-center gap-1">
                                 <span className="w-1.5 h-1.5 rounded-full bg-gold2 animate-pulse"></span>
-                                <span className="text-gold2 text-xs">Live</span>
+                                <span className="text-gold2 text-xs">{L.live}</span>
                             </span>
                         )}
                     </div>
@@ -205,7 +217,7 @@ export default function BeforeAfterCard({title, before, after}) {
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
                     >
-                        Before
+                        {L.before}
                     </button>
                     <button
                         onClick={() => switchMode("after")}
@@ -215,7 +227,7 @@ export default function BeforeAfterCard({title, before, after}) {
                             ? { backgroundColor: "#C9A84C", boxShadow: "0 0 8px rgba(201,168,76,0.4)" }
                             : {}}
                     >
-                        After
+                        {L.after}
                     </button>
                 </div>
             </div>
@@ -272,7 +284,7 @@ export default function BeforeAfterCard({title, before, after}) {
                     </button>
                 </div>
                 <span className="text-white/25 text-xs">
-                    {audioLoading ? "Loading audio..." : mode === "before" ? "Playing raw" : "Playing final mix"}
+                    {audioLoading ? L.loading : mode === "before" ? L.playingRaw : L.playingFinal}
                 </span>
             </div>
         </div>

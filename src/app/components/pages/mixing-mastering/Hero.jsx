@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroWave from "../../common/HeroWave";
+import LangSwitch from "../../common/LangSwitch";
 
 export default function Hero() {
     return (
         <section className="mt-16 mb-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <LangSwitch active="en" enHref="/mixing-mastering" plHref="/pl/miks-i-mastering" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
                 <div className="flex flex-col gap-6 md:justify-between">
                     <div className="flex flex-col gap-10">
                         <span className="

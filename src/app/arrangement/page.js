@@ -6,7 +6,12 @@ import BeforeAfterArrangement from "../components/sections/BeforeAfterArrangemen
 export const metadata = {
     title: "Arrangement & Production",
     alternates: {
-        canonical: "https://www.slstudio.pro/arrangement"
+        canonical: "https://www.slstudio.pro/arrangement",
+        languages: {
+            "en": "https://www.slstudio.pro/arrangement",
+            "pl": "https://www.slstudio.pro/pl/aranzacja-i-produkcja",
+            "x-default": "https://www.slstudio.pro/arrangement",
+        },
     },
     description:
         "Music arrangement and production services. From a guitar riff or voice memo to a full professional track. Any genre, remote workflow, worldwide.",

@@ -6,7 +6,12 @@ import BeforeAfterMixing from "../components/sections/BeforeAfterMixing";
 export const metadata = {
     title: "Mixing & Mastering",
     alternates: {
-        canonical: "https://www.slstudio.pro/mixing-mastering"
+        canonical: "https://www.slstudio.pro/mixing-mastering",
+        languages: {
+            "en": "https://www.slstudio.pro/mixing-mastering",
+            "pl": "https://www.slstudio.pro/pl/miks-i-mastering",
+            "x-default": "https://www.slstudio.pro/mixing-mastering",
+        },
     },
     description:
         "Professional mixing and mastering services. Bass, drums, vocals, and guitars balanced with precision to create space, depth, and clarity in every track.",

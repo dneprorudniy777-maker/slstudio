@@ -6,17 +6,17 @@ import LangSwitch from "../../common/LangSwitch";
 export default function Hero() {
     return (
         <section className="mt-16 mb-10">
-            <LangSwitch active="en" enHref="/arrangement" plHref="/pl/aranzacja-i-produkcja" />
+            <LangSwitch active="pl" enHref="/mixing-mastering" plHref="/pl/miks-i-mastering" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-4">
                 <div className="flex flex-col gap-6 md:justify-between">
-                    <div className="flex flex-col gap-6">
+                    <div className="flex flex-col gap-10">
                         <span className="
                             text-white/40
                             text-xs
                             uppercase
                             tracking-[0.3em]
                         ">
-                            Production Service
+                            Studio · Warszawa
                         </span>
                         <div className="relative">
                             <div className="hero-title-glow" aria-hidden="true" />
@@ -27,9 +27,9 @@ export default function Hero() {
                                 leading-tight
                                 tracking-wide
                             ">
-                                Arrangement &{" "}
+                                Miks i{" "}
                                 <span className="text-gold2">
-                                    Production
+                                    Mastering
                                 </span>
                             </h1>
                         </div>
@@ -42,10 +42,10 @@ export default function Hero() {
                             leading-relaxed
                             max-w-2xl
                         ">
-                            From a raw idea to a full professional track
+                            Miks i mastering online — studio w Warszawie, dla artystów z całej Polski
                         </p>
                         <p className="text-white/65 text-[16px] leading-relaxed max-w-2xl">
-                            A guitar riff, a voice memo, a rehearsal recording — that's enough to start. I build complete arrangements around your ideas. Any genre, remote workflow, worldwide.
+                            Wyślij ślady, roboczy miks albo starą realizację sprzed lat — odsyłam dopracowany, gotowy do publikacji utwór. Zdalnie, każdy gatunek, szybki termin.
                         </p>
                         <div className="flex items-center gap-6 flex-wrap">
                             <a
@@ -53,23 +53,18 @@ export default function Hero() {
                                 className="btn-gold inline-flex items-center gap-2 text-black font-semibold px-6 py-3 rounded-xl text-sm"
                                 style={{ backgroundColor: "#C9A84C", boxShadow: "0 0 24px rgba(201,168,76,0.25)" }}
                             >
-                                Hear the Difference ↓
+                                Posłuchaj różnicy ↓
                             </a>
-                            <Link href="/contact" className="text-white/55 hover:text-[#f5b942] transition text-sm">
-                                or send your idea directly →
+                            <Link href="/free-track-preview" className="text-white/55 hover:text-[#f5b942] transition text-sm">
+                                albo wyślij utwór od razu →
                             </Link>
                         </div>
                     </div>
-                    {/* Trust strip — real numbers, visible to visitors who land here
-                        directly from search, without ever seeing the homepage.
-                        Kept as its own flex child (sibling of the block above, under
-                        justify-between) so it always lands flush with the photo's
-                        bottom edge, regardless of how tall the photo ends up being. */}
                     <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-6">
                         {[
-                            { value: "300+", label: "Tracks Mixed & Mastered" },
-                            { value: "10+", label: "Years Behind the Board" },
-                            { value: "Any Genre", label: "Blues to Electronic" },
+                            { value: "300+", label: "Zmiksowanych utworów" },
+                            { value: "10+", label: "Lat za konsolą" },
+                            { value: "3–5 dni", label: "Typowy termin realizacji" },
                         ].map((s, i) => (
                             <div key={i} className="flex flex-col gap-1">
                                 <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">{s.value}</span>
@@ -80,8 +75,8 @@ export default function Hero() {
                 </div>
                 <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
                     <Image
-                        src="/images/Serhii-Lazariev-03.webp"
-                        alt="Serhii Lazariev"
+                        src="/images/Serhii-Lazariev-02.webp"
+                        alt="Serhii Lazariev — miks i mastering, studio w Warszawie"
                         fill
                         className="object-cover object-top"
                         sizes="(max-width: 768px) 100vw, 1024px"
