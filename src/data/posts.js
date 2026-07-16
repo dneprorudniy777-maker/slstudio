@@ -1,5 +1,13 @@
 export const posts = [
     {
+        href: "/blog/suno-advanced-split-clean-instrumental",
+        image: "/images/suno-clean-stems-cover.jpg",
+        category: "Tutorials",
+        date: "July 16, 2026",
+        title: "How to Make a Clean Instrumental in Suno with Advanced Split",
+        excerpt: "A practical test of Suno Advanced Split: how to rebuild a cleaner instrumental without obvious vocal artifacts, export aligned WAV stems, and finish the track in a DAW."
+    },
+    {
         href: "/blog/suno-studio-guide-2026",
         image: "/images/blog-suno-studio-cover-ru.webp",
         category: "Tutorials",
