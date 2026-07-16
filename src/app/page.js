@@ -24,6 +24,11 @@ export const metadata = {
   ],
   alternates: {
     canonical: "https://www.slstudio.pro",
+    languages: {
+      "en": "https://www.slstudio.pro",
+      "pl": "https://www.slstudio.pro/pl",
+      "x-default": "https://www.slstudio.pro",
+    },
   },
   openGraph: {
     title: "SL Studio | Mixing & Mastering",

@@ -2,55 +2,54 @@
 import { Shield, Clock, RefreshCw, Headphones } from "lucide-react";
 import ScrollReveal from "../common/ScrollReveal";
 
-const steps = [
-    {
-        icon: Headphones,
-        step: "01",
-        title: "Send Your Track",
-        time: "~ 2 min",
-        description: "Share your stems, rough mix, rehearsal recording, or demo — whatever you have. Any format, any quality.",
-        highlight: false,
-        badge: null,
-    },
-    {
-        icon: RefreshCw,
-        step: "02",
-        title: "We Discuss the Direction",
-        time: "Same day",
-        // Updated to match the new Hero promise ("Get a free preview →"):
-        // previously this only described a verbal consultation. Now it also
-        // covers the processed audio sample, so the offer stays consistent
-        // from the top of the page down to this section.
-        description: "Free consultation and a short preview. I listen to your material and send back a quick processed sample, so you hear the direction before committing to anything.",
-        highlight: false,
-        badge: null,
-    },
-    {
-        icon: Shield,
-        step: "03",
-        title: "Work Begins",
-        time: "1–3 days",
-        description: "Once we agree on the scope, I get to work. You get updates along the way — no black box.",
-        highlight: true,
-        badge: null,
-    },
-    {
-        icon: Clock,
-        step: "04",
-        title: "Delivered in 3–5 Days",
-        time: "3–5 days",
-        description: "You receive the finished track. Revisions included until you are completely happy with the result.",
-        highlight: false,
-        badge: "✓ Result",
-    },
+// Icons/numbering/highlight stay here; text is pulled from labels (English
+// default) so the section can be reused on the Polish home via a labels prop.
+const STEP_META = [
+    { icon: Headphones, step: "01", highlight: false },
+    { icon: RefreshCw, step: "02", highlight: false },
+    { icon: Shield, step: "03", highlight: true },
+    { icon: Clock, step: "04", highlight: false },
 ];
 
-export default function HowItWorks() {
+const DEFAULTS = {
+    eyebrow: "The Process",
+    heading: "How It Works",
+    steps: [
+        {
+            title: "Send Your Track",
+            time: "~ 2 min",
+            description: "Share your stems, rough mix, rehearsal recording, or demo — whatever you have. Any format, any quality.",
+            badge: null,
+        },
+        {
+            title: "We Discuss the Direction",
+            time: "Same day",
+            description: "Free consultation and a short preview. I listen to your material and send back a quick processed sample, so you hear the direction before committing to anything.",
+            badge: null,
+        },
+        {
+            title: "Work Begins",
+            time: "1–3 days",
+            description: "Once we agree on the scope, I get to work. You get updates along the way — no black box.",
+            badge: null,
+        },
+        {
+            title: "Delivered in 3–5 Days",
+            time: "3–5 days",
+            description: "You receive the finished track. Revisions included until you are completely happy with the result.",
+            badge: "✓ Result",
+        },
+    ],
+};
+
+export default function HowItWorks({ labels }) {
+    const t = { ...DEFAULTS, ...labels };
+    const steps = STEP_META.map((m, i) => ({ ...m, ...t.steps[i] }));
     return (
         <section className="py-12 border-t border-white/5">
             <div className="mb-10">
-                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">The Process</span>
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">How It Works</h2>
+                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">{t.eyebrow}</span>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">{t.heading}</h2>
             </div>
 
             {/* Timeline connector — desktop only */}

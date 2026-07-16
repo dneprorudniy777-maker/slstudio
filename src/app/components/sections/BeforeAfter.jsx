@@ -4,7 +4,15 @@ import pool from "@/settings/db";
 import { AudioWaveform } from "lucide-react";
 import BeforeAfterCard from "../cards/BeforeAfterCard";
 
-export default async function BeforeAfter() {
+const DEFAULTS = {
+    eyebrow: "Audio Enhancement",
+    heading: "Transform Low-Quality Recordings Into Professional Studio Sound",
+    text: "Have a rough demo, rehearsal take, or poorly recorded track? I specialize in audio enhancement, restoring clarity, balance, and depth to your recordings. Using professional mixing and mastering techniques, I turn raw material into polished, release-ready sound.",
+    card: undefined, // BeforeAfterCard falls back to English labels when undefined
+};
+
+export default async function BeforeAfter({ labels }) {
+    const t = { ...DEFAULTS, ...labels };
     const [enhancements] = await pool.query(`
         SELECT *
         FROM enhancements
@@ -18,14 +26,14 @@ export default async function BeforeAfter() {
                 <div className="text-white/55 mb-4 flex items-center gap-2">
                     <AudioWaveform size={16} />
                     <span className="text-xs uppercase tracking-widest">
-                        Audio Enhancement
+                        {t.eyebrow}
                     </span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                    Transform Low-Quality Recordings Into Professional Studio Sound
+                    {t.heading}
                 </h2>
                 <p className="mt-4 max-w-2/3 text-sm md:text-base leading-relaxed">
-                    Have a rough demo, rehearsal take, or poorly recorded track? I specialize in audio enhancement, restoring clarity, balance, and depth to your recordings. Using professional mixing and mastering techniques, I turn raw material into polished, release-ready sound.
+                    {t.text}
                 </p>
             </div>
 
@@ -36,6 +44,7 @@ export default async function BeforeAfter() {
                         title={el.title}
                         before={String(el.file_before).trim()}
                         after={String(el.file_after).trim()}
+                        labels={t.card}
                     />
                 ))}
             </div>

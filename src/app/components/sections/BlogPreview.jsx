@@ -10,7 +10,17 @@ const FEATURED_SLUGS = [
 
 const featured = FEATURED_SLUGS.map(slug => posts.find(p => p.href === slug)).filter(Boolean);
 
-export default function BlogPreview() {
+const DEFAULTS = {
+    eyebrow: "From the Studio",
+    heading: "Guides & Insights",
+    text: "Practical guides on Suno AI, mixing, mastering and music production — written from real studio experience.",
+    allArticles: "All Articles →",
+    featured: "Featured Guide",
+    readMore: "Read more",
+};
+
+export default function BlogPreview({ labels }) {
+    const t = { ...DEFAULTS, ...labels };
     return (
         <section className="py-12 border-t border-white/5">
 
@@ -18,13 +28,13 @@ export default function BlogPreview() {
             <div className="flex items-end justify-between mb-8 gap-4 flex-wrap">
                 <div>
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        From the Studio
+                        {t.eyebrow}
                     </span>
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-                        Guides & Insights
+                        {t.heading}
                     </h2>
                     <p className="text-white/55 text-sm mt-2 max-w-lg">
-                        Practical guides on Suno AI, mixing, mastering and music production — written from real studio experience.
+                        {t.text}
                     </p>
                 </div>
                 <Link
@@ -36,7 +46,7 @@ export default function BlogPreview() {
                         background: "rgba(201,168,76,0.06)",
                     }}
                 >
-                    All Articles →
+                    {t.allArticles}
                 </Link>
             </div>
 
@@ -88,7 +98,7 @@ export default function BlogPreview() {
                 color: "#C9A84C",
                 border: "1px solid rgba(201,168,76,0.28)",
             }}>
-            Featured Guide
+            {t.featured}
         </span>
     )}
                             <div className="flex items-center gap-2">
@@ -104,7 +114,7 @@ export default function BlogPreview() {
                             </h3>
                             <div className="flex items-center gap-1 mt-auto pt-1 text-xs font-medium"
                                 style={{ color: "#C9A84C" }}>
-                                Read more
+                                {t.readMore}
                                 <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                             </div>
                         </div>

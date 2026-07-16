@@ -3,7 +3,14 @@ import pool from "@/settings/db";
 import { YouTubeIcon, YouTubeRedIcon } from "../common/SVGIcons";
 import YouTubeCard from "../cards/YouTubeCard";
 
-export default async function YouTube() {
+const DEFAULTS = {
+    eyebrow: "YouTube Projects",
+    heading: "Music Production & Arrangements",
+    text: "A selection of my music production and arrangement work, featuring original tracks and projects from my YouTube channel.",
+};
+
+export default async function YouTube({ labels }) {
+    const t = { ...DEFAULTS, ...labels };
     const [videos] = await pool.query(`
         SELECT *
         FROM videos
@@ -17,12 +24,12 @@ export default async function YouTube() {
                 <div className="flex items-center gap-2 mb-2">
                     <YouTubeIcon size={16} className="text-white/65" />
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                        YouTube Projects
+                        {t.eyebrow}
                     </span>
                 </div>
                 <div className="flex items-end justify-between gap-4 flex-wrap">
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide">
-                        Music Production & Arrangements
+                        {t.heading}
                     </h2>
                     <a
                         href="https://www.youtube.com/@SLStudio_Guitar"
@@ -35,7 +42,7 @@ export default async function YouTube() {
                     </a>
                 </div>
                 <p className="mt-3 text-white/65 text-sm leading-relaxed max-w-xl">
-                    A selection of my music production and arrangement work, featuring original tracks and projects from my YouTube channel.
+                    {t.text}
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

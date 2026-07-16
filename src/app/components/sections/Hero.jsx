@@ -4,6 +4,7 @@ import Link from "next/link";
 import { User, RefreshCw, Clock } from "lucide-react";
 import HeroCard from "../cards/HeroCard";
 import HeroWave from "../common/HeroWave";
+import LangSwitch from "../common/LangSwitch";
 import { servicesData } from "@/data/temporaryData";
 
 const stats = [
@@ -88,17 +89,25 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Photo — already a direct row-1 grid item, no unwrapping
-                    needed; grid stretch fills row 1's height automatically */}
-                <div className="w-full h-full aspect-[16/9] md:aspect-auto relative rounded-xl overflow-hidden [@media(max-width:767px)]:order-2">
-                    <Image
-                        src="/images/Serhii-Lazariev.webp"
-                        alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
-                        fill
-                        className="object-cover object-top"
-                        sizes="(max-width: 768px) 100vw, 1024px"
-                        loading="eager"
-                    />
+                {/* Photo column — a small right-aligned EN/PL strip sits above
+                    the photo; the photo (flex-1) fills the rest of the stretched
+                    column, so its bottom still lands on the service-cards bottom
+                    while its top drops by the strip's height. Section height is
+                    unchanged (the left column still defines the row height). */}
+                <div className="flex flex-col [@media(max-width:767px)]:order-2">
+                    <div className="flex justify-end mb-2 h-8 items-center">
+                        <LangSwitch active="en" enHref="/" plHref="/pl" />
+                    </div>
+                    <div className="w-full flex-1 min-h-0 aspect-[16/9] md:aspect-auto relative rounded-xl overflow-hidden">
+                        <Image
+                            src="/images/Serhii-Lazariev.webp"
+                            alt="Serhii Lazariev — mixing and mastering engineer in his Warsaw studio"
+                            fill
+                            className="object-cover object-top"
+                            sizes="(max-width: 768px) 100vw, 1024px"
+                            loading="eager"
+                        />
+                    </div>
                 </div>
             </div>
 

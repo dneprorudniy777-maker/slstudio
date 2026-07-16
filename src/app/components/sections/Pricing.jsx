@@ -4,19 +4,38 @@ import Link from "next/link";
 import ScrollReveal from "../common/ScrollReveal";
 import { useState } from "react";
 
-const services = [
-    { icon: Sliders, title: "Mastering Only", price: "from $25", description: "Final processing of your ready mix. Optimized for streaming, competitive loudness, delivered in WAV and MP3.", featured: false, service: "mastering" },
-    { icon: Music, title: "Mixing & Mastering", price: "from $60", description: "Full mix of all your tracks plus mastering. Works with stems or a rough mix you want taken to release level.", featured: true, service: "mixing-mastering" },
-    { icon: Guitar, title: "Arrangement & Production", price: "from $110", description: "From idea to finished track. Instruments, structure, mix and master. Final price depends on the scope.", featured: false, service: "arrangement" },
+// Icons, prices, the ?service= key and the featured flag stay here; all text
+// comes from labels (English default) so the section can be reused on the
+// Polish home via a labels prop.
+const SERVICE_META = [
+    { icon: Sliders, price: "from $25", featured: false, service: "mastering" },
+    { icon: Music, price: "from $60", featured: true, service: "mixing-mastering" },
+    { icon: Guitar, price: "from $110", featured: false, service: "arrangement" },
 ];
 
-const payment = [
-    { icon: Shield, title: "50% upfront", description: "The rest after you approve the result. No risk on your side." },
-    { icon: MessageCircle, title: "Talk first, pay after", description: "Exact price confirmed after we discuss your project. First consultation is always free." },
-    { icon: CreditCard, title: "PayPal & bank transfer", description: "Working with clients worldwide. No location limitations." },
-];
+const PAY_META = [{ icon: Shield }, { icon: MessageCircle }, { icon: CreditCard }];
 
-function ServiceCard({ icon: Icon, title, price, description, featured, service }) {
+const DEFAULTS = {
+    eyebrow: "Pricing",
+    heading: "Simple, Transparent Pricing",
+    sub1: "No hidden fees. Exact price confirmed after discussing your project.",
+    sub2: "Solo studio — every project gets my personal, full attention. No handoffs, no junior engineers.",
+    mostPopular: "Most Popular",
+    getStarted: "Get Started",
+    contactHref: "/contact",
+    services: [
+        { title: "Mastering Only", description: "Final processing of your ready mix. Optimized for streaming, competitive loudness, delivered in WAV and MP3." },
+        { title: "Mixing & Mastering", description: "Full mix of all your tracks plus mastering. Works with stems or a rough mix you want taken to release level." },
+        { title: "Arrangement & Production", description: "From idea to finished track. Instruments, structure, mix and master. Final price depends on the scope." },
+    ],
+    payment: [
+        { title: "50% upfront", description: "The rest after you approve the result. No risk on your side." },
+        { title: "Talk first, pay after", description: "Exact price confirmed after we discuss your project. First consultation is always free." },
+        { title: "PayPal & bank transfer", description: "Working with clients worldwide. No location limitations." },
+    ],
+};
+
+function ServiceCard({ icon: Icon, title, price, description, featured, service, mostPopular, getStarted, contactHref }) {
     const [hovered, setHovered] = useState(false);
     return (
         <div
@@ -48,7 +67,7 @@ function ServiceCard({ icon: Icon, title, price, description, featured, service 
                 {featured && (
                     <span className="text-xs uppercase tracking-widest px-3 py-1 rounded-full"
                         style={{ backgroundColor: "rgba(201,168,76,0.15)", color: "#C9A84C" }}>
-                        Most Popular
+                        {mostPopular}
                     </span>
                 )}
             </div>
@@ -64,33 +83,36 @@ function ServiceCard({ icon: Icon, title, price, description, featured, service 
 
             {/* Button */}
             <Link
-                href={`/contact?service=${service}`}
+                href={`${contactHref}?service=${service}`}
                 className="btn-gold py-2 px-5 rounded-xl text-xs font-semibold text-center w-full mt-1"
                 style={featured
                     ? { background: "#C9A84C", color: "#161616" }
                     : { background: "rgba(201,168,76,0.08)", color: "#C9A84C", border: "1px solid rgba(201,168,76,0.25)" }
                 }
             >
-                Get Started
+                {getStarted}
             </Link>
         </div>
     );
 }
 
-export default function Pricing() {
+export default function Pricing({ labels }) {
+    const t = { ...DEFAULTS, ...labels };
+    const services = SERVICE_META.map((m, i) => ({ ...m, ...t.services[i] }));
+    const payment = PAY_META.map((m, i) => ({ ...m, ...t.payment[i] }));
     return (
         <section className="py-12 border-t border-white/5">
             <div className="mb-8">
-                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Pricing</span>
-                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">Simple, Transparent Pricing</h2>
-                <p className="text-white/55 text-sm mt-2">No hidden fees. Exact price confirmed after discussing your project.</p>
-                <p className="text-white/55 text-sm mt-1">Solo studio — every project gets my personal, full attention. No handoffs, no junior engineers.</p>
+                <span className="text-white/30 text-xs uppercase tracking-[0.3em]">{t.eyebrow}</span>
+                <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">{t.heading}</h2>
+                <p className="text-white/55 text-sm mt-2">{t.sub1}</p>
+                <p className="text-white/55 text-sm mt-1">{t.sub2}</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                 {services.map((service, i) => (
                     <ScrollReveal key={i} delay={i * 120}>
-                        <ServiceCard {...service} />
+                        <ServiceCard {...service} mostPopular={t.mostPopular} getStarted={t.getStarted} contactHref={t.contactHref} />
                     </ScrollReveal>
                 ))}
             </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 
-export default function HeroCard({ icon: Icon, title, description, href }) {
+export default function HeroCard({ icon: Icon, title, description, href, cta = "Learn More" }) {
     const [hovered, setHovered] = useState(false);
 
     return (
@@ -47,7 +47,7 @@ export default function HeroCard({ icon: Icon, title, description, href }) {
                     border: "1px solid rgba(201,168,76,0.35)",
                     background: "rgba(201,168,76,0.08)",
                 }}>
-                Learn More
+                {cta}
                 <ArrowRight
                     size={14}
                     style={{

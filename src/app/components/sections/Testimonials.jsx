@@ -2,36 +2,44 @@
 import Image from "next/image";
 import ScrollReveal from "../common/ScrollReveal";
 
-const testimonials = [
-    {
-        name: "Andrii Holikov",
-        role: "Guitarist & Musician",
-        photo: "/images/review-andrei3.webp",
-        text: "Total bomb. Keep this one, don't change a thing. I keep hitting replay. Maestro, bravo."
-    },
-    {
-        name: "Oleg Volos",
-        role: "Singer & Songwriter",
-        photo: "/images/review-luis2.webp",
-        text: "Sitting alone in front of the speakers, celebrating my son's 30th birthday — listening to what we made together. Feelings just hit me. No words. Thank you."
-    },
-    {
-        name: "Olga Lalum",
-        role: "Vocalist & Composer",
-        photo: "/images/review-anna2.webp",
-        text: "Beautiful music — it just gives you wings. ❤️❤️❤️❤️❤️❤️❤️"
-    },
+// Names/photos stay; heading + quote text + role come from labels (English
+// default) so the section can be reused on the Polish home via a labels prop.
+const TESTI_META = [
+    { name: "Andrii Holikov", photo: "/images/review-andrei3.webp" },
+    { name: "Oleg Volos", photo: "/images/review-luis2.webp" },
+    { name: "Olga Lalum", photo: "/images/review-anna2.webp" },
 ];
 
-export default function Testimonials() {
+const DEFAULTS = {
+    eyebrow: "Client Reviews",
+    heading: "What Artists Say",
+    items: [
+        {
+            role: "Guitarist & Musician",
+            text: "Total bomb. Keep this one, don't change a thing. I keep hitting replay. Maestro, bravo."
+        },
+        {
+            role: "Singer & Songwriter",
+            text: "Sitting alone in front of the speakers, celebrating my son's 30th birthday — listening to what we made together. Feelings just hit me. No words. Thank you."
+        },
+        {
+            role: "Vocalist & Composer",
+            text: "Beautiful music — it just gives you wings. ❤️❤️❤️❤️❤️❤️❤️"
+        },
+    ],
+};
+
+export default function Testimonials({ labels }) {
+    const L = { ...DEFAULTS, ...labels };
+    const testimonials = TESTI_META.map((m, i) => ({ ...m, ...L.items[i] }));
     return (
         <section className="py-12 border-t border-white/5">
             <div className="mb-10">
                 <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
-                    Client Reviews
+                    {L.eyebrow}
                 </span>
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mt-2">
-                    What Artists Say
+                    {L.heading}
                 </h2>
             </div>
 
