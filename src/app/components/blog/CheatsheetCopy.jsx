@@ -2,11 +2,34 @@
 
 import { useState } from "react";
 
+// UI copy per locale. English is the default so a page that passes nothing
+// renders English; Russian guides opt in with lang="ru".
+const UI = {
+    en: {
+        copy: "Copy all",
+        copied: "✓ Copied",
+        done: "✓ Ready to export",
+        task: "Task",
+        tool: "Tool",
+        hint: "Tap each item to mark it done",
+    },
+    ru: {
+        copy: "Скопировать всё",
+        copied: "✓ Скопировано",
+        done: "✓ Готово к экспорту",
+        task: "Задача",
+        tool: "Инструмент",
+        hint: "Нажми на каждый пункт чтобы отметить выполненным",
+    },
+};
+
 /**
  * variant="table"     — rows are [task, tool] pairs, renders a table + "Copy all" button
  * variant="checklist" — rows are strings, renders interactive strikethrough checklist
+ * lang                — "en" (default) | "ru"
  */
-export default function CheatsheetCopy({ title, items, variant = "table", footnote }) {
+export default function CheatsheetCopy({ title, items, variant = "table", footnote, lang = "en" }) {
+    const t = UI[lang] ?? UI.en;
     const [copied, setCopied] = useState(false);
     const [checked, setChecked] = useState([]);
 
@@ -45,12 +68,12 @@ export default function CheatsheetCopy({ title, items, variant = "table", footno
                             border: copied ? "1px solid rgba(100,200,100,0.3)" : "1px solid rgba(201,168,76,0.25)",
                         }}
                     >
-                        {copied ? "✓ Скопировано" : "Скопировать всё"}
+                        {copied ? t.copied : t.copy}
                     </button>
                 )}
                 {variant === "checklist" && allDone && (
                     <span className="text-xs px-3 py-1.5 rounded-lg" style={{ background: "rgba(100,200,100,0.12)", color: "rgb(100,200,100)", border: "1px solid rgba(100,200,100,0.25)" }}>
-                        ✓ Готово к экспорту
+                        {t.done}
                     </span>
                 )}
             </div>
@@ -60,8 +83,8 @@ export default function CheatsheetCopy({ title, items, variant = "table", footno
                     <table className="w-full text-sm" style={{ borderCollapse: "collapse" }}>
                         <thead>
                             <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.1)" }}>
-                                <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">Задача</th>
-                                <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">Инструмент</th>
+                                <th className="text-left py-3 pr-6 text-white/40 text-xs uppercase tracking-widest font-medium">{t.task}</th>
+                                <th className="text-left py-3 text-white/40 text-xs uppercase tracking-widest font-medium">{t.tool}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -111,7 +134,7 @@ export default function CheatsheetCopy({ title, items, variant = "table", footno
                             </button>
                         );
                     })}
-                    <p className="text-white/25 text-xs mt-1 pl-1">Нажми на каждый пункт чтобы отметить выполненным</p>
+                    <p className="text-white/25 text-xs mt-1 pl-1">{t.hint}</p>
                 </div>
             )}
 

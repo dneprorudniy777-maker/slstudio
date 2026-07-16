@@ -29,13 +29,45 @@ const VOCALS = [
     "Spoken Word", "Falsetto", "Rap Vocals", "Opera", "Harmonized Vocals",
 ];
 
-const TEMPOS = [
-    { label: "Очень медленно", value: "60 BPM" },
-    { label: "Медленно", value: "80 BPM" },
-    { label: "Умеренно", value: "100 BPM" },
-    { label: "Быстро", value: "128 BPM" },
-    { label: "Очень быстро", value: "160 BPM" },
-];
+const TEMPO_VALUES = ["60 BPM", "80 BPM", "100 BPM", "128 BPM", "160 BPM"];
+
+// UI copy per locale. The tag pools above stay English on purpose — they are
+// literal Suno prompt tokens and must be typed into Suno as-is, in any locale.
+// English is the default so a page that passes nothing renders English.
+const UI = {
+    en: {
+        subtitle: "Pick your tags — the prompt builds itself",
+        reset: "Reset",
+        selected: (n, max) => `${n}/${max} selected`,
+        genre: "Genre",
+        mood: "Mood",
+        instruments: "Instruments",
+        vocals: "Vocals",
+        tempo: "Tempo (optional)",
+        tempos: ["Very slow", "Slow", "Moderate", "Fast", "Very fast"],
+        output: "Ready prompt",
+        tagCount: (n) => `${n} tags`,
+        empty: "← Choose at least one tag on the left",
+        copy: "Copy prompt",
+        copied: "✓ Copied!",
+    },
+    ru: {
+        subtitle: "Выбери теги — промпт соберётся автоматически",
+        reset: "Сбросить",
+        selected: (n, max) => `выбрано ${n}/${max}`,
+        genre: "Genre — жанр",
+        mood: "Mood — атмосфера",
+        instruments: "Instruments — инструменты",
+        vocals: "Vocals — вокал",
+        tempo: "Tempo (опционально)",
+        tempos: ["Очень медленно", "Медленно", "Умеренно", "Быстро", "Очень быстро"],
+        output: "Готовый промпт",
+        tagCount: (n) => `${n} тегов`,
+        empty: "← Выбери хотя бы один тег слева",
+        copy: "Скопировать промпт",
+        copied: "✓ Скопировано!",
+    },
+};
 
 function Tag({ label, selected, onClick }) {
     return (
@@ -54,13 +86,13 @@ function Tag({ label, selected, onClick }) {
     );
 }
 
-function Section({ letter, title, items, selected, onToggle, max = 2 }) {
+function Section({ letter, title, items, selected, onToggle, max = 2, countLabel }) {
     return (
         <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
                 <span className="text-lg font-bold" style={{ color: "#C9A84C" }}>{letter}</span>
                 <span className="text-white/60 text-sm">— {title}</span>
-                <span className="text-white/25 text-xs ml-auto">выбрано {selected.length}/{max}</span>
+                <span className="text-white/25 text-xs ml-auto">{countLabel(selected.length, max)}</span>
             </div>
             <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
@@ -76,7 +108,8 @@ function Section({ letter, title, items, selected, onToggle, max = 2 }) {
     );
 }
 
-export default function GmivBuilder() {
+export default function GmivBuilder({ lang = "en" }) {
+    const t = UI[lang] ?? UI.en;
     const [genre, setGenre] = useState([]);
     const [mood, setMood] = useState([]);
     const [instruments, setInstruments] = useState([]);
@@ -135,14 +168,14 @@ export default function GmivBuilder() {
             >
                 <div>
                     <p className="text-white font-semibold text-base">G.M.I.V. Prompt Builder</p>
-                    <p className="text-white/40 text-xs mt-0.5">Выбери теги — промпт соберётся автоматически</p>
+                    <p className="text-white/40 text-xs mt-0.5">{t.subtitle}</p>
                 </div>
                 <button
                     onClick={handleReset}
                     className="text-xs px-3 py-1.5 rounded-lg transition hover:opacity-70"
                     style={{ background: "rgba(255,255,255,0.04)", color: "rgba(255,255,255,0.3)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
-                    Сбросить
+                    {t.reset}
                 </button>
             </div>
 
@@ -150,57 +183,61 @@ export default function GmivBuilder() {
             <div className="px-6 flex flex-col gap-6">
                 <Section
                     letter="G"
-                    title="Genre — жанр"
+                    title={t.genre}
                     items={GENRES}
                     selected={genre}
                     onToggle={(item) => toggle(genre, setGenre, item, 2)}
                     max={2}
+                    countLabel={t.selected}
                 />
                 <Section
                     letter="M"
-                    title="Mood — атмосфера"
+                    title={t.mood}
                     items={MOODS}
                     selected={mood}
                     onToggle={(item) => toggle(mood, setMood, item, 2)}
                     max={2}
+                    countLabel={t.selected}
                 />
                 <Section
                     letter="I"
-                    title="Instruments — инструменты"
+                    title={t.instruments}
                     items={INSTRUMENTS}
                     selected={instruments}
                     onToggle={(item) => toggle(instruments, setInstruments, item, 3)}
                     max={3}
+                    countLabel={t.selected}
                 />
                 <Section
                     letter="V"
-                    title="Vocals — вокал"
+                    title={t.vocals}
                     items={VOCALS}
                     selected={vocals}
                     onToggle={(item) => toggle(vocals, setVocals, item, 1)}
                     max={1}
+                    countLabel={t.selected}
                 />
 
                 {/* Tempo */}
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center gap-2">
                         <span className="text-lg font-bold" style={{ color: "#C9A84C" }}>+</span>
-                        <span className="text-white/60 text-sm">— Tempo (опционально)</span>
+                        <span className="text-white/60 text-sm">— {t.tempo}</span>
                     </div>
                     <div className="flex flex-wrap gap-2">
-                        {TEMPOS.map((t) => (
+                        {TEMPO_VALUES.map((value, i) => (
                             <button
-                                key={t.value}
-                                onClick={() => setTempo(tempo === t.value ? "" : t.value)}
+                                key={value}
+                                onClick={() => setTempo(tempo === value ? "" : value)}
                                 className="flex flex-col items-center px-3 py-2 rounded-lg transition-all duration-200 cursor-pointer"
                                 style={{
-                                    background: tempo === t.value ? "rgba(201,168,76,0.2)" : "rgba(255,255,255,0.04)",
-                                    border: tempo === t.value ? "1px solid rgba(201,168,76,0.6)" : "1px solid rgba(255,255,255,0.08)",
-                                    color: tempo === t.value ? "#C9A84C" : "rgba(255,255,255,0.45)",
+                                    background: tempo === value ? "rgba(201,168,76,0.2)" : "rgba(255,255,255,0.04)",
+                                    border: tempo === value ? "1px solid rgba(201,168,76,0.6)" : "1px solid rgba(255,255,255,0.08)",
+                                    color: tempo === value ? "#C9A84C" : "rgba(255,255,255,0.45)",
                                 }}
                             >
-                                <span className="text-xs font-mono font-bold">{t.value}</span>
-                                <span className="text-xs opacity-60">{t.label}</span>
+                                <span className="text-xs font-mono font-bold">{value}</span>
+                                <span className="text-xs opacity-60">{t.tempos[i]}</span>
                             </button>
                         ))}
                     </div>
@@ -214,11 +251,11 @@ export default function GmivBuilder() {
             >
                 <div className="flex items-center justify-between mb-1">
                     <p className="text-xs font-bold uppercase tracking-widest" style={{ color: "rgba(201,168,76,0.6)" }}>
-                        Готовый промпт
+                        {t.output}
                     </p>
                     {!isEmpty && (
                         <span className="text-xs" style={{ color: "rgba(255,255,255,0.2)" }}>
-                            {prompt.split(",").filter(Boolean).length} тегов
+                            {t.tagCount(prompt.split(",").filter(Boolean).length)}
                         </span>
                     )}
                 </div>
@@ -227,7 +264,7 @@ export default function GmivBuilder() {
                     className="text-sm font-mono leading-relaxed min-h-[2.5rem]"
                     style={{ color: isEmpty ? "rgba(255,255,255,0.2)" : "#C9A84C" }}
                 >
-                    {isEmpty ? "← Выбери хотя бы один тег слева" : prompt}
+                    {isEmpty ? t.empty : prompt}
                 </p>
 
                 <button
@@ -253,7 +290,7 @@ export default function GmivBuilder() {
                         cursor: isEmpty ? "not-allowed" : "pointer",
                     }}
                 >
-                    {copied ? "✓ Скопировано!" : "Скопировать промпт"}
+                    {copied ? t.copied : t.copy}
                 </button>
             </div>
         </div>

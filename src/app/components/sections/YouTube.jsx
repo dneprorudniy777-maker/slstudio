@@ -11,12 +11,25 @@ const DEFAULTS = {
 
 export default async function YouTube({ labels }) {
     const t = { ...DEFAULTS, ...labels };
-    const [videos] = await pool.query(`
-        SELECT *
-        FROM videos
-        WHERE is_active = 1
-        ORDER BY created_at DESC
-    `);
+    let videos = [];
+
+    // An unreachable database (or a hit on the shared user's connection limit)
+    // must not take the whole page down with it: drop the section and let the
+    // rest of the page render, same as BeforeAfter.
+    try {
+        const [rows] = await pool.query(`
+            SELECT *
+            FROM videos
+            WHERE is_active = 1
+            ORDER BY created_at DESC
+        `);
+        videos = rows;
+    } catch (error) {
+        console.error("[YouTube] Failed to load videos:", error);
+        return null;
+    }
+
+    if (!videos || videos.length === 0) return null;
 
     return (
         <section className="py-12 border-t border-white/5">

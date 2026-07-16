@@ -16,13 +16,22 @@ export default function RelatedPosts({ slug, slugs }) {
             .filter((p) => p && p.href !== current.href)
             .slice(0, 3);
     } else {
-        const sameCategory = posts.filter(
-            (p) => p.href !== current.href && p.category === current.category,
-        );
-        const others = posts.filter(
-            (p) => p.href !== current.href && p.category !== current.category,
-        );
-        related = [...sameCategory, ...others].slice(0, 3);
+        // Language outranks category: an English article must not offer Russian
+        // reading (only the two RU Suno guides carry `lang`, English posts have
+        // no field). The other language is a fallback, not a filter — with 20
+        // English posts an English page never reaches it, while the two Russian
+        // guides still fill three cards instead of dropping to one.
+        const langOf = (p) => p.lang ?? "en";
+        const currentLang = langOf(current);
+        const byCategoryFirst = (list) => [
+            ...list.filter((p) => p.category === current.category),
+            ...list.filter((p) => p.category !== current.category),
+        ];
+        const candidates = posts.filter((p) => p.href !== current.href);
+        related = [
+            ...byCategoryFirst(candidates.filter((p) => langOf(p) === currentLang)),
+            ...byCategoryFirst(candidates.filter((p) => langOf(p) !== currentLang)),
+        ].slice(0, 3);
     }
     if (related.length === 0) return null;
 
