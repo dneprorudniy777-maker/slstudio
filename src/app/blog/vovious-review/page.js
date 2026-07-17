@@ -317,6 +317,60 @@ export default function VoviousReviewPage() {
             </div>
           </div>
 
+          {/* Community perspective */}
+          <div className="flex flex-col gap-4">
+            <h2 className="text-xl md:text-2xl font-semibold text-white">
+              What Other Engineers Are Saying
+            </h2>
+            <p>
+              Before settling on a verdict I spent a couple of evenings reading
+              the long Vovious threads on Gearspace, VI-Control, KVR and Reddit
+              — partly to sanity-check my own impressions, partly because a
+              pitch editor from an unknown developer does not normally generate
+              this much discussion in every DAW community within weeks of
+              launch. A few things kept repeating.
+            </p>
+            <div className="flex flex-col gap-4">
+              {[
+                {
+                  title: "The formant argument is what converts people",
+                  body: "The recurring Melodyne complaint in composer forums is that it drags formants along with pitch, and correcting the formant after correcting the pitch is a chore. RePitch keeps formants natural but loses on interface and scale support. Vovious is the first editor people consistently describe as getting both right at once — which matches exactly what I heard in my own sessions.",
+                },
+                {
+                  title: "Formant shifting clean enough for harmonies",
+                  body: "Gearspace users report the global formant shift stays smooth even on hard, glissy notes — several are building convincing harmony stacks from a single take, including full male-to-female flips, and describe Melodyne's formant shifting as gritty by comparison. I would not push it that far on a lead vocal, but for background stacks it genuinely holds up.",
+                },
+                {
+                  title: "The honest wishlist",
+                  body: "The two most requested features across every thread: a per-note reset back to the original scan, and a proper bypass or 'show original pitch' view so you can toggle against the untouched take while editing. I hit the same wall. The workaround for now is duplicating the track before you start — thirty seconds that will save you real frustration.",
+                },
+                {
+                  title: "A time-stretch trick worth stealing",
+                  body: "The Gearspace consensus on the time tools: keep stretches small and stay in the lower half of the range, and the edits stay clean — several users also find the time grid easier to read than RePitch's. Nobody claims it beats dedicated elastic-audio engines on big stretches, and neither will I.",
+                },
+                {
+                  title: "The most balanced summary I found",
+                  body: "Side-by-side comparisons keep landing the same way: Vovious retains the feeling of a person singing, while heavily edited Melodyne takes drift toward the recognizable 'Melodyne sound'. The seasoned KVR crowd adds the right caveat — it is a young product, so run the full 30-day trial in your own DAW before paying, especially if that DAW is Logic.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl p-5 flex flex-col gap-2"
+                  style={{
+                    background: "rgba(255,255,255,0.02)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderLeft: "3px solid #C9A84C",
+                  }}
+                >
+                  <p className="text-white font-semibold text-sm">
+                    {item.title}
+                  </p>
+                  <p className="text-white/50 text-sm">{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Vovious vs RePitch 2 */}
           <div className="flex flex-col gap-4">
             <h2 className="text-xl md:text-2xl font-semibold text-white">

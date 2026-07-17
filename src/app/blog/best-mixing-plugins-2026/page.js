@@ -113,28 +113,46 @@ export default function BestMixingPluginsPage() {
             <div className="flex flex-col gap-3 text-white/60 text-sm leading-relaxed">
               <p>
                 <strong className="text-white">
-                  1. Reference beats guesswork.
+                  The most telling data point I found.
                 </strong>{" "}
-                The most repeated practical advice in community threads was not
-                “buy more EQs.” It was: compare more often, level-match
-                properly, and stop mixing in a vacuum.
+                In a big r/audioengineering thread, Plugin Alliance MEGA
+                subscribers voted on their favorite plugins from the whole
+                catalog — and the thread author counted every single mention. He
+                then left Metric AB off the final list entirely, with a dry note
+                that it had been mentioned more than anything else and he
+                already used it in every session. Read that again: in a catalog
+                of over a hundred EQs, compressors and console emulations, the
+                tool the community cannot live without is the one that processes
+                nothing.
               </p>
               <p>
                 <strong className="text-white">
-                  2. Utility plugins age better than hype plugins.
+                  Reference beats guesswork.
                 </strong>{" "}
-                Saturation gets the attention, but the tools people keep naming
-                years later are the ones that solve repeat problems fast — room
-                control, mid/side cleanup, translation checks, gain staging,
-                mono compatibility.
+                Which is also the most repeated practical advice in those
+                threads — not “buy more EQs” but: compare more often,
+                level-match properly, and stop mixing in a vacuum.
               </p>
               <p>
                 <strong className="text-white">
-                  3. Fewer, better defaults win.
+                  The community vote backs up this list.
+                </strong>{" "}
+                The HG-2 was among the most-mentioned plugins in that same
+                thread, Kirchhoff EQ sat close behind, and the Lindell 80 was
+                comfortably present — while the Silver Bullet MK2 had only just
+                been released and was already being named. In fairness, the top
+                vote-getter was the Kiive Xtressor, a genuinely great compressor
+                — it simply has not displaced anything in my own template yet.
+              </p>
+              <p>
+                <strong className="text-white">
+                  Fewer, better defaults win.
                 </strong>{" "}
                 The engineers who sound most confident are usually not the ones
                 juggling 19 versions of the same compressor. They are the ones
-                who know exactly which tool gets opened first and why.
+                who know exactly which tool gets opened first and why — and
+                utility tools (room control, mid/side cleanup, translation
+                checks) age far better than hype tools.
               </p>
             </div>
           </div>
