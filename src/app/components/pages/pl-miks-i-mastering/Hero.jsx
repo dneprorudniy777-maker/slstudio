@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroWave from "../../common/HeroWave";
+import HeroStats from "../../common/HeroStats";
 import LangSwitch from "../../common/LangSwitch";
 
 export default function Hero() {
@@ -58,22 +59,13 @@ export default function Hero() {
               bez konta i bez zobowiązań.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
-            {[
+          <HeroStats
+            items={[
               { value: "300+", label: "Gotowych miksów" },
               { value: "10+", label: "Lat doświadczenia" },
               { value: "3–5 dni", label: "Typowy termin" },
-            ].map((item) => (
-              <div key={item.label} className="flex flex-col gap-1">
-                <span className="text-xl md:text-2xl font-semibold text-[#f5b942]">
-                  {item.value}
-                </span>
-                <span className="text-white/55 text-xs uppercase tracking-widest">
-                  {item.label}
-                </span>
-              </div>
-            ))}
-          </div>
+            ]}
+          />
         </div>
         <div className="w-full aspect-[16/9] md:aspect-[4/3] relative rounded-xl overflow-hidden">
           <Image

@@ -1,5 +1,50 @@
 export const posts = [
     {
+        href: "/pl/blog/suno-guide-2026",
+        image: "/images/blog-suno-cover-pl.webp",
+        category: "Tutorials",
+        date: "14 kwietnia 2026",
+        lang: "pl",
+        title: "Suno AI: Kompletny poradnik dla muzyków — gatunki, tagi i prompty 2026",
+        excerpt: "Przestań zgadywać przy Generate. Jak producenci naprawdę używają Suno — struktura promptu, nawiasy, Custom Mode, Personas i funkcje v5.5, które zmieniły workflow."
+    },
+    {
+        href: "/pl/blog/suno-studio-guide-en-2026",
+        image: "/images/blog-suno-studio-cover-pl.webp",
+        category: "Tutorials",
+        date: "7 lipca 2026",
+        lang: "pl",
+        title: "Suno AI Część 2: Suno Studio — Kompletny poradnik dla muzyków",
+        excerpt: "Krok po kroku o Suno Studio — kontroluj timeline, rozszerzaj utwory w dokładnym miejscu, naprawiaj słabe sekcje przez Cover & Replace i eksportuj czyste stemy WAV do miksu."
+    },
+    {
+        href: "/blog/best-melodyne-alternatives-2026-ru",
+        image: "/images/beyond-melodyne-cover-ru.jpg",
+        category: "Review",
+        date: "July 17, 2026",
+        lang: "ru",
+        title: "Лучшие альтернативы Melodyne в 2026: чем её реально заменить?",
+        excerpt: "Лучшие альтернативы Melodyne для ручного тюнинга вокала, редактирования питча, коррекции в реальном времени и бюджетных сценариев — включая Vovious, RePitch 2, AutoTune Pro, Waves Tune и встроенные инструменты DAW."
+    },
+    {
+        href: "/blog/ai-mixing-mastering-review-ru",
+        image: "/images/blog-ai-mixing-cover-ru.webp",
+        category: "Industry Insights",
+        date: "February 21, 2026",
+        lang: "ru",
+        title: "AI-сведение и мастеринг в 2026 — тест на реальной сессии",
+        excerpt: "Может ли ИИ свести и отмастерить песню? Я загрузил реальную сессию из 30 дорожек на топовый AI-сервис, а затем разобрал весь рынок 2026 года — что работает, что ломается и сколько это стоит."
+    },
+    {
+        href: "/blog/best-mixing-plugins-2026-ru",
+        image: "/images/blog-plugins-cover-ru.webp",
+        category: "Technics",
+        date: "March 17, 2026",
+        lang: "ru",
+        title: "Лучшие плагины Plugin Alliance для сведения в 2026",
+        excerpt: "Лучшие плагины Plugin Alliance для сведения в 2026 — 10 инструментов, которые реально работают в каждой сессии, плюс один плагин от Slate Digital, заслуживающий места в том же разговоре. Проверено, а не распиарено."
+    },
+    {
         href: "/pl/blog/best-melodyne-alternatives-2026",
         image: "/images/melodyne-alternatives-cover-pl.jpg",
         category: "Review",

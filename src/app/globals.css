@@ -96,14 +96,16 @@ html {
     rgba(201, 168, 76, 0.06)
   );
   transform-origin: center;
-  /* one shared, slow 12s cycle — a calm breathing motion rather than a
-     fast travelling crest; smaller scale range keeps the peaks gentle */
-  animation: heroWave 12s ease-in-out infinite;
+  /* one shared, slow cycle — a calm breathing motion rather than a fast
+     travelling crest. Each bar is phase-shifted (negative animation-delay),
+     so a slightly taller, slightly brighter crest drifts left-to-right: the
+     "living" wave. Kept gentle on purpose — alive, not flashing. */
+  animation: heroWave 9s ease-in-out infinite;
 }
 
 @keyframes heroWave {
-  0%, 100% { transform: scaleY(0.55); opacity: 0.5; }
-  50%      { transform: scaleY(0.85); opacity: 0.75; }
+  0%, 100% { transform: scaleY(0.5);  opacity: 0.4; }
+  50%      { transform: scaleY(0.95); opacity: 0.9; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -117,8 +117,8 @@ export default function Section1() {
               Odbierz bezpłatny fragment →
             </Link>
           </div>
-          <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02]">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+          <div className="rounded-2xl p-8 border border-white/[0.06] bg-white/[0.02] flex flex-col">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 flex-1 content-between">
               {includedItems.map((item) => (
                 <li
                   key={item}

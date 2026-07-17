@@ -7,6 +7,11 @@ export const metadata = {
   title: "Best Melodyne Alternatives in 2026: 5 Options Compared",
   alternates: {
     canonical: "https://www.slstudio.pro/blog/best-melodyne-alternatives-2026",
+    languages: {
+      en: "https://www.slstudio.pro/blog/best-melodyne-alternatives-2026",
+      ru: "https://www.slstudio.pro/blog/best-melodyne-alternatives-2026-ru",
+      "x-default": "https://www.slstudio.pro/blog/best-melodyne-alternatives-2026",
+    },
   },
   description:
     "The best Melodyne alternatives for manual vocal tuning, pitch editing, real-time correction, and budget workflows — including Vovious, RePitch 2, AutoTune Pro, Waves Tune, and stock DAW tools.",

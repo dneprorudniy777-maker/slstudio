@@ -6,6 +6,11 @@ export const metadata = {
   title: "AI Mixing and Mastering in 2026 — Tested on a Real Session",
   alternates: {
     canonical: "https://www.slstudio.pro/blog/ai-mixing-mastering-review",
+    languages: {
+      en: "https://www.slstudio.pro/blog/ai-mixing-mastering-review",
+      ru: "https://www.slstudio.pro/blog/ai-mixing-mastering-review-ru",
+      "x-default": "https://www.slstudio.pro/blog/ai-mixing-mastering-review",
+    },
   },
   description:
     "Can AI mix and master a song? I uploaded a real 30-track session to a top-rated AI platform, then mapped the whole 2026 landscape — what works, what fails, and what it costs.",

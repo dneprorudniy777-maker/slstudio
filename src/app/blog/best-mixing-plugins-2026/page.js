@@ -6,6 +6,11 @@ export const metadata = {
   title: "Best Plugin Alliance Plugins 2026 (10 Worth Every Dollar)",
   alternates: {
     canonical: "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
+    languages: {
+      en: "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
+      ru: "https://www.slstudio.pro/blog/best-mixing-plugins-2026-ru",
+      "x-default": "https://www.slstudio.pro/blog/best-mixing-plugins-2026",
+    },
   },
   description:
     "The best Plugin Alliance plugins for mixing in 2026 — 10 tools that actually keep earning their place in real sessions, plus one Slate Digital pick that deserves to be in the same conversation.",

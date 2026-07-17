@@ -11,6 +11,7 @@ export const metadata = {
     languages: {
       en: "https://www.slstudio.pro/blog/suno-guide-2026",
       ru: "https://www.slstudio.pro/blog/suno-guide-2026-ru",
+      pl: "https://www.slstudio.pro/pl/blog/suno-guide-2026",
       "x-default": "https://www.slstudio.pro/blog/suno-guide-2026",
     },
   },
