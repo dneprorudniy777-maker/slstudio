@@ -1,9 +1,10 @@
 import Link from "next/link";
+import LangSwitch from "../components/common/LangSwitch";
 
 const SITE = "https://www.slstudio.pro";
 
 export const metadata = {
-    title: "About Serhii Lazariev — Mixing & Mastering Engineer in Warsaw | SL Studio",
+    title: "About Serhii Lazariev — Mixing & Mastering Engineer in Warsaw",
     description:
         "Guitarist, vocalist and producer. 30+ years in music, 10+ years behind the board, 300+ tracks mixed and mastered. The person behind SL Studio in Warsaw.",
     alternates: {
@@ -111,14 +112,17 @@ const tools = [
 
 export default function AboutPage() {
     return (
-        <main>
+        <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
             {/* Hero */}
-            <section className="container pt-16 pb-12">
+            <section className="pt-16 pb-12">
+                <div className="mb-8">
+                    <LangSwitch active="en" enHref="/about" plHref="/pl/o-mnie" />
+                </div>
                 <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 items-center">
                     <div>
                         <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
@@ -163,7 +167,7 @@ export default function AboutPage() {
             </section>
 
             {/* Story */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
                     The long road to a quiet room in Warsaw
                 </h2>
@@ -195,7 +199,7 @@ export default function AboutPage() {
             </section>
 
             {/* Restoration project */}
-            <section className="container py-12">
+            <section className="py-12">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
                     <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#C9A84C" }}>
                         A project I'm proud of
@@ -235,7 +239,7 @@ export default function AboutPage() {
             </section>
 
             {/* Principles */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
                     Musician first, engineer second
                 </h2>
@@ -254,7 +258,7 @@ export default function AboutPage() {
             </section>
 
             {/* Tools */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6">
                     The studio runs on
                 </h2>
@@ -279,7 +283,7 @@ export default function AboutPage() {
             </section>
 
             {/* CTA */}
-            <section className="container py-16">
+            <section className="py-16">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
                         Hear it before you pay
@@ -306,6 +310,6 @@ export default function AboutPage() {
                     </p>
                 </div>
             </section>
-        </main>
+        </>
     );
 }

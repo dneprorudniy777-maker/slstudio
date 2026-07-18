@@ -1,9 +1,10 @@
 import Link from "next/link";
+import LangSwitch from "../../components/common/LangSwitch";
 
 const SITE = "https://www.slstudio.pro";
 
 export const metadata = {
-    title: "O mnie — Serhii Lazariev, inżynier miksu i masteringu w Warszawie | SL Studio",
+    title: "O mnie — Serhii Lazariev, inżynier miksu i masteringu w Warszawie",
     description:
         "Gitarzysta, wokalista i producent. Ponad 30 lat w muzyce, ponad 10 lat za konsoletą, 300+ zmiksowanych i zmasterowanych utworów. Człowiek stojący za SL Studio w Warszawie.",
     alternates: {
@@ -103,14 +104,17 @@ const tools = [
 
 export default function OMniePage() {
     return (
-        <main>
+        <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
             />
 
             {/* Hero */}
-            <section className="container pt-16 pb-12">
+            <section className="pt-16 pb-12">
+                <div className="mb-8">
+                    <LangSwitch active="pl" enHref="/about" plHref="/pl/o-mnie" />
+                </div>
                 <div className="grid md:grid-cols-[1.1fr_1fr] gap-10 items-center">
                     <div>
                         <p className="text-xs uppercase tracking-widest mb-4" style={{ color: "#C9A84C" }}>
@@ -156,7 +160,7 @@ export default function OMniePage() {
             </section>
 
             {/* Story */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
                     Długa droga do cichego pokoju w Warszawie
                 </h2>
@@ -189,7 +193,7 @@ export default function OMniePage() {
             </section>
 
             {/* Restoration project */}
-            <section className="container py-12">
+            <section className="py-12">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-10">
                     <p className="text-xs uppercase tracking-widest mb-3" style={{ color: "#C9A84C" }}>
                         Projekt, z którego jestem dumny
@@ -229,7 +233,7 @@ export default function OMniePage() {
             </section>
 
             {/* Principles */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-8">
                     Najpierw muzyk, potem inżynier
                 </h2>
@@ -248,7 +252,7 @@ export default function OMniePage() {
             </section>
 
             {/* Tools */}
-            <section className="container py-12">
+            <section className="py-12">
                 <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-6">
                     Studio pracuje na
                 </h2>
@@ -274,7 +278,7 @@ export default function OMniePage() {
             </section>
 
             {/* CTA */}
-            <section className="container py-16">
+            <section className="py-16">
                 <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 md:p-12 text-center">
                     <h2 className="text-2xl md:text-3xl font-semibold tracking-wide mb-4">
                         Usłysz efekt, zanim zapłacisz
@@ -301,6 +305,6 @@ export default function OMniePage() {
                     </p>
                 </div>
             </section>
-        </main>
+        </>
     );
 }
