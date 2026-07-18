@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Mail, Send, ArrowUpRight, Loader2 } from "lucide-react";
+import { Mail, Send, ArrowUpRight, Loader2, Clock, MessagesSquare, BadgeCheck, ChevronDown } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 
 const SERVICE_FROM_QUERY = {
@@ -65,7 +65,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="max-w-5xl mx-auto relative">
+        <section className="max-w-6xl mx-auto relative">
             <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
                 <div style={{position:"absolute",top:"-80px",left:"-120px",width:"400px",height:"400px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",animation:"pulse 6s ease-in-out infinite"}}/>
                 <div style={{position:"absolute",bottom:"0",right:"-80px",width:"300px",height:"300px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",animation:"pulse 8s ease-in-out infinite reverse"}}/>
@@ -76,10 +76,15 @@ export default function Hero() {
                 <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
 
-                {/* LEFT */}
-                <div className="flex flex-col gap-3">
+                {/* LEFT — logo, heading, direct channels (40%) */}
+                <div className="md:col-span-2 flex flex-col gap-3">
+                    <img
+                        src="/images/logo-animated.svg"
+                        alt="SL Studio"
+                        style={{width:"100%",display:"block",mixBlendMode:"lighten"}}
+                    />
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Kontakt</span>
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
@@ -124,15 +129,8 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* RIGHT — stretched to match the left column's height (5 contact
-                    cards make it taller); logo pinned top, form pinned bottom */}
-                <div className="flex flex-col gap-4 md:justify-between">
-                    <img
-                        src="/images/logo-animated.svg"
-                        alt="SL Studio"
-                        style={{width:"100%",display:"block",mixBlendMode:"lighten"}}
-                    />
-
+                {/* RIGHT — form (60%) */}
+                <div className="md:col-span-3 flex flex-col gap-4">
                     {sent ? (
                         <div className="flex flex-col items-center justify-center gap-4 text-center p-8 rounded-2xl" style={{border:"1px solid rgba(201,168,76,0.2)",background:"rgba(201,168,76,0.04)",minHeight:"320px"}}>
                             <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{background:"rgba(201,168,76,0.1)",border:"1px solid rgba(201,168,76,0.3)"}}>
@@ -190,6 +188,64 @@ export default function Hero() {
                     )}
                 </div>
 
+            </div>
+
+            {/* Three steps */}
+            <div className="mt-16 flex flex-col gap-6">
+                <div>
+                    <p className="text-white/30 text-xs uppercase tracking-[0.3em] mb-2">Co dalej</p>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white">Co się dzieje po wysłaniu wiadomości</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {[
+                        { num:"01", icon:<Clock className="w-5 h-5"/>, title:"Odpowiadam w ciągu 24 godzin", body:"Zwykle szybciej — najszybciej na Telegramie. Bez botów i automatycznych odpowiedzi, zawsze osobiście." },
+                        { num:"02", icon:<MessagesSquare className="w-5 h-5"/>, title:"Rozmawiamy o utworze", body:"Mówisz, co masz nagrane i do czego dążysz. Ja szczerze mówię, co da się z tym zrobić, a czego nie warto." },
+                        { num:"03", icon:<BadgeCheck className="w-5 h-5"/>, title:"Preview albo konkretna cena", body:"Dostajesz darmowe preview fragmentu albo dokładną wycenę całości. Zero zobowiązań — decyzja należy do Ciebie." },
+                    ].map((s,i) => (
+                        <div key={i} className="rounded-xl p-5 flex flex-col gap-3" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.02)"}}>
+                            <div className="flex items-start justify-between">
+                                <div className="w-9 h-9 rounded-lg flex items-center justify-center" style={{background:"rgba(201,168,76,0.1)",color:"#C9A84C"}}>{s.icon}</div>
+                                <span className="text-2xl font-semibold" style={{color:"rgba(201,168,76,0.35)"}}>{s.num}</span>
+                            </div>
+                            <p className="text-white font-semibold text-sm">{s.title}</p>
+                            <p className="text-white/50 text-sm leading-relaxed">{s.body}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Mini FAQ */}
+            <div className="mt-16 flex flex-col gap-6">
+                <div>
+                    <p className="text-white/30 text-xs uppercase tracking-[0.3em] mb-2">FAQ</p>
+                    <h2 className="text-2xl md:text-3xl font-semibold text-white">Częste pytania</h2>
+                </div>
+                <div className="flex flex-col gap-3">
+                    {[
+                        { q:"W jakim języku mogę pisać?", a:"Po polsku, angielsku, ukraińsku albo rosyjsku — jak Ci wygodniej. Odpowiem w tym samym języku." },
+                        { q:"Co napisać w wiadomości?", a:"Wystarczy kilka zdań: gatunek, co masz nagrane (demo, stemy, gotowy miks) i co Ci przeszkadza w obecnym brzmieniu. Link do utworu referencyjnego jest mile widziany." },
+                        { q:"Mam duży plik — jak go wysłać?", a:"Nie przez formularz — wrzuć link do Google Drive, Dropbox albo WeTransfer. Możesz też skorzystać ze strony darmowego preview, tam jest uploader do 100 MB." },
+                    ].map((f,i) => (
+                        <details key={i} className="rounded-xl group" style={{border:"1px solid rgba(255,255,255,0.06)",background:"rgba(255,255,255,0.02)"}}>
+                            <summary className="flex items-center justify-between gap-3 p-4 cursor-pointer text-white text-sm font-medium list-none [&::-webkit-details-marker]:hidden">
+                                {f.q}
+                                <ChevronDown className="w-4 h-4 flex-shrink-0 opacity-40 transition-transform group-open:rotate-180" style={{color:"#C9A84C"}}/>
+                            </summary>
+                            <p className="px-4 pb-4 text-white/50 text-sm leading-relaxed">{f.a}</p>
+                        </details>
+                    ))}
+                </div>
+            </div>
+
+            {/* CTA — mirror of the "Prefer to talk first?" card on the free preview page */}
+            <div className="mt-16 rounded-2xl p-8 text-center flex flex-col items-center gap-4" style={{background:"rgba(201,168,76,0.06)",border:"1px solid rgba(201,168,76,0.2)"}}>
+                <h3 className="text-xl font-semibold text-white">Nie chce Ci się pisać?</h3>
+                <p className="text-white/50 text-sm max-w-md">
+                    Po prostu wyślij utwór — dostaniesz darmowe preview, szczere uwagi i konkretną cenę. A potem porozmawiamy.
+                </p>
+                <a href="/free-track-preview" className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm" style={{backgroundColor:"#C9A84C"}}>
+                    Wyślij utwór →
+                </a>
             </div>
         </section>
     );
