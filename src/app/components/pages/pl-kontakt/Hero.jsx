@@ -72,14 +72,15 @@ export default function Hero() {
                 <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
             </div>
 
-            <div className="mb-6">
+            <div className="mb-3">
                 <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch">
+            <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch">
 
-                {/* LEFT */}
-                <div className="flex flex-col gap-3">
+                {/* LEFT — justify-between spreads the blocks so the column's top and
+                    bottom line up exactly with the form column on the right */}
+                <div className="flex flex-col gap-3 md:justify-between">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Kontakt</span>
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
@@ -139,7 +140,7 @@ export default function Hero() {
                                 <Send className="w-7 h-7" style={{color:"#C9A84C"}}/>
                             </div>
                             <div>
-                                <h3 className="text-xl font-semibold text-white mb-2">Wiadomość wys����ana!</h3>
+                                <h3 className="text-xl font-semibold text-white mb-2">Wiadomość wys������ana!</h3>
                                 <p className="text-white/50 text-sm">Odezwę się w ciągu 24 godzin.</p>
                             </div>
                         </div>
