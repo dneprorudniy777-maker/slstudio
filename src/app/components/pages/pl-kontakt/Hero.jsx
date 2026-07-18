@@ -65,7 +65,7 @@ export default function Hero() {
     };
 
     return (
-        <section className="max-w-6xl mx-auto relative">
+        <section className="max-w-5xl mx-auto relative">
             <div className="pointer-events-none absolute inset-0 overflow-hidden -z-10">
                 <div style={{position:"absolute",top:"-80px",left:"-120px",width:"400px",height:"400px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%)",animation:"pulse 6s ease-in-out infinite"}}/>
                 <div style={{position:"absolute",bottom:"0",right:"-80px",width:"300px",height:"300px",borderRadius:"50%",background:"radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%)",animation:"pulse 8s ease-in-out infinite reverse"}}/>
@@ -76,15 +76,10 @@ export default function Hero() {
                 <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
 
-                {/* LEFT — logo, heading, direct channels (40%) */}
-                <div className="md:col-span-2 flex flex-col gap-3">
-                    <img
-                        src="/images/logo-animated.svg"
-                        alt="SL Studio"
-                        style={{width:"100%",display:"block",mixBlendMode:"lighten"}}
-                    />
+                {/* LEFT */}
+                <div className="flex flex-col gap-3">
                     <span className="text-white/30 text-xs uppercase tracking-[0.3em]">Kontakt</span>
                     <div className="relative">
                         <div className="hero-title-glow" aria-hidden="true" />
@@ -129,8 +124,15 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* RIGHT — form (60%) */}
-                <div className="md:col-span-3 flex flex-col gap-4">
+                {/* RIGHT — stretched to match the left column's height (5 contact
+                    cards make it taller); logo pinned top, form pinned bottom */}
+                <div className="flex flex-col gap-4 md:justify-between">
+                    <img
+                        src="/images/logo-animated.svg"
+                        alt="SL Studio"
+                        style={{width:"100%",display:"block",mixBlendMode:"lighten"}}
+                    />
+
                     {sent ? (
                         <div className="flex flex-col items-center justify-center gap-4 text-center p-8 rounded-2xl" style={{border:"1px solid rgba(201,168,76,0.2)",background:"rgba(201,168,76,0.04)",minHeight:"320px"}}>
                             <div className="w-16 h-16 rounded-full flex items-center justify-center" style={{background:"rgba(201,168,76,0.1)",border:"1px solid rgba(201,168,76,0.3)"}}>
