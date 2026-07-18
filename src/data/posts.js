@@ -1,5 +1,14 @@
 export const posts = [
     {
+        href: "/blog/master-suno-track-for-spotify",
+        image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
+        category: "Mastering",
+        date: "2026-07-18",
+        lang: "en",
+        title: "How to Master a Suno Track for Spotify",
+        excerpt: "Your Suno track sounds quiet and thin on Spotify? A working mastering engineer breaks down loudness normalization, AI artifacts and a step-by-step fix — with real settings from the studio."
+    },
+    {
         href: "/pl/blog/suno-guide-2026",
         image: "/images/blog-suno-cover-pl.webp",
         category: "Tutorials",
