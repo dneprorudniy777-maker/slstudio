@@ -349,6 +349,14 @@ export default function VoviousReviewPage() {
                   body: "The Gearspace consensus on the time tools: keep stretches small and stay in the lower half of the range, and the edits stay clean — several users also find the time grid easier to read than RePitch's. Nobody claims it beats dedicated elastic-audio engines on big stretches, and neither will I.",
                 },
                 {
+                  title: "Sound On Sound agrees on the basics",
+                  body: "The Sound On Sound review lands on the same points as the forums: Vovious is not a real-time auto-tuner but a graphical editor, it runs standalone, as a regular VST3/AU/AAX plugin or as ARA2, and the reviewer called the whole experience very smooth in Cubase. When a print magazine and half a dozen forums independently say the same thing, it is usually true.",
+                },
+                {
+                  title: "A fair pricing counterpoint",
+                  body: "VI-Control users make a fair point: feature-for-feature, Vovious competes with Melodyne Assistant, which lists at a similar $249 — not with the $699 Studio version, which adds polyphonic editing. True. But Assistant does not have the color view, the note preview or the sibilance tools, and those are exactly the features that make Vovious fast. Compare workflows, not just price tags.",
+                },
+                {
                   title: "The most balanced summary I found",
                   body: "Side-by-side comparisons keep landing the same way: Vovious retains the feeling of a person singing, while heavily edited Melodyne takes drift toward the recognizable 'Melodyne sound'. The seasoned KVR crowd adds the right caveat — it is a young product, so run the full 30-day trial in your own DAW before paying, especially if that DAW is Logic.",
                 },
@@ -600,6 +608,23 @@ export default function VoviousReviewPage() {
                 you commit. In some chains a de-esser before Vovious helps; in
                 others it is better after. The important part is not to assume —
                 check.
+              </li>
+              <li>
+                →{" "}
+                <strong className="text-white">Try the harmony trick.</strong>{" "}
+                Duplicate a tuned lead, move the copy to the harmony note and
+                push the formant shift a little. Gearspace users build whole
+                background stacks this way from a single take — and after
+                trying it, I get why. Keep it for stacks, not for the lead.
+              </li>
+              <li>
+                →{" "}
+                <strong className="text-white">
+                  Use the standalone app for quick jobs.
+                </strong>{" "}
+                A client sent one flat phrase? You do not have to open the
+                whole session. Drop the file into the standalone version, fix
+                it, bounce it back — two minutes, no DAW.
               </li>
             </ul>
           </div>
