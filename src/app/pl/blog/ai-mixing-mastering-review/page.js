@@ -664,7 +664,7 @@ export default function AIMixingReviewPagePL() {
               ocena i konkretna cena, bez zobowiązań.
             </p>
             <a
-              href="/pl/free-track-preview"
+              href="/pl/darmowy-fragment"
               className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
               style={{ backgroundColor: "#C9A84C" }}
             >

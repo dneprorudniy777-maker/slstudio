@@ -575,7 +575,7 @@ export default function MixingMasteringCost2026PagePL() {
             <p>
               Pełna przejrzystość, skoro cały ten artykuł jest o cenach: w{" "}
               <a
-                href="/mixing-mastering"
+                href="/pl/miks-i-mastering"
                 className="underline decoration-white/30 hover:decoration-white text-white/85"
               >
                 SL Studio
@@ -714,7 +714,7 @@ export default function MixingMasteringCost2026PagePL() {
               mastering $89, bez ukrytych dopłat za ścieżki.
             </p>
             <a
-              href="/mixing-mastering"
+              href="/pl/miks-i-mastering"
               className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
               style={{ backgroundColor: "#C9A84C" }}
             >
