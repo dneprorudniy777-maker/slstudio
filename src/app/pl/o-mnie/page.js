@@ -234,11 +234,30 @@ export default function OMniePage() {
                         style={{ background: "radial-gradient(ellipse at 85% 40%, rgba(201,168,76,0.10), transparent 65%)" }}
                     />
                     <div className="pointer-events-none absolute right-10 bottom-8 hidden lg:flex items-end gap-1.5" aria-hidden="true">
+                        <style>{`
+                            @keyframes eqPulse {
+                                0%, 100% { transform: scaleY(0.45); opacity: 0.55; }
+                                50% { transform: scaleY(1); opacity: 1; }
+                            }
+                            .eq-bar {
+                                transform-origin: bottom;
+                                animation: eqPulse 3s ease-in-out infinite;
+                                will-change: transform;
+                            }
+                            @media (prefers-reduced-motion: reduce) {
+                                .eq-bar { animation: none; }
+                            }
+                        `}</style>
                         {[38, 62, 26, 74, 48, 88, 34, 66, 22, 54, 42, 78].map((h, i) => (
                             <span
                                 key={i}
-                                className="w-1.5 rounded-full"
-                                style={{ height: `${h}px`, background: "rgba(201,168,76,0.18)" }}
+                                className="w-1.5 rounded-full eq-bar"
+                                style={{
+                                    height: `${h}px`,
+                                    background: "rgba(201,168,76,0.18)",
+                                    animationDelay: `${(i % 7) * 0.23}s`,
+                                    animationDuration: `${2.4 + (i % 5) * 0.45}s`,
+                                }}
                             />
                         ))}
                     </div>

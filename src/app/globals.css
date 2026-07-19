@@ -4,11 +4,12 @@
    instead of hardcoding #C9A84C in components. --color-gold-bright is
    the hover/accent variant (same value as legacy .text-gold2). */
 @theme {
-  --color-gold: #C9A84C;
+  --color-gold: #c9a84c;
   --color-gold-bright: #f5b942;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
 }
@@ -56,7 +57,11 @@ html {
   left: -5%;
   width: 65%;
   height: 150%;
-  background: radial-gradient(ellipse at center, rgba(245, 185, 66, 0.16) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245, 185, 66, 0.16) 0%,
+    transparent 70%
+  );
   filter: blur(30px);
   pointer-events: none;
 }
@@ -104,12 +109,21 @@ html {
 }
 
 @keyframes heroWave {
-  0%, 100% { transform: scaleY(0.5);  opacity: 0.4; }
-  50%      { transform: scaleY(0.95); opacity: 0.9; }
+  0%,
+  100% {
+    transform: scaleY(0.5);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scaleY(0.95);
+    opacity: 0.9;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-wave span { animation: none; }
+  .hero-wave span {
+    animation: none;
+  }
 }
 
 /* How It Works: step numbers flare up one by one as cards reveal */
@@ -118,14 +132,25 @@ html {
 }
 
 @keyframes stepFlare {
-  0%   { text-shadow: none; }
-  45%  { color: #f5b942; text-shadow: 0 0 18px rgba(245, 185, 66, 0.75); }
-  100% { color: rgba(201, 168, 76, 0.6); text-shadow: 0 0 6px rgba(201, 168, 76, 0.25); }
+  0% {
+    text-shadow: none;
+  }
+  45% {
+    color: #f5b942;
+    text-shadow: 0 0 18px rgba(245, 185, 66, 0.75);
+  }
+  100% {
+    color: rgba(201, 168, 76, 0.6);
+    text-shadow: 0 0 6px rgba(201, 168, 76, 0.25);
+  }
 }
 
 /* Gold CTA buttons: lift + glow on hover, press on click */
 .btn-gold {
-  transition: transform 0.15s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.25s ease,
+    opacity 0.2s ease;
 }
 
 .btn-gold:hover {
@@ -138,17 +163,28 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-on-scroll.is-visible .step-number { animation: none; }
-  .btn-gold, .btn-gold:hover, .btn-gold:active { transform: none; }
+  .animate-on-scroll.is-visible .step-number {
+    animation: none;
+  }
+  .btn-gold,
+  .btn-gold:hover,
+  .btn-gold:active {
+    transform: none;
+  }
 }
 
 body {
   background: #1b1b1b;
   font-family: inherit;
-  color: rgba(255, 255, 255, 0.80);
+  color: rgba(255, 255, 255, 0.8);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -176,7 +212,9 @@ h1, h2, h3, h4, h5, h6 {
     color: #f5b942;
   }
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: var(--font-playfair), serif;
 }
 @keyframes fadeInUp {
@@ -198,8 +236,13 @@ h1, h2, h3 {
   animation: fadeInUp 0.5s ease forwards;
 }
 @keyframes cardGlow {
-  0%, 100% { box-shadow: 0 0 12px rgba(201,168,76,0.07); }
-  50% { box-shadow: 0 0 28px rgba(201,168,76,0.18); }
+  0%,
+  100% {
+    box-shadow: 0 0 12px rgba(201, 168, 76, 0.07);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(201, 168, 76, 0.18);
+  }
 }
 .hero-card {
   animation: cardGlow 4s ease-in-out infinite;
