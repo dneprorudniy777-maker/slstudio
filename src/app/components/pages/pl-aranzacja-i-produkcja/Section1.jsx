@@ -1,4 +1,5 @@
 import Link from "next/link";
+import StepFlareCard from "../../common/StepFlareCard";
 
 const includedItems = [
   "Aranżacja zbudowana wokół melodii, akordów lub demo",
@@ -138,19 +139,20 @@ export default function Section1() {
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step) => (
-            <div
+          {steps.map((step, i) => (
+            <StepFlareCard
               key={step.number}
-              className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02]"
+              delay={i * 120}
+              className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02] h-full"
             >
-              <span className="text-3xl font-bold text-[#C9A84C]/30">
+              <span className="step-number text-3xl font-bold text-[#C9A84C]/30">
                 {step.number}
               </span>
               <h3 className="text-white font-semibold mt-4">{step.title}</h3>
               <p className="text-white/60 text-sm leading-relaxed mt-2">
                 {step.text}
               </p>
-            </div>
+            </StepFlareCard>
           ))}
         </div>
       </div>
