@@ -25,9 +25,9 @@ export default function SunoBanner({ labels }) {
                 onMouseLeave={() => setHovered(false)}
                 className="flex items-center gap-4 rounded-2xl px-5 py-4 md:px-6"
                 style={{
-                    background: "linear-gradient(90deg, rgba(201,168,76,0.10), rgba(201,168,76,0.02) 55%, rgba(201,168,76,0.08))",
-                    border: hovered ? "1px solid rgba(201,168,76,0.5)" : "1px solid rgba(201,168,76,0.22)",
-                    boxShadow: hovered ? "0 0 30px rgba(201,168,76,0.10)" : "none",
+                    background: "rgba(255,255,255,0.02)",
+                    border: hovered ? "1px solid rgba(201,168,76,0.4)" : "1px solid rgba(255,255,255,0.06)",
+                    boxShadow: hovered ? "0 0 30px rgba(201,168,76,0.08)" : "none",
                     transition: "border 0.2s ease, box-shadow 0.2s ease",
                 }}
             >
