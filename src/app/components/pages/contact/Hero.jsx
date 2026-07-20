@@ -71,8 +71,51 @@ const contacts = [
   },
 ];
 
+function FaqItem({ q, a, open, onToggle }) {
+  return (
+    <div
+      className="rounded-2xl overflow-hidden"
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        border: open
+          ? "1px solid rgba(201,168,76,0.35)"
+          : "1px solid rgba(255,255,255,0.05)",
+        transition: "border 0.2s ease",
+      }}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={open}
+        className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
+      >
+        <span className="font-medium text-white text-[15px]">{q}</span>
+        <ChevronDown
+          className="w-4 h-4 flex-shrink-0 transition-transform duration-300"
+          style={{
+            color: "#C9A84C",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+          }}
+        />
+      </button>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateRows: open ? "1fr" : "0fr",
+          transition: "grid-template-rows 0.3s ease",
+        }}
+      >
+        <div style={{ overflow: "hidden" }}>
+          <p className="text-white/65 text-sm leading-relaxed px-5 pb-4">{a}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Hero() {
   const [sent, setSent] = useState(false);
+  const [openFaq, setOpenFaq] = useState(0);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [service, setService] = useState("");
@@ -150,121 +193,129 @@ export default function Hero() {
         <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
       </div>
 
-      <div className="mb-1 md:translate-y-[61px] relative z-20">
+      <div className="mb-1 md:translate-y-[25px] relative z-20">
         <LangSwitch active="en" enHref="/contact" plHref="/pl/kontakt" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch">
+      <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch md:-translate-y-[36px]">
         {/* LEFT */}
         <div className="flex flex-col gap-3">
-          <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
+          <span className="relative md:top-2 text-white/30 text-xs uppercase tracking-[0.3em]">
             Get In Touch
           </span>
-          <div className="relative">
+          <div className="relative md:top-2">
             <div className="hero-title-glow" aria-hidden="true" />
             <h1 className="relative text-4xl md:text-6xl font-semibold tracking-wide">
               {"Let's "}
               <span className="text-gold2">Work</span>
             </h1>
           </div>
-          <p className="text-white/65 text-[15px] leading-relaxed max-w-sm">
+          <p className="relative md:top-4 text-white/65 text-[15px] leading-relaxed max-w-sm">
             Send me your track. Tell me what you are going for, and I will tell
             you what I can do with it — no charge, no obligation, just an honest
             listen.
           </p>
 
-          <p className="text-white/25 text-xs uppercase tracking-widest mt-1 mb-1">
+          <p className="relative md:top-2 text-white/25 text-xs uppercase tracking-widest mt-1 mb-1">
             Connect directly
           </p>
 
-          <div className="flex flex-col gap-3 flex-1 md:justify-between">
-          {contacts.map((c, i) => (
-            <a
-              key={i}
-              href={c.href}
-              target={c.href.startsWith("mailto") ? undefined : "_blank"}
-              className={`group flex items-center gap-3 ${c.highlight ? "p-4" : "p-3.5"} rounded-xl transition-all duration-200`}
-              style={
-                c.highlight
-                  ? {
-                      border: "1px solid rgba(201,168,76,0.4)",
-                      background: "rgba(201,168,76,0.08)",
-                      boxShadow: "0 0 22px rgba(201,168,76,0.14)",
-                    }
-                  : {
-                      border: "1px solid rgba(255,255,255,0.05)",
-                      background: "rgba(255,255,255,0.015)",
-                    }
-              }
-              onMouseEnter={(e) => {
-                e.currentTarget.style.border = "1px solid rgba(201,168,76,0.5)";
-                e.currentTarget.style.background = "rgba(201,168,76,0.08)";
-                e.currentTarget.style.transform = "translateX(3px)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.border = c.highlight
-                  ? "1px solid rgba(201,168,76,0.4)"
-                  : "1px solid rgba(255,255,255,0.05)";
-                e.currentTarget.style.background = c.highlight
-                  ? "rgba(201,168,76,0.08)"
-                  : "rgba(255,255,255,0.015)";
-                e.currentTarget.style.transform = "translateX(0)";
+          <div className="flex flex-col gap-3 flex-1 md:justify-between md:pt-7">
+            {contacts.map((c, i) => (
+              <a
+                key={i}
+                href={c.href}
+                target={c.href.startsWith("mailto") ? undefined : "_blank"}
+                className={`group flex items-center gap-3 ${c.highlight ? "p-4" : "p-3.5"} rounded-xl transition-all duration-200`}
+                style={
+                  c.highlight
+                    ? {
+                        border: "1px solid rgba(201,168,76,0.4)",
+                        background: "rgba(201,168,76,0.08)",
+                        boxShadow: "0 0 22px rgba(201,168,76,0.14)",
+                      }
+                    : {
+                        border: "1px solid rgba(255,255,255,0.05)",
+                        background: "rgba(255,255,255,0.015)",
+                      }
+                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.border =
+                    "1px solid rgba(201,168,76,0.5)";
+                  e.currentTarget.style.background = "rgba(201,168,76,0.08)";
+                  e.currentTarget.style.transform = "translateX(3px)";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.border = c.highlight
+                    ? "1px solid rgba(201,168,76,0.4)"
+                    : "1px solid rgba(255,255,255,0.05)";
+                  e.currentTarget.style.background = c.highlight
+                    ? "rgba(201,168,76,0.08)"
+                    : "rgba(255,255,255,0.015)";
+                  e.currentTarget.style.transform = "translateX(0)";
+                }}
+              >
+                <div
+                  className={`${c.highlight ? "w-10 h-10" : "w-9 h-9"} rounded-lg flex items-center justify-center flex-shrink-0`}
+                  style={{
+                    background: "rgba(201,168,76,0.1)",
+                    color: "#C9A84C",
+                  }}
+                >
+                  {c.icon}
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <p
+                      className={`${c.highlight ? "text-white" : "text-white/75"} font-medium text-sm`}
+                    >
+                      {c.label}
+                    </p>
+                    {c.sub && (
+                      <span
+                        className="text-xs px-2 py-0.5 rounded-full"
+                        style={{
+                          background: "rgba(201,168,76,0.15)",
+                          color: "#C9A84C",
+                        }}
+                      >
+                        {c.sub}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-white/50 text-xs truncate">{c.handle}</p>
+                </div>
+                <ArrowUpRight
+                  className="w-4 h-4 flex-shrink-0 opacity-30 group-hover:opacity-70 transition"
+                  style={{ color: "#C9A84C" }}
+                />
+              </a>
+            ))}
+
+            <div
+              className="p-4 rounded-xl"
+              style={{
+                border: "1px solid rgba(255,255,255,0.05)",
+                background: "rgba(255,255,255,0.02)",
               }}
             >
-              <div
-                className={`${c.highlight ? "w-10 h-10" : "w-9 h-9"} rounded-lg flex items-center justify-center flex-shrink-0`}
-                style={{ background: "rgba(201,168,76,0.1)", color: "#C9A84C" }}
-              >
-                {c.icon}
+              <div className="flex items-center gap-2 mb-1">
+                <div
+                  className="w-2 h-2 rounded-full flex-shrink-0"
+                  style={{
+                    background: "#C9A84C",
+                    boxShadow: "0 0 6px rgba(201,168,76,0.6)",
+                    animation: "pulse 2s ease-in-out infinite",
+                  }}
+                />
+                <p className="text-white/40 text-xs uppercase tracking-widest">
+                  Response time
+                </p>
               </div>
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <p className={`${c.highlight ? "text-white" : "text-white/75"} font-medium text-sm`}>{c.label}</p>
-                  {c.sub && (
-                    <span
-                      className="text-xs px-2 py-0.5 rounded-full"
-                      style={{
-                        background: "rgba(201,168,76,0.15)",
-                        color: "#C9A84C",
-                      }}
-                    >
-                      {c.sub}
-                    </span>
-                  )}
-                </div>
-                <p className="text-white/50 text-xs truncate">{c.handle}</p>
-              </div>
-              <ArrowUpRight
-                className="w-4 h-4 flex-shrink-0 opacity-30 group-hover:opacity-70 transition"
-                style={{ color: "#C9A84C" }}
-              />
-            </a>
-          ))}
-
-          <div
-            className="p-4 rounded-xl"
-            style={{
-              border: "1px solid rgba(255,255,255,0.05)",
-              background: "rgba(255,255,255,0.02)",
-            }}
-          >
-            <div className="flex items-center gap-2 mb-1">
-              <div
-                className="w-2 h-2 rounded-full flex-shrink-0"
-                style={{
-                  background: "#C9A84C",
-                  boxShadow: "0 0 6px rgba(201,168,76,0.6)",
-                  animation: "pulse 2s ease-in-out infinite",
-                }}
-              />
-              <p className="text-white/40 text-xs uppercase tracking-widest">
-                Response time
+              <p className="text-white/60 text-sm">
+                Usually within 24 hours. Telegram is fastest.
               </p>
             </div>
-            <p className="text-white/60 text-sm">
-              Usually within 24 hours. Telegram is fastest.
-            </p>
-          </div>
           </div>
         </div>
 
@@ -272,26 +323,35 @@ export default function Hero() {
                     cards make it taller); compact column header pinned top, form pinned bottom */}
         <div className="flex flex-col gap-4 md:justify-between">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-7 self-start md:mt-[28px]">
+            <div className="flex items-center gap-12 self-start md:mt-[28px]">
               <div
-                className="relative w-16 h-16 md:w-[68px] md:h-[68px] flex-shrink-0 rounded-full overflow-hidden"
+                className="relative w-16 h-16 md:w-[100px] md:h-[100px] flex-shrink-0 rounded-full overflow-hidden"
                 style={{
                   border: "1px solid rgba(201,168,76,0.35)",
                   boxShadow: "0 0 20px rgba(201,168,76,0.12)",
                 }}
               >
                 <img
-                  src="/images/Serhii-Lazariev.webp"
+                  src="/images/Serhii-Lazariev-round-avatar.png"
                   alt="Serhii Lazariev"
-                  className="w-full h-full object-cover"
-                  style={{ transform: "scale(2.2)", transformOrigin: "49% 31%" }}
+                  className="w-full h-full object-contain"
                 />
               </div>
-              <div>
-                <h2 className="text-3xl md:text-4xl font-semibold tracking-wide leading-none text-white">
+              <div className="relative text-left">
+                <div className="hero-title-glow" aria-hidden="true" />
+                <div
+                  className="pointer-events-none absolute -inset-x-8 -inset-y-5 rounded-full"
+                  aria-hidden="true"
+                  style={{
+                    background:
+                      "radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.045) 42%, transparent 74%)",
+                    filter: "blur(20px)",
+                  }}
+                />
+                <h2 className="relative whitespace-nowrap text-3xl md:text-[52px] font-semibold tracking-wide leading-none text-white">
                   Send Your <span className="text-gold2">Track</span>
                 </h2>
-                <p className="text-white/45 text-sm mt-2">
+                <p className="text-white/45 text-sm md:text-base mt-2">
                   Usually replies within 24 hours
                 </p>
               </div>
@@ -299,10 +359,11 @@ export default function Hero() {
             {/* Track-prep guide card */}
             <a
               href="/blog/how-to-export-stems-for-mixing"
-              className="group flex items-center gap-3 p-3.5 rounded-xl transition-all duration-200"
+              className="group relative md:-top-1 flex items-center gap-3 p-4 md:mt-2 rounded-xl transition-all duration-200"
               style={{
-                border: "1px solid rgba(201,168,76,0.3)",
-                background: "rgba(201,168,76,0.05)",
+                border: "1px solid rgba(201,168,76,0.4)",
+                background: "rgba(201,168,76,0.08)",
+                boxShadow: "0 0 22px rgba(201,168,76,0.14)",
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.border = "1px solid rgba(201,168,76,0.5)";
@@ -310,13 +371,13 @@ export default function Hero() {
                 e.currentTarget.style.transform = "translateX(3px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.border = "1px solid rgba(201,168,76,0.3)";
-                e.currentTarget.style.background = "rgba(201,168,76,0.05)";
+                e.currentTarget.style.border = "1px solid rgba(201,168,76,0.4)";
+                e.currentTarget.style.background = "rgba(201,168,76,0.08)";
                 e.currentTarget.style.transform = "translateX(0)";
               }}
             >
               <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0"
+                className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{ background: "rgba(201,168,76,0.1)", color: "#C9A84C" }}
               >
                 <FileText className="w-5 h-5" />
@@ -365,7 +426,7 @@ export default function Hero() {
             </div>
           ) : (
             <div
-              className="rounded-2xl p-6 md:pb-3 flex flex-col gap-4"
+              className="rounded-2xl p-6 md:pt-4 md:pb-3 flex flex-col gap-4"
               style={{
                 border: "1px solid rgba(255,255,255,0.06)",
                 background: "rgba(255,255,255,0.015)",
@@ -591,7 +652,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Mini FAQ */}
+      {/* Mini FAQ — same card and accordion behavior as the homepage */}
       <div className="mt-20">
         <div className="mb-8">
           <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
@@ -601,7 +662,7 @@ export default function Hero() {
             Common questions
           </h2>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 max-w-3xl">
           {[
             {
               q: "What language can I write in?",
@@ -616,51 +677,61 @@ export default function Hero() {
               a: "Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB.",
             },
           ].map((f, i) => (
-            <details
-              key={i}
-              className="rounded-xl group"
-              style={{
-                border: "1px solid rgba(255,255,255,0.06)",
-                background: "rgba(255,255,255,0.02)",
-              }}
-            >
-              <summary className="flex items-center justify-between gap-3 p-4 cursor-pointer text-white text-sm font-medium list-none [&::-webkit-details-marker]:hidden">
-                {f.q}
-                <ChevronDown
-                  className="w-4 h-4 flex-shrink-0 opacity-40 transition-transform group-open:rotate-180"
-                  style={{ color: "#C9A84C" }}
-                />
-              </summary>
-              <p className="px-4 pb-4 text-white/50 text-sm leading-relaxed">
-                {f.a}
-              </p>
-            </details>
+            <FaqItem
+              key={f.q}
+              q={f.q}
+              a={f.a}
+              open={openFaq === i}
+              onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
+            />
           ))}
         </div>
       </div>
 
-      {/* CTA — mirror of the "Prefer to talk first?" card on the free preview page */}
-      <div
-        className="mt-20 rounded-2xl p-8 text-center flex flex-col items-center gap-4"
-        style={{
-          background: "rgba(201,168,76,0.06)",
-          border: "1px solid rgba(201,168,76,0.2)",
-        }}
-      >
-        <h3 className="text-xl font-semibold text-white">
-          Don't feel like writing?
-        </h3>
-        <p className="text-white/50 text-sm max-w-md">
-          Just send the track instead — you'll get a free preview, honest notes
-          and an exact price. Then we talk.
-        </p>
-        <a
-          href="/free-track-preview"
-          className="inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
-          style={{ backgroundColor: "#C9A84C" }}
+      {/* CTA — compact mirror of the final card on the free preview page */}
+      <div className="mt-20 py-4">
+        <div
+          className="rounded-2xl p-10 text-center flex flex-col items-center gap-6 max-w-2xl mx-auto relative overflow-hidden"
+          style={{
+            background: "rgba(201,168,76,0.06)",
+            border: "1px solid rgba(201,168,76,0.2)",
+          }}
         >
-          Send a Track →
-        </a>
+          <div
+            style={{
+              position: "absolute",
+              top: "-60px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "300px",
+              height: "200px",
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%)",
+              pointerEvents: "none",
+            }}
+          />
+          <h3 className="text-xl font-semibold text-white relative z-10">
+            Don't feel like writing?
+          </h3>
+          <p className="text-white/50 text-sm max-w-md relative z-10">
+            Just send the track instead — you'll get a free preview, honest
+            notes and an exact price. Then we talk.
+          </p>
+          <a
+            href="/free-track-preview"
+            className="btn-gold relative z-10 inline-flex items-center gap-2 text-black font-semibold px-8 py-4 rounded-xl hover:opacity-90 transition text-sm"
+            style={{
+              background:
+                "linear-gradient(135deg, #C9A84C 0%, #e8c97a 50%, #C9A84C 100%)",
+              backgroundSize: "200% auto",
+              color: "#161616",
+              boxShadow: "0 0 30px rgba(201,168,76,0.25)",
+            }}
+          >
+            Send a Track →
+          </a>
+        </div>
       </div>
     </section>
   );
