@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 import StepFlareCard from "../../common/StepFlareCard";
+import ScrollFaders from "../../common/ScrollFaders";
 
 const SERVICE_FROM_QUERY = {
   mastering: "Mastering Only",
@@ -662,29 +663,34 @@ export default function Hero() {
             Common questions
           </h2>
         </div>
-        <div className="flex flex-col gap-3 max-w-3xl">
-          {[
-            {
-              q: "What language can I write in?",
-              a: "English, Polish, Ukrainian or Russian — whichever is comfortable. I will reply in the same language.",
-            },
-            {
-              q: "What should I put in the message?",
-              a: "A few sentences is enough: the genre, what you have recorded (a demo, stems, a finished mix) and what bothers you about the current sound. A link to a reference track is welcome.",
-            },
-            {
-              q: "My file is too big — how do I send it?",
-              a: "Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB.",
-            },
-          ].map((f, i) => (
-            <FaqItem
-              key={f.q}
-              q={f.q}
-              a={f.a}
-              open={openFaq === i}
-              onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
-            />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-16 items-start">
+          <div className="flex flex-col gap-3 max-w-3xl">
+            {[
+              {
+                q: "What language can I write in?",
+                a: "English, Polish, Ukrainian or Russian — whichever is comfortable. I will reply in the same language.",
+              },
+              {
+                q: "What should I put in the message?",
+                a: "A few sentences is enough: the genre, what you have recorded (a demo, stems, a finished mix) and what bothers you about the current sound. A link to a reference track is welcome.",
+              },
+              {
+                q: "My file is too big — how do I send it?",
+                a: "Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB.",
+              },
+            ].map((f, i) => (
+              <FaqItem
+                key={f.q}
+                q={f.q}
+                a={f.a}
+                open={openFaq === i}
+                onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
+              />
+            ))}
+          </div>
+          <div className="hidden md:flex justify-evenly items-center h-full">
+            <ScrollFaders />
+          </div>
         </div>
       </div>
 

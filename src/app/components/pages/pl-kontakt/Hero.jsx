@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import LangSwitch from "../../common/LangSwitch";
 import StepFlareCard from "../../common/StepFlareCard";
+import ScrollFaders from "../../common/ScrollFaders";
 
 const SERVICE_FROM_QUERY = {
   mastering: "Tylko mastering",
@@ -663,29 +664,34 @@ export default function Hero() {
             Częste pytania
           </h2>
         </div>
-        <div className="flex flex-col gap-3 max-w-3xl">
-          {[
-            {
-              q: "W jakim języku mogę pisać?",
-              a: "Po polsku, angielsku, ukraińsku albo rosyjsku — jak Ci wygodniej. Odpowiem w tym samym języku.",
-            },
-            {
-              q: "Co napisać w wiadomości?",
-              a: "Wystarczy kilka zdań: gatunek, co masz nagrane (demo, stemy, gotowy miks) i co Ci przeszkadza w obecnym brzmieniu. Link do utworu referencyjnego jest mile widziany.",
-            },
-            {
-              q: "Mam duży plik — jak go wysłać?",
-              a: "Nie przez formularz — wrzuć link do Google Drive, Dropbox albo WeTransfer. Możesz też skorzystać ze strony darmowego preview, tam jest uploader do 100 MB.",
-            },
-          ].map((f, i) => (
-            <FaqItem
-              key={f.q}
-              q={f.q}
-              a={f.a}
-              open={openFaq === i}
-              onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
-            />
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-16 items-start">
+          <div className="flex flex-col gap-3 max-w-3xl">
+            {[
+              {
+                q: "W jakim języku mogę pisać?",
+                a: "Po polsku, angielsku, ukraińsku albo rosyjsku — jak Ci wygodniej. Odpowiem w tym samym języku.",
+              },
+              {
+                q: "Co napisać w wiadomości?",
+                a: "Wystarczy kilka zdań: gatunek, co masz nagrane (demo, stemy, gotowy miks) i co Ci przeszkadza w obecnym brzmieniu. Link do utworu referencyjnego jest mile widziany.",
+              },
+              {
+                q: "Mam duży plik — jak go wysłać?",
+                a: "Nie przez formularz — wrzuć link do Google Drive, Dropbox albo WeTransfer. Możesz też skorzystać ze strony darmowego preview, tam jest uploader do 100 MB.",
+              },
+            ].map((f, i) => (
+              <FaqItem
+                key={f.q}
+                q={f.q}
+                a={f.a}
+                open={openFaq === i}
+                onToggle={() => setOpenFaq(openFaq === i ? -1 : i)}
+              />
+            ))}
+          </div>
+          <div className="hidden md:flex justify-evenly items-center h-full">
+            <ScrollFaders />
+          </div>
         </div>
       </div>
 
