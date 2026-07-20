@@ -150,14 +150,14 @@ export default function Hero() {
         <style>{`@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:0.6}}`}</style>
       </div>
 
-      <div className="mb-1 md:mt-6">
+      <div className="mb-1 md:translate-y-[61px] relative z-20">
         <LangSwitch active="pl" enHref="/contact" plHref="/pl/kontakt" />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-8 md:gap-10 items-stretch">
         {/* LEFT — justify-between spreads the blocks so the column's top and
                     bottom line up exactly with the form column on the right */}
-        <div className="flex flex-col gap-3 md:justify-between">
+        <div className="flex flex-col gap-3">
           <span className="text-white/30 text-xs uppercase tracking-[0.3em]">
             Kontakt
           </span>
@@ -173,16 +173,17 @@ export default function Hero() {
             z tym zrobić — bez opłat, bez zobowiązań, po prostu szczery odsłuch.
           </p>
 
-          <p className="text-white/25 text-xs uppercase tracking-widest mt-4 mb-1">
+          <p className="text-white/25 text-xs uppercase tracking-widest mt-1 mb-1">
             Napisz bezpośrednio
           </p>
 
+          <div className="flex flex-col gap-3 flex-1 md:justify-between">
           {contacts.map((c, i) => (
             <a
               key={i}
               href={c.href}
               target={c.href.startsWith("mailto") ? undefined : "_blank"}
-              className={`group flex items-center gap-3 ${c.highlight ? "p-3.5" : "p-2.5"} rounded-xl transition-all duration-200`}
+              className={`group flex items-center gap-3 ${c.highlight ? "p-4" : "p-3.5"} rounded-xl transition-all duration-200`}
               style={
                 c.highlight
                   ? {
@@ -211,7 +212,7 @@ export default function Hero() {
               }}
             >
               <div
-                className={`${c.highlight ? "w-9 h-9" : "w-8 h-8"} rounded-lg flex items-center justify-center flex-shrink-0`}
+                className={`${c.highlight ? "w-10 h-10" : "w-9 h-9"} rounded-lg flex items-center justify-center flex-shrink-0`}
                 style={{ background: "rgba(201,168,76,0.1)", color: "#C9A84C" }}
               >
                 {c.icon}
@@ -241,7 +242,7 @@ export default function Hero() {
           ))}
 
           <div
-            className="p-3.5 rounded-xl"
+            className="p-4 rounded-xl"
             style={{
               border: "1px solid rgba(255,255,255,0.05)",
               background: "rgba(255,255,255,0.02)",
@@ -264,13 +265,14 @@ export default function Hero() {
               Zwykle w ciągu 24 godzin. Najszybciej przez Telegram.
             </p>
           </div>
+          </div>
         </div>
 
         {/* RIGHT — stretched to match the left column's height (5 contact
                     cards make it taller); compact column header pinned top, form pinned bottom */}
         <div className="flex flex-col gap-4 md:justify-between">
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-5 self-start md:mt-[34px]">
+            <div className="flex items-center gap-7 self-start md:mt-[28px]">
               <div
                 className="relative w-16 h-16 md:w-[68px] md:h-[68px] flex-shrink-0 rounded-full overflow-hidden"
                 style={{
@@ -281,7 +283,8 @@ export default function Hero() {
                 <img
                   src="/images/Serhii-Lazariev.webp"
                   alt="Serhii Lazariev"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
+                  style={{ transform: "scale(2.2)", transformOrigin: "49% 31%" }}
                 />
               </div>
               <div>
