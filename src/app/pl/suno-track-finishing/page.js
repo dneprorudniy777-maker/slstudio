@@ -364,7 +364,7 @@ export default function SunoTrackFinishingPagePL() {
               )}
               <h3 className="text-xl font-semibold mb-1">{p.name}</h3>
               <div
-                className="step-number text-3xl font-semibold mb-2"
+                className="step-number price-number text-3xl font-semibold mb-2"
                 style={{ color: "#C9A84C" }}
               >
                 {p.price}

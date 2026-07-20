@@ -153,7 +153,7 @@ function ServiceCard({
           {title}
         </p>
         <p
-          className="step-number text-xl font-semibold"
+          className="step-number price-number text-xl font-semibold"
           style={{ color: "#C9A84C" }}
         >
           {price}

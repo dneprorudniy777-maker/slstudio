@@ -8,6 +8,15 @@ export default function StepFlareCard({
   className = "",
   style,
 }) {
+  const keepPriceVisible = (event) => {
+    const target = event.target;
+    if (!target.classList?.contains("price-number")) return;
+
+    target.style.animation = "none";
+    target.style.color = "#DDB85B";
+    target.style.textShadow = "0 0 6px rgba(201, 168, 76, 0.22)";
+  };
+
   const replayStepFlare = (event) => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
@@ -25,7 +34,12 @@ export default function StepFlareCard({
 
   return (
     <ScrollReveal delay={delay}>
-      <div className={className} style={style} onMouseEnter={replayStepFlare}>
+      <div
+        className={className}
+        style={style}
+        onMouseEnter={replayStepFlare}
+        onAnimationEnd={keepPriceVisible}
+      >
         {children}
       </div>
     </ScrollReveal>

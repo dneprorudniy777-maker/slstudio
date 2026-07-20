@@ -100,7 +100,7 @@ export default function Section1() {
               <div className="mt-5 flex flex-col gap-5">
                 <div>
                   <p className="text-white/70 text-sm">Mastering only</p>
-                  <p className="step-number text-3xl font-semibold text-[#f5b942]">
+                  <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     from $39
                   </p>
                 </div>
@@ -109,7 +109,7 @@ export default function Section1() {
                   <p className="text-white/70 text-sm">
                     Mixing &amp; mastering
                   </p>
-                  <p className="step-number text-3xl font-semibold text-[#f5b942]">
+                  <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                     from $89
                   </p>
                 </div>

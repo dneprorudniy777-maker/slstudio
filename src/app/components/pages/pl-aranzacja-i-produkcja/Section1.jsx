@@ -100,7 +100,7 @@ export default function Section1() {
               <p className="text-white/70 text-sm mt-5">
                 Aranżacja i produkcja
               </p>
-              <p className="step-number text-3xl font-semibold text-[#f5b942]">
+              <p className="step-number price-number text-3xl font-semibold text-[#f5b942]">
                 od 119 USD
               </p>
             </div>

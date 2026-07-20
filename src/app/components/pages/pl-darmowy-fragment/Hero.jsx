@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { uploadPresigned } from "@vercel/blob/client";
 import HeroWave from "../../common/HeroWave";
+import StepFlareCard from "../../common/StepFlareCard";
 import LangSwitch from "../../common/LangSwitch";
 import { faqItems } from "./faqData";
 
@@ -621,9 +622,10 @@ export default function Hero() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {steps.map(({ icon: Icon, step, title, text }) => (
-              <div
+            {steps.map(({ icon: Icon, step, title, text }, i) => (
+              <StepFlareCard
                 key={step}
+                delay={i * 120}
                 className="rounded-2xl p-6 flex flex-col gap-4 h-full"
                 style={{
                   border: "1px solid rgba(255,255,255,0.05)",
@@ -639,7 +641,7 @@ export default function Hero() {
                     <Icon className="w-5 h-5" style={{ color: "#C9A84C" }} />
                   </div>
                   <span
-                    className="text-3xl font-bold"
+                    className="step-number text-3xl font-bold"
                     style={{ color: "rgba(201,168,76,0.25)" }}
                   >
                     {step}
@@ -651,7 +653,7 @@ export default function Hero() {
                     {text}
                   </p>
                 </div>
-              </div>
+              </StepFlareCard>
             ))}
           </div>
         </section>
