@@ -16,12 +16,16 @@ export const faqItems = [
     a: "Yes. For arrangement projects, the free preview may be a short production concept or an initial assessment, depending on the material and how much new instrumentation is required.",
   },
   {
+    q: "Which file formats can I send?",
+    a: "WAV, MP3, AIFF, FLAC, OGG, M4A, MP4, WebM, or a ZIP of stems — up to 100 MB per upload. Anything outside that list is rejected by the uploader itself, so if your format or size is not covered, paste a link instead.",
+  },
+  {
     q: "My file is too big to upload. What should I do?",
     a: "Paste a Google Drive, Dropbox or WeTransfer link instead. Files uploaded directly to the form can be up to 100 MB.",
   },
   {
     q: "What happens to my file?",
-    a: "Your file is stored privately and cannot be opened without a signed link. It is used only to prepare your preview and is deleted after the preview request is completed.",
+    a: "It goes straight into a private store — there is no public URL and nobody can open it without a signed link. I use it only to prepare your preview. It is never published, never passed to anyone else, and never used to train AI models. I delete it within 30 days of your request, or sooner if you ask.",
   },
   {
     q: "How long does it take?",

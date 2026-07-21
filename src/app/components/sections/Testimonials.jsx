@@ -6,8 +6,8 @@ import ScrollReveal from "../common/ScrollReveal";
 // default) so the section can be reused on the Polish home via a labels prop.
 const TESTI_META = [
     { name: "Andrii Holikov", photo: "/images/review-andrei3.webp" },
-    { name: "Oleg Volos", photo: "/images/review-luis2.webp" },
-    { name: "Olga Lalum", photo: "/images/review-anna2.webp" },
+    { name: "Oleg Volos", photo: "/images/review-oleg.webp" },
+    { name: "Olga Lalum", photo: "/images/review-olga.webp" },
 ];
 
 const DEFAULTS = {

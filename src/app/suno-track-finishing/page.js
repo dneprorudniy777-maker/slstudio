@@ -181,6 +181,14 @@ const faq = [
     a: "If you generated the track on a paid Suno plan, Suno's terms allow commercial use. I work on the audio itself — the rights side stays between you and Suno, and it's straightforward on paid tiers.",
   },
   {
+    q: "Will anyone know the track was made with AI?",
+    a: "Not from me. Your files go into a private store, they are never published, and I don't post before/after examples or use your track as a portfolio piece unless you specifically say I can. Whether you tell your listeners the song started in Suno is entirely your call — nothing in the finished files announces it.",
+  },
+  {
+    q: "Will the finished track pass DistroKid or Spotify moderation?",
+    a: "Finishing improves your odds a lot — most AI tracks that get bounced are rejected for obviously synthetic, artefact-heavy audio, and that is exactly what this work removes. But I won't pretend anyone can guarantee moderation: distributors set their own rules, those rules on AI-assisted music are still changing, and the final call is always theirs. What I can promise is that your track won't be the one rejected for sounding cheap.",
+  },
+  {
     q: "What loudness do you master to?",
     a: "I master for how the track actually behaves on Spotify, Apple Music and YouTube after their normalization — not to a magic LUFS number. Competitive loudness without crushing the life out of the mix.",
   },

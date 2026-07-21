@@ -16,12 +16,16 @@ export const faqItems = [
     a: "Tak. Przy projektach aranżacyjnych bezpłatna odpowiedź może mieć formę krótkiej koncepcji produkcyjnej albo wstępnej oceny — zależnie od materiału i liczby nowych partii, które trzeba stworzyć.",
   },
   {
+    q: "Jakie formaty plików mogę wysłać?",
+    a: "WAV, MP3, AIFF, FLAC, OGG, M4A, MP4, WebM albo ZIP ze stemami — do 100 MB na plik. Wszystko spoza tej listy jest odrzucane już na etapie wysyłki, więc jeśli Twój format lub rozmiar się nie mieści, wklej zamiast tego link.",
+  },
+  {
     q: "Plik jest za duży. Co mam zrobić?",
     a: "Wklej link z Dysku Google, Dropboxa albo WeTransfer. Pliki przesyłane bezpośrednio przez formularz mogą mieć maksymalnie 100 MB.",
   },
   {
     q: "Co dzieje się z moim plikiem?",
-    a: "Plik trafia do prywatnej przestrzeni i nie można go otworzyć bez podpisanego linku. Używam go wyłącznie do przygotowania fragmentu i usuwam po zakończeniu zgłoszenia.",
+    a: "Plik trafia od razu do prywatnej przestrzeni — nie ma publicznego adresu i nikt nie otworzy go bez podpisanego linku. Używam go wyłącznie do przygotowania fragmentu. Nigdy nie jest publikowany, nikomu nieprzekazywany ani nieużywany do trenowania modeli AI. Usuwam go w ciągu 30 dni od zgłoszenia albo wcześniej, jeśli o to poprosisz.",
   },
   {
     q: "Ile trzeba czekać?",

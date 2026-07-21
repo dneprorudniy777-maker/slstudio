@@ -181,6 +181,14 @@ const faq = [
     a: "Jeśli wygenerowano utwór na płatnym planie Suno, warunki Suno pozwalają na użytek komercyjny. Ja pracuję nad samym audio — kwestia praw zostaje między Tobą a Suno i na płatnych planach jest prosta.",
   },
   {
+    q: "Czy ktoś się dowie, że utwór powstał z AI?",
+    a: "Ode mnie nie. Twoje pliki trafiają do prywatnej przestrzeni, nigdy nie są publikowane, a przykładów „przed i po” ani wpisów portfolio z Twoim utworem nie publikuję bez Twojej wyraźnej zgody. To, czy powiesz słuchaczom, że piosenka zaczęła się w Suno, zależy wyłącznie od Ciebie — gotowe pliki tego nie zdradzają.",
+  },
+  {
+    q: "Czy gotowy utwór przejdzie moderację DistroKid albo Spotify?",
+    a: "Dokończenie mocno zwiększa szanse — większość utworów z AI odrzucanych jest za wyraźnie sztuczne, pełne artefaktów brzmienie, a właśnie to tutaj znika. Nie będę jednak udawał, że ktokolwiek może zagwarantować moderację: dystrybutorzy ustalają własne zasady, przepisy dotyczące muzyki tworzonej z AI wciąż się zmieniają, a ostateczna decyzja zawsze należy do nich. Mogę obiecać tylko tyle: Twój utwór nie zostanie odrzucony za to, że brzmi tanio.",
+  },
+  {
     q: "Do jakiej głośności robisz mastering?",
     a: "Masteruję pod to, jak utwór faktycznie zachowuje się na Spotify, Apple Music i YouTube po ich normalizacji — a nie pod magiczną liczbę LUFS. Konkurencyjna głośność bez zgniatania życia z miksu.",
   },
