@@ -649,6 +649,7 @@ export default function Hero() {
             {steps.map(({ icon: Icon, step, title, text }, i) => (
               <StepFlareCard
                 key={step}
+                tilt
                 delay={i * 120}
                 className="rounded-2xl p-6 flex flex-col gap-4 h-full"
                 style={{

@@ -1,6 +1,6 @@
 "use client";
 import { Shield, Clock, RefreshCw, Headphones } from "lucide-react";
-import ScrollReveal from "../common/ScrollReveal";
+import StepFlareCard from "../common/StepFlareCard";
 
 // Icons/numbering/highlight stay here; text is pulled from labels (English
 // default) so the section can be reused on the Polish home via a labels prop.
@@ -49,20 +49,6 @@ const DEFAULTS = {
 export default function HowItWorks({ labels }) {
   const t = { ...DEFAULTS, ...labels };
   const steps = STEP_META.map((m, i) => ({ ...m, ...t.steps[i] }));
-
-  // Restart the existing flare animation every time the pointer enters a
-  // card. Resetting the inline animation and forcing one reflow makes the
-  // replay reliable even after ScrollReveal has already run stepFlare once.
-  const replayStepFlare = (event) => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const number = event.currentTarget.querySelector(".step-number");
-    if (!number) return;
-
-    number.style.animation = "none";
-    void number.offsetWidth;
-    number.style.animation = "stepFlare 0.9s ease-out both";
-  };
 
   return (
     <section className="py-12 border-t border-white/5">
@@ -117,25 +103,26 @@ export default function HowItWorks({ labels }) {
             { icon: Icon, step, title, time, description, highlight, badge },
             i,
           ) => (
-            <ScrollReveal key={i} delay={i * 120}>
-              <div
-                className="how-step-card rounded-2xl p-6 flex flex-col gap-4 relative h-full"
-                onMouseEnter={replayStepFlare}
-                style={
-                  highlight
-                    ? {
-                        border: "1px solid rgba(201,168,76,0.4)",
-                        background: "rgba(255,255,255,0.03)",
-                        borderLeft: "3px solid #C9A84C",
-                        boxShadow: "0 0 20px rgba(201,168,76,0.06)",
-                      }
-                    : {
-                        border: "1px solid rgba(255,255,255,0.05)",
-                        background: "rgba(255,255,255,0.03)",
-                        borderLeft: "3px solid rgba(201,168,76,0.4)",
-                      }
-                }
-              >
+            <StepFlareCard
+              key={i}
+              tilt
+              delay={i * 120}
+              className="how-step-card rounded-2xl p-6 flex flex-col gap-4 relative h-full"
+              style={
+                highlight
+                  ? {
+                      border: "1px solid rgba(201,168,76,0.4)",
+                      background: "rgba(255,255,255,0.03)",
+                      borderLeft: "3px solid #C9A84C",
+                      boxShadow: "0 0 20px rgba(201,168,76,0.06)",
+                    }
+                  : {
+                      border: "1px solid rgba(255,255,255,0.05)",
+                      background: "rgba(255,255,255,0.03)",
+                      borderLeft: "3px solid rgba(201,168,76,0.4)",
+                    }
+              }
+            >
                 {badge && (
                   <div
                     style={{
@@ -193,8 +180,7 @@ export default function HowItWorks({ labels }) {
                     {description}
                   </p>
                 </div>
-              </div>
-            </ScrollReveal>
+            </StepFlareCard>
           ),
         )}
       </div>

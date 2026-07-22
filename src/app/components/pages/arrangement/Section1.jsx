@@ -179,6 +179,7 @@ export default function Section1() {
           {steps.map((step, i) => (
             <StepFlareCard
               key={step.number}
+              tilt
               delay={i * 120}
               className="rounded-2xl p-6 border border-white/[0.06] bg-white/[0.02] h-full"
             >

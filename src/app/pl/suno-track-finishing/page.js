@@ -5,6 +5,8 @@ import HeroWave from "../../components/common/HeroWave";
 import StepFlareCard from "../../components/common/StepFlareCard";
 import BeforeAfterSunoPl from "../../components/sections/BeforeAfterSunoPl";
 import FAQ from "../../components/sections/FAQ";
+import ImpactStats from "../../components/common/ImpactStats";
+import SpotlightCard from "../../components/common/SpotlightCard";
 import { Bot, Gauge, Waves, Layers } from "lucide-react";
 
 const SITE = "https://www.slstudio.pro";
@@ -301,31 +303,25 @@ export default function SunoTrackFinishingPagePL() {
 
       {/* Pain points */}
       <section className="container py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
-          {[
+        <ImpactStats
+          items={[
             {
-              n: "7 mln",
-              t: "utworów AI powstaje każdego dnia — sam Suno generuje cały katalog Spotify co dwa tygodnie",
+              value: "7 mln",
+              caption:
+                "utworów AI powstaje każdego dnia — sam Suno generuje cały katalog Spotify co dwa tygodnie",
             },
             {
-              n: "44%",
-              t: "całej nowej muzyki trafiającej na streamingi jest już generowane przez AI",
+              value: "44%",
+              caption:
+                "całej nowej muzyki trafiającej na streamingi jest już generowane przez AI",
             },
             {
-              n: "<3%",
-              t: "czasu słuchania przypada utworom AI — wyróżnia się tylko to, co brzmi po ludzku",
+              value: "<3%",
+              caption:
+                "czasu słuchania przypada utworom AI — wyróżnia się tylko to, co brzmi po ludzku",
             },
-          ].map((s) => (
-            <div key={s.n}>
-              <p className="step-number text-3xl md:text-4xl font-semibold text-[#f5b942]">
-                {s.n}
-              </p>
-              <p className="text-white/55 text-sm leading-relaxed mt-1">
-                {s.t}
-              </p>
-            </div>
-          ))}
-        </div>
+          ]}
+        />
         <p className="text-white/70 text-sm mb-12">
           Żeby Twój utwór trafił do tych 3%, musi brzmieć jak płyta —
           właśnie temu służy dopracowanie.
@@ -334,10 +330,11 @@ export default function SunoTrackFinishingPagePL() {
           Dlaczego surowe utwory z Suno nie są traktowane poważnie
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          {pains.map((p) => (
-            <div
+          {pains.map((p, i) => (
+            <SpotlightCard
               key={p.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#C9A84C]/35"
+              delay={i * 120}
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 h-full"
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
@@ -350,7 +347,7 @@ export default function SunoTrackFinishingPagePL() {
               </div>
               <h3 className="font-semibold mb-2">{p.title}</h3>
               <p className="text-white/55 text-sm leading-relaxed">{p.text}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -460,6 +457,7 @@ export default function SunoTrackFinishingPagePL() {
           {steps.map((s, i) => (
             <StepFlareCard
               key={s.num}
+              tilt
               delay={i * 120}
               className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 h-full"
             >

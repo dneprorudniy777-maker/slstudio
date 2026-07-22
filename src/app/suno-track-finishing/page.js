@@ -5,6 +5,8 @@ import HeroWave from "../components/common/HeroWave";
 import StepFlareCard from "../components/common/StepFlareCard";
 import BeforeAfterSuno from "../components/sections/BeforeAfterSuno";
 import FAQ from "../components/sections/FAQ";
+import ImpactStats from "../components/common/ImpactStats";
+import SpotlightCard from "../components/common/SpotlightCard";
 import { Bot, Gauge, Waves, Layers } from "lucide-react";
 
 const SITE = "https://www.slstudio.pro";
@@ -302,31 +304,25 @@ export default function SunoTrackFinishingPage() {
 
       {/* Pain points */}
       <section className="container py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-4">
-          {[
+        <ImpactStats
+          items={[
             {
-              n: "7 million",
-              t: "AI tracks are generated every day — Suno alone outputs Spotify's entire catalog every two weeks",
+              value: "7 million",
+              caption:
+                "AI tracks are generated every day — Suno alone outputs Spotify's entire catalog every two weeks",
             },
             {
-              n: "44%",
-              t: "of all new music uploaded to streaming services is already AI-generated",
+              value: "44%",
+              caption:
+                "of all new music uploaded to streaming services is already AI-generated",
             },
             {
-              n: "<3%",
-              t: "of listening time goes to AI tracks — only songs that sound human stand out",
+              value: "<3%",
+              caption:
+                "of listening time goes to AI tracks — only songs that sound human stand out",
             },
-          ].map((s) => (
-            <div key={s.n}>
-              <p className="step-number text-3xl md:text-4xl font-semibold text-[#f5b942]">
-                {s.n}
-              </p>
-              <p className="text-white/55 text-sm leading-relaxed mt-1">
-                {s.t}
-              </p>
-            </div>
-          ))}
-        </div>
+          ]}
+        />
         <p className="text-white/70 text-sm mb-12">
           For your track to land in those 3%, it has to sound like a record
           — that's exactly what finishing is for.
@@ -335,10 +331,11 @@ export default function SunoTrackFinishingPage() {
           Why raw Suno tracks don't get taken seriously
         </h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          {pains.map((p) => (
-            <div
+          {pains.map((p, i) => (
+            <SpotlightCard
               key={p.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors duration-300 hover:border-[#C9A84C]/35"
+              delay={i * 120}
+              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 h-full"
             >
               <div
                 className="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
@@ -351,7 +348,7 @@ export default function SunoTrackFinishingPage() {
               </div>
               <h3 className="font-semibold mb-2">{p.title}</h3>
               <p className="text-white/55 text-sm leading-relaxed">{p.text}</p>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </section>
@@ -460,6 +457,7 @@ export default function SunoTrackFinishingPage() {
           {steps.map((s, i) => (
             <StepFlareCard
               key={s.num}
+              tilt
               delay={i * 120}
               className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 h-full"
             >
