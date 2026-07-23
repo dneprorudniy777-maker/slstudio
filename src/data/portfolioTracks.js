@@ -152,132 +152,12 @@ export const portfolioSections = [
         "cover": false
       },
       {
-        "slug": "shestistrunnaya-lyubov",
-        "title": "\u0428\u0435\u0441\u0442\u0438\u0441\u0442\u0440\u0443\u043d\u043d\u0430\u044f \u043b\u044e\u0431\u043e\u0432\u044c",
-        "file": "/audio/portfolio/shestistrunnaya-lyubov.mp3",
-        "duration": "3:42",
-        "captionEn": "Bleuler Band \u2014 Dniprorudne",
-        "captionPl": "Bleuler Band \u2014 Dniprorudne",
-        "band": "BB",
-        "cover": false
-      },
-      {
-        "slug": "idillia-adrenalin",
-        "title": "\u0410\u0434\u0440\u0435\u043d\u0430\u043b\u0438\u043d",
-        "file": "/audio/portfolio/idillia-adrenalin.mp3",
-        "duration": "4:07",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-golos-serdtsa",
-        "title": "\u0413\u043e\u043b\u043e\u0441 \u0421\u0435\u0440\u0434\u0446\u0430",
-        "file": "/audio/portfolio/idillia-golos-serdtsa.mp3",
-        "duration": "3:57",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-dodomu",
-        "title": "\u0414\u043e\u0434\u043e\u043c\u0443",
-        "file": "/audio/portfolio/idillia-dodomu.mp3",
-        "duration": "3:58",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-doloni",
-        "title": "\u0414\u043e\u043b\u043e\u043d\u0456",
-        "file": "/audio/portfolio/idillia-doloni.mp3",
-        "duration": "3:36",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-druzya",
-        "title": "\u0414\u0440\u0443\u0437\u044c\u044f",
-        "file": "/audio/portfolio/idillia-druzya.mp3",
-        "duration": "4:23",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-ya-znayu-ty-lyubish",
-        "title": "\u042f \u0437\u043d\u0430\u044e \u0442\u044b \u043b\u044e\u0431\u0438\u0448\u044c",
-        "file": "/audio/portfolio/idillia-ya-znayu-ty-lyubish.mp3",
-        "duration": "3:28",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-u-moii-golovi",
-        "title": "\u0423 \u043c\u043e\u0457\u0439 \u0433\u043e\u043b\u043e\u0432\u0456",
-        "file": "/audio/portfolio/idillia-u-moii-golovi.mp3",
-        "duration": "5:00",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "idillia-mosty",
-        "title": "\u041c\u043e\u0441\u0442\u0438",
-        "file": "/audio/portfolio/idillia-mosty.mp3",
-        "duration": "3:22",
-        "captionEn": "Idillia band \u2014 Vasylivka",
-        "captionPl": "Zesp\u00f3\u0142 Idillia \u2014 Wasyliwka",
-        "band": "ID",
-        "cover": false
-      },
-      {
-        "slug": "paradox-mir-lyubvi",
-        "title": "\u041c\u0438\u0440 \u043b\u044e\u0431\u0432\u0438",
-        "file": "/audio/portfolio/paradox-mir-lyubvi.mp3",
-        "duration": "4:15",
-        "captionEn": "Paradox band \u2014 Warsaw",
-        "captionPl": "Zesp\u00f3\u0142 Paradox \u2014 Warszawa",
-        "band": "PX",
-        "cover": false
-      },
-      {
-        "slug": "paradox-svit-v-vogni",
-        "title": "\u0421\u0432\u0456\u0442 \u0432 \u0432\u043e\u0433\u043d\u0456",
-        "file": "/audio/portfolio/paradox-svit-v-vogni.mp3",
-        "duration": "4:48",
-        "captionEn": "Paradox band \u2014 Warsaw",
-        "captionPl": "Zesp\u00f3\u0142 Paradox \u2014 Warszawa",
-        "band": "PX",
-        "cover": false
-      },
-      {
-        "slug": "paradox-kholodno-navkolo",
-        "title": "\u0425\u043e\u043b\u043e\u0434\u043d\u043e \u043d\u0430\u0432\u043a\u043e\u043b\u043e",
-        "file": "/audio/portfolio/paradox-kholodno-navkolo.mp3",
-        "duration": "4:51",
-        "captionEn": "Paradox band \u2014 Warsaw",
-        "captionPl": "Zesp\u00f3\u0142 Paradox \u2014 Warszawa",
-        "band": "PX",
-        "cover": false
-      },
-      {
         "slug": "za-okrainoy",
         "title": "\u0417\u0430 \u043e\u043a\u0440\u0430\u0438\u043d\u043e\u0439",
         "file": "/audio/portfolio/za-okrainoy.mp3",
         "duration": "3:16",
-        "captionEn": "Alexey Krepak",
-        "captionPl": "Alexey Krepak",
+        "captionEn": "",
+        "captionPl": "",
         "band": null,
         "cover": false
       },
@@ -286,8 +166,8 @@ export const portfolioSections = [
         "title": "\u0421\u043e\u043d\u0446\u0435",
         "file": "/audio/portfolio/sontse.mp3",
         "duration": "3:37",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
+        "captionEn": "",
+        "captionPl": "",
         "band": null,
         "cover": false
       },
@@ -296,8 +176,18 @@ export const portfolioSections = [
         "title": "\u0427\u0435\u0440\u0432\u043e\u043d\u0438\u0439 \u0441\u043d\u0456\u0433",
         "file": "/audio/portfolio/chervonyi-snih.mp3",
         "duration": "3:53",
-        "captionEn": "Alexey Krepak",
-        "captionPl": "Alexey Krepak",
+        "captionEn": "",
+        "captionPl": "",
+        "band": null,
+        "cover": false
+      },
+      {
+        "slug": "shestistrunnaya-lyubov",
+        "title": "\u0428\u0435\u0441\u0442\u0438\u0441\u0442\u0440\u0443\u043d\u043d\u0430\u044f \u043b\u044e\u0431\u043e\u0432\u044c",
+        "file": "/audio/portfolio/shestistrunnaya-lyubov.mp3",
+        "duration": "3:42",
+        "captionEn": "",
+        "captionPl": "",
         "band": null,
         "cover": false
       },
@@ -306,8 +196,8 @@ export const portfolioSections = [
         "title": "\u041a\u043e\u0444\u0435 \u0430\u0440\u043e\u043c\u0430\u0442",
         "file": "/audio/portfolio/kofe-aromat.mp3",
         "duration": "3:26",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
+        "captionEn": "",
+        "captionPl": "",
         "band": null,
         "cover": false
       },
@@ -319,7 +209,7 @@ export const portfolioSections = [
         "captionEn": "",
         "captionPl": "",
         "band": null,
-        "cover": true
+        "cover": false
       },
       {
         "slug": "sos-dun-terrien",
@@ -356,76 +246,6 @@ export const portfolioSections = [
         "captionEn": "Temperatura band \u2014 Dniprorudne",
         "captionPl": "Zesp\u00f3\u0142 Temperatura \u2014 Dniprorudne",
         "band": "TM",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-smert",
-        "title": "\u0421\u043c\u0435\u0440\u0442\u044c",
-        "file": "/audio/portfolio/red-sky-smert.mp3",
-        "duration": "4:03",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-black-sun",
-        "title": "Black Sun",
-        "file": "/audio/portfolio/red-sky-black-sun.mp3",
-        "duration": "3:55",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-cold-dawn",
-        "title": "Cold Dawn",
-        "file": "/audio/portfolio/red-sky-cold-dawn.mp3",
-        "duration": "4:21",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-edge-of-the-sky",
-        "title": "Edge of the Sky",
-        "file": "/audio/portfolio/red-sky-edge-of-the-sky.mp3",
-        "duration": "4:36",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-iron-pulse",
-        "title": "Iron Pulse",
-        "file": "/audio/portfolio/red-sky-iron-pulse.mp3",
-        "duration": "3:32",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-red-flag",
-        "title": "Red Flag",
-        "file": "/audio/portfolio/red-sky-red-flag.mp3",
-        "duration": "3:43",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
-        "cover": false
-      },
-      {
-        "slug": "red-sky-syndrome",
-        "title": "Red Sky Syndrome",
-        "file": "/audio/portfolio/red-sky-syndrome.mp3",
-        "duration": "5:42",
-        "captionEn": "Red Sky Syndrome \u2014 Warsaw",
-        "captionPl": "Red Sky Syndrome \u2014 Warszawa",
-        "band": "RS",
         "cover": false
       }
     ]
@@ -488,93 +308,6 @@ export const portfolioSections = [
     ]
   },
   {
-    "genre": "pop",
-    "labelEn": "Pop",
-    "labelPl": "Pop",
-    "tracks": [
-      {
-        "slug": "virus-lyubov",
-        "title": "\u0412\u0438\u0440\u0443\u0441-\u043b\u044e\u0431\u043e\u0432\u044c",
-        "file": "/audio/portfolio/virus-lyubov.mp3",
-        "duration": "3:08",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "zhemchuga",
-        "title": "\u0416\u0435\u043c\u0447\u0443\u0433\u0430",
-        "file": "/audio/portfolio/zhemchuga.mp3",
-        "duration": "3:23",
-        "captionEn": "Dniprorudne",
-        "captionPl": "Dniprorudne",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "iyul",
-        "title": "\u0418\u044e\u043b\u044c",
-        "file": "/audio/portfolio/iyul.mp3",
-        "duration": "3:22",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "pod-dozhdyom",
-        "title": "\u041f\u043e\u0434 \u0434\u043e\u0436\u0434\u0451\u043c",
-        "file": "/audio/portfolio/pod-dozhdyom.mp3",
-        "duration": "3:18",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "rytsar",
-        "title": "\u0420\u044b\u0446\u0430\u0440\u044c",
-        "file": "/audio/portfolio/rytsar.mp3",
-        "duration": "3:10",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "fevral",
-        "title": "\u0424\u0435\u0432\u0440\u0430\u043b\u044c",
-        "file": "/audio/portfolio/fevral.mp3",
-        "duration": "2:19",
-        "captionEn": "Oleg Volos",
-        "captionPl": "Oleg Volos",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "tuchka",
-        "title": "\u0422\u0443\u0447\u043a\u0430",
-        "file": "/audio/portfolio/tuchka.mp3",
-        "duration": "3:12",
-        "captionEn": "Alexey Kulikov",
-        "captionPl": "Alexey Kulikov",
-        "band": null,
-        "cover": false
-      },
-      {
-        "slug": "proshchay",
-        "title": "\u041f\u0440\u043e\u0449\u0430\u0439",
-        "file": "/audio/portfolio/proshchay.mp3",
-        "duration": "4:28",
-        "captionEn": "Alexey Kulikov",
-        "captionPl": "Alexey Kulikov",
-        "band": null,
-        "cover": false
-      }
-    ]
-  },
-  {
     "genre": "classical",
     "labelEn": "Classics",
     "labelPl": "Klasyka",
@@ -587,7 +320,7 @@ export const portfolioSections = [
         "captionEn": "",
         "captionPl": "",
         "band": null,
-        "cover": true
+        "cover": false
       },
       {
         "slug": "olga",
@@ -649,39 +382,39 @@ export const portfolioBands = [
     "name": "Temperatura",
     "cityEn": "Dniprorudne",
     "cityPl": "Dniprorudne",
-    "textEn": "Jazz-leaning band from Dniprorudne. No studio recordings survived \u2014 these songs were restored from old live videos.",
-    "textPl": "Zesp\u00f3\u0142 jazzowy z Dniprorudnego. \u017badne nagrania studyjne nie przetrwa\u0142y \u2014 te utwory zosta\u0142y odtworzone ze starych nagra\u0144 wideo."
+    "textEn": "Two guitarists who swore they’d never share a stage — one a rhythm player, one a soloist — proved themselves wrong over five or six years. When a proper drummer was hard to find, Rodion switched from guitar to drums and the band discovered jazz instrumentals. The songs in this archive were born in good company, with no hurry.",
+    "textPl": "Dwóch gitarzystów, którzy przysięgali, że nigdy nie staną razem na scenie — jeden rytmiczny, drugi solowy — przez sześć lat udowodnili sobie coś przeciwnego. Gdy zabrakło perkusisty, Rodion przesiadł się z gitary za perkusję i zespół odkrył jazzowy instrumental. Utwory z tego archiwum powstały w dobrym towarzystwie, bez pośpiechu."
   },
   {
     "badge": "BB",
     "name": "Bleuler Band",
     "cityEn": "Dniprorudne",
     "cityPl": "Dniprorudne",
-    "textEn": "Blues band from Dniprorudne.",
-    "textPl": "Zesp\u00f3\u0142 bluesowy z Dniprorudnego."
+    "textEn": "Alexey Popov had closed himself off from the world — but he let Serhii in. For several months they played through the night: pots of tea, no sleep, two musicians fusing ideas into something neither could make alone. Alexey wrote the songs; Serhii brought the guitar. The recordings nearly vanished. Years later, Serhii brought them back.",
+    "textPl": "Aleksiej Popow zamknął się na świat — ale wpuścił Siergieja. Przez kilka miesięcy grali do późna w nocy: herbata, bez snu, dwóch muzyków łączących pomysły w coś, czego żaden z nich nie mógłby stworzyć sam. Aleksiej pisał piosenki; Siergiej przynosił gitarę. Nagrania prawie zaginęły. Lata później Siergiej je wskrzesił."
   },
   {
     "badge": "ID",
     "name": "Idillia",
     "cityEn": "Vasylivka",
     "cityPl": "Wasyliwka",
-    "textEn": "Rock band from Vasylivka. We played together for almost 20 years.",
-    "textPl": "Zesp\u00f3\u0142 rockowy z Wasyliwki. Grali\u015bmy razem prawie 20 lat."
+    "textEn": "Since 1999. Twenty years of concerts across every village in the region, biker rallies, festivals — word spread without mobile phones, without the internet, town by town. Idillia disbanded and reunited more than once, but never truly stopped. The band that defined most of Serhii’s musical life.",
+    "textPl": "Od 1999 roku. Dwadzieścia lat koncertów w każdej wiosce regionu, zloty bikersów, festiwale — sława rozchodziła się bez telefonów, bez internetu, wieś po wsi. Idillia rozpadała się i odnawiała nie raz, ale nigdy naprawdę nie przestała istnieć. Zespół, który ukształtował większość muzycznego życia Siergieja."
   },
   {
     "badge": "PX",
     "name": "Paradox",
     "cityEn": "Warsaw",
     "cityPl": "Warszawa",
-    "textEn": "Rock band from Warsaw.",
-    "textPl": "Zesp\u00f3\u0142 rockowy z Warszawy."
+    "textEn": "Warsaw rock with no room for covers — every song written by frontman Artem. Concerts, a growing crowd of loyal friends, and the kind of energy that only comes from a band playing exclusively its own music.",
+    "textPl": "Warszawski rock bez miejsca na covery — każda piosenka napisana przez frontmana Artema. Koncerty, rosnące grono wiernych przyjaciół i energia, która pojawia się tylko wtedy, gdy zespół gra wyłącznie własną muzykę."
   },
   {
     "badge": "RS",
     "name": "Red Sky Syndrome",
     "cityEn": "Warsaw",
     "cityPl": "Warszawa",
-    "textEn": "Metal band from Warsaw.",
-    "textPl": "Zesp\u00f3\u0142 metalowy z Warszawy."
+    "textEn": "Warsaw metal founded and driven by Andrii — the songwriter, arranger and engine of the project. Igor on drums brings raw energy that electrifies every room. Serhii handles the solo guitars and arrangements. Different vocalists, always evolving, never standing still.",
+    "textPl": "Warszawski metal założony i napędzany przez Andrija — kompozytora, aranżera i siły napędowej projektu. Igor za perkusją wnosi energię, która elektryzuje każdą salę. Siergiej odpowiada za gitary solowe i aranżacje. Różni wokaliści, ciągła ewolucja, żadnego stania w miejscu."
   }
 ];
