@@ -342,15 +342,13 @@ export default function OMniePage() {
               jaką wykonałem.
             </p>
           </div>
-          <a
-            href="https://dneprorudniy777.wixsite.com/serhii_lazariev"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/pl/portfolio"
             className="inline-block mt-6 text-sm transition hover:opacity-80"
             style={{ color: "#C9A84C" }}
           >
-            Archiwum znajdziesz tutaj →
-          </a>
+            Posłuchaj odrestaurowanych piosenek →
+          </Link>
         </div>
       </section>
 
