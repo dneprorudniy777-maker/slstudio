@@ -41,7 +41,7 @@ export const metadata = {
     "affordable mixing and mastering",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-07-11",
   },
 };
 
@@ -263,7 +263,7 @@ export default function MixingMasteringCost2026Page() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Business"
-          date="July 20, 2026"
+          date="July 11, 2026"
           title="How Much Does Mixing and Mastering Cost in 2026?"
           description="Every price tier on the market - from $5 AI tools to $5,000 boutique mixes - explained by a working engineer, with the honest answer on what you actually get for your money."
         />

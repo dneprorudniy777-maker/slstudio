@@ -37,7 +37,7 @@ const DEFAULTS = {
     },
     {
       q: "How do payments work?",
-      a: "50% upfront, the rest after you approve the result. PayPal and bank transfer \u2014 working with clients worldwide.",
+      a: "30% upfront once we agree on the scope, the remaining 70% after you approve the final result. Wise or regular bank transfer (Polish IBAN \u2014 PLN, EUR or USD); card payments on the site are coming soon.",
     },
   ],
 };

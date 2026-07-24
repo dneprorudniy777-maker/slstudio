@@ -38,7 +38,7 @@ export const metadata = {
     "коррекция вокала плагин",
   ],
   other: {
-    "article:published_time": "2026-07-17",
+    "article:published_time": "2026-05-15",
   },
 };
 
@@ -94,7 +94,7 @@ export default function MelodyneAlternativesPageRu() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Техника"
-          date="17 июля 2026"
+          date="15 мая 2026"
           title="Лучшие альтернативы Melodyne в 2026: чем её реально заменить?"
           description="Поищите альтернативу Melodyne — и найдёте кучу списков, где половина плагинов её не заменяет. Я разобрал, кто на самом деле конкурирует с Melodyne, а кто просто написал «питч-коррекция» на коробке."
         />

@@ -49,7 +49,7 @@ export const metadata = {
     "eksport \u015bcie\u017cek do miksu",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-07-02",
   },
 };
 
@@ -205,7 +205,7 @@ export default function HowToExportStemsForMixingPagePl() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Produkcja"
-          date="20 lipca 2026"
+          date="2 lipca 2026"
           title="Jak wyeksportować stemy i przygotować utwór do miksu"
           description="Praktyczny przewodnik bez gatekeepingu: formaty, headroom, stemy z każdego DAW, nazewnictwo plików i wysyłka - plus co zrobić, kiedy masz tylko nagranie z telefonu. W środku darmowa jednostronicowa checklista PDF."
         />

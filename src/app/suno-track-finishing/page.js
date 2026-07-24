@@ -201,6 +201,10 @@ const faq = [
     q: "What if my track needs less work than I think?",
     a: "Then I'll say so. After the free preview you get an honest scope: sometimes a $39 master is genuinely all a track needs. You never pay for work your song doesn't need.",
   },
+  {
+    q: "How does payment work?",
+    a: "30% upfront once we agree on the scope after the free preview, the remaining 70% when you approve the final result. Wise or bank transfer (Polish IBAN); card payments on the site are coming soon.",
+  },
 ];
 
 export default function SunoTrackFinishingPage() {

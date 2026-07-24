@@ -41,7 +41,7 @@ export const metadata = {
     "tani mix i mastering online",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-07-11",
   },
 };
 
@@ -264,7 +264,7 @@ export default function MixingMasteringCost2026PagePL() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Biznes"
-          date="20 lipca 2026"
+          date="11 lipca 2026"
           title="Ile kosztuje mix i mastering w 2026?"
           description="Ka\u017cdy poziom cenowy na rynku - od narz\u0119dzi AI za 20 z\u0142 po butikowe miksy za tysi\u0105ce - wyja\u015bniony przez praktykuj\u0105cego realizatora, z uczciw\u0105 odpowiedzi\u0105, co naprawd\u0119 dostajesz za swoje pieni\u0105dze."
         />

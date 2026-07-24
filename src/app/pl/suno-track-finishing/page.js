@@ -201,6 +201,10 @@ const faq = [
     q: "A jeśli mój utwór potrzebuje mniej pracy, niż myślę?",
     a: "To Ci to powiem. Po darmowym fragmencie dostajesz uczciwy zakres prac: czasem master za 39$ to naprawdę wszystko, czego utwór potrzebuje. Nigdy nie płacisz za pracę, której Twoja piosenka nie potrzebuje.",
   },
+  {
+    q: "Jak wygląda płatność?",
+    a: "30% zaliczki po ustaleniu zakresu prac po darmowym fragmencie, pozostałe 70% po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą na stronie już wkrótce.",
+  },
 ];
 
 export default function SunoTrackFinishingPagePL() {

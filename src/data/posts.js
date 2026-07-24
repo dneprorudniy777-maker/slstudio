@@ -23,7 +23,7 @@ export const posts = [
     href: "/blog/how-to-export-stems-for-mixing",
     image: "/images/blog/stems/stems-cover.jpg",
     category: "Production",
-    date: "2026-07-20",
+    date: "2026-07-02",
     lang: "en",
     title: "How to Export Stems and Prepare Your Track for Mixing",
     excerpt:
@@ -33,7 +33,7 @@ export const posts = [
     href: "/pl/blog/how-to-export-stems-for-mixing",
     image: "/images/blog/stems/stems-cover-pl.jpg",
     category: "Produkcja",
-    date: "2026-07-20",
+    date: "2026-07-02",
     lang: "pl",
     title: "Jak wyeksportować stemy i przygotować utwór do miksu",
     excerpt:
@@ -43,7 +43,7 @@ export const posts = [
     href: "/blog/how-to-export-stems-for-mixing-ru",
     image: "/images/blog/stems/stems-cover-ru.jpg",
     category: "Продакшен",
-    date: "2026-07-20",
+    date: "2026-07-02",
     lang: "ru",
     title: "Как экспортировать стемы и подготовить трек к сведению",
     excerpt:
@@ -53,7 +53,7 @@ export const posts = [
     href: "/blog/ai-vs-human-mastering-blind-test",
     image: "/images/blog/blind-test/blind-test-cover.jpg",
     category: "Production",
-    date: "2026-07-20",
+    date: "2026-06-22",
     lang: "en",
     title: "AI vs Human Mastering: Can You Hear the Difference?",
     excerpt:
@@ -63,7 +63,7 @@ export const posts = [
     href: "/pl/blog/ai-vs-human-mastering-blind-test",
     image: "/images/blog/blind-test/blind-test-cover-pl.jpg",
     category: "Produkcja",
-    date: "2026-07-20",
+    date: "2026-06-22",
     lang: "pl",
     title: "AI kontra człowiek: czy usłyszysz różnicę?",
     excerpt:
@@ -73,7 +73,7 @@ export const posts = [
     href: "/blog/ai-vs-human-mastering-blind-test-ru",
     image: "/images/blog/blind-test/blind-test-cover-ru.jpg",
     category: "Продакшен",
-    date: "2026-07-20",
+    date: "2026-06-22",
     lang: "ru",
     title: "ИИ против человека: услышишь ли ты разницу?",
     excerpt:
@@ -83,7 +83,7 @@ export const posts = [
     href: "/blog/mixing-mastering-cost-2026",
     image: "/images/blog/pricing/pricing-cover.jpg",
     category: "Business",
-    date: "2026-07-20",
+    date: "2026-07-11",
     lang: "en",
     title: "How Much Does Mixing and Mastering Cost in 2026?",
     excerpt:
@@ -93,7 +93,7 @@ export const posts = [
     href: "/pl/blog/mixing-mastering-cost-2026",
     image: "/images/blog/pricing/pricing-cover-pl.jpg",
     category: "Biznes",
-    date: "2026-07-20",
+    date: "2026-07-11",
     lang: "pl",
     title: "Ile kosztuje mix i mastering w 2026?",
     excerpt:
@@ -103,7 +103,7 @@ export const posts = [
     href: "/blog/why-ai-tracks-sound-cheap",
     image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
     category: "Production",
-    date: "2026-07-19",
+    date: "2026-06-13",
     lang: "en",
     title: "Why AI Tracks Sound Cheap — and How to Fix It",
     excerpt:
@@ -113,7 +113,7 @@ export const posts = [
     href: "/pl/blog/why-ai-tracks-sound-cheap",
     image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
     category: "Produkcja",
-    date: "2026-07-19",
+    date: "2026-06-13",
     lang: "pl",
     title: "Dlaczego utwory z AI brzmią tanio — i jak to naprawić",
     excerpt:
@@ -123,7 +123,7 @@ export const posts = [
     href: "/blog/why-ai-tracks-sound-cheap-ru",
     image: "/images/blog/ai-restoration/ai-restoration-cover.jpg",
     category: "Продакшен",
-    date: "2026-07-19",
+    date: "2026-06-13",
     lang: "ru",
     title: "Почему AI-треки звучат дёшево — и как это исправить",
     excerpt:
@@ -133,7 +133,7 @@ export const posts = [
     href: "/blog/master-suno-track-for-spotify",
     image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
     category: "Mastering",
-    date: "2026-07-18",
+    date: "2026-06-03",
     lang: "en",
     title: "How to Master a Suno Track for Spotify",
     excerpt:
@@ -143,7 +143,7 @@ export const posts = [
     href: "/pl/blog/master-suno-track-for-spotify",
     image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
     category: "Mastering",
-    date: "2026-07-18",
+    date: "2026-06-03",
     lang: "pl",
     title: "Jak zmasterować utwór z Suno na Spotify",
     excerpt:
@@ -153,7 +153,7 @@ export const posts = [
     href: "/blog/master-suno-track-for-spotify-ru",
     image: "/images/blog/suno-mastering/suno-mastering-cover.jpg",
     category: "Mastering",
-    date: "2026-07-18",
+    date: "2026-06-03",
     lang: "ru",
     title: "Как замастерить трек из Suno для Spotify",
     excerpt:
@@ -184,7 +184,7 @@ export const posts = [
     href: "/blog/best-melodyne-alternatives-2026-ru",
     image: "/images/beyond-melodyne-cover-ru.jpg",
     category: "Review",
-    date: "2026-07-17",
+    date: "2026-05-15",
     lang: "ru",
     title: "Лучшие альтернативы Melodyne в 2026: чем её реально заменить?",
     excerpt:
@@ -214,7 +214,7 @@ export const posts = [
     href: "/pl/blog/best-melodyne-alternatives-2026",
     image: "/images/melodyne-alternatives-cover-pl.jpg",
     category: "Review",
-    date: "2026-07-17",
+    date: "2026-05-15",
     lang: "pl",
     title:
       "Najlepsze alternatywy dla Melodyne w 2026: co naprawdę je zastępuje?",
@@ -225,7 +225,7 @@ export const posts = [
     href: "/blog/best-melodyne-alternatives-2026",
     image: "/images/melodyne-alternatives-cover.jpg",
     category: "Review",
-    date: "2026-07-16",
+    date: "2026-05-15",
     lang: "en",
     title: "Best Melodyne Alternatives in 2026: What Actually Replaces It?",
     excerpt:
@@ -235,7 +235,7 @@ export const posts = [
     href: "/blog/suno-advanced-split-clean-instrumental",
     image: "/images/suno-clean-stems-cover.jpg",
     category: "Tutorials",
-    date: "2026-07-16",
+    date: "2026-05-25",
     lang: "en",
     title: "How to Make a Clean Instrumental in Suno with Advanced Split",
     excerpt:

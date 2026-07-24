@@ -38,7 +38,7 @@ export const metadata = {
     "repitch vs melodyne",
     "vocal tuning plugins",
   ],
-  other: { "article:published_time": "2026-07-16" },
+  other: { "article:published_time": "2026-05-15" },
 };
 
 // ─── FAQ — mirrors the visible Q&A below, verbatim ───────────────────────────
@@ -307,7 +307,7 @@ export default function BestMelodyneAlternativesPage() {
     <div id="top" className="mt-16 mb-20">
       <BlogJsonLd
         slug="best-melodyne-alternatives-2026"
-        dateModified="July 16, 2026"
+        dateModified="May 15, 2026"
         breadcrumbLabel="Best Melodyne Alternatives in 2026"
       />
       <script
@@ -318,7 +318,7 @@ export default function BestMelodyneAlternativesPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Review"
-          date="July 16, 2026"
+          date="May 15, 2026"
           title="Best Melodyne Alternatives in 2026: What Actually Replaces It?"
           description="The best Melodyne alternatives for manual vocal tuning, pitch editing, real-time correction, and budget workflows — including Vovious, RePitch 2, AutoTune Pro, Waves Tune, and stock DAW tools."
         />

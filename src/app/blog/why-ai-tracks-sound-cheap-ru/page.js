@@ -43,7 +43,7 @@ export const metadata = {
     "реставрация ai музыки",
   ],
   other: {
-    "article:published_time": "2026-07-19",
+    "article:published_time": "2026-06-13",
   },
 };
 
@@ -201,7 +201,7 @@ export default function WhyAiTracksSoundCheapPageRu() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Продакшен"
-          date="19 июля 2026"
+          date="13 июня 2026"
           title="Почему AI-треки звучат дёшево — и как это исправить"
           description="Слушатели от 8 до 80 лет вычисляют AI-трек за секунды. Вот глубокое лечение: стемы, живые барабаны, MIDI-бас, хирургия вокала и глубина — со скриншотами из моих реальных сессий."
         />

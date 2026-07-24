@@ -19,6 +19,9 @@ const SERVICE_FROM_QUERY = {
   mastering: "Mastering Only",
   "mixing-mastering": "Mixing and Mastering",
   arrangement: "Arrangement and Production",
+  "suno-master": "Suno Master",
+  "suno-finishing": "Suno Finishing",
+  "suno-production": "Suno Full Production",
 };
 
 const TelegramIcon = () => (
@@ -514,6 +517,9 @@ export default function Hero() {
                     <option>Mastering Only</option>
                     <option>Mixing and Mastering</option>
                     <option>Arrangement and Production</option>
+                    <option>Suno Master</option>
+                    <option>Suno Finishing</option>
+                    <option>Suno Full Production</option>
                     <option>Sound Enhancement</option>
                     <option>Not sure yet</option>
                   </select>
@@ -678,6 +684,10 @@ export default function Hero() {
               {
                 q: "My file is too big — how do I send it?",
                 a: "Not through the form — paste a link to Google Drive, Dropbox or WeTransfer. Or use the free preview page, it has an uploader that takes up to 100 MB.",
+              },
+              {
+                q: "How does payment work?",
+                a: "30% upfront once we agree on the scope, the rest after you approve the final result. Wise or bank transfer (Polish IBAN); card payments are coming soon.",
               },
             ].map((f, i) => (
               <FaqItem

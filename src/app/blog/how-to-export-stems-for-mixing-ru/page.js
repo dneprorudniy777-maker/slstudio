@@ -49,7 +49,7 @@ export const metadata = {
     "\u044d\u043a\u0441\u043f\u043e\u0440\u0442 \u0434\u043e\u0440\u043e\u0436\u0435\u043a \u0434\u043b\u044f \u0441\u0432\u0435\u0434\u0435\u043d\u0438\u044f",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-07-02",
   },
 };
 
@@ -205,7 +205,7 @@ export default function HowToExportStemsForMixingPageRu() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Продакшен"
-          date="20 июля 2026"
+          date="2 июля 2026"
           title="Как экспортировать стемы и подготовить трек к сведению"
           description="Практичный гайд без снобизма: форматы, запас громкости, стемы из любой DAW, имена файлов и отправка - плюс что делать, когда есть только запись с телефона. Внутри бесплатный PDF-чек-лист на одну страницу."
         />

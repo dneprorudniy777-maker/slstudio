@@ -8,8 +8,36 @@ const escapeHtml = (str) =>
         .replaceAll('"', '&quot;')
         .replaceAll("'", '&#39;');
 
+// Simple in-memory rate limiter (per serverless instance).
+// Not bulletproof, but stops naive bot spam from burning the Resend quota.
+const RATE_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const RATE_MAX = 5; // max submissions per window per IP
+const rateHits = new Map();
+
+const isRateLimited = (ip) => {
+    const now = Date.now();
+    const fresh = (rateHits.get(ip) || []).filter((t) => now - t < RATE_WINDOW_MS);
+    if (fresh.length >= RATE_MAX) {
+        rateHits.set(ip, fresh);
+        return true;
+    }
+    fresh.push(now);
+    rateHits.set(ip, fresh);
+    if (rateHits.size > 1000) {
+        for (const [key, times] of rateHits) {
+            if (times.every((t) => now - t >= RATE_WINDOW_MS)) rateHits.delete(key);
+        }
+    }
+    return false;
+};
+
 export async function POST(req) {
     try {
+        const ip = (req.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim();
+        if (isRateLimited(ip)) {
+            return Response.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+        }
+
         const resend = new Resend(process.env.RESEND_API_KEY);
         const { name, email, service, message, website } = await req.json();
 
@@ -20,6 +48,10 @@ export async function POST(req) {
 
         if (!name || !email || !service || !message) {
             return Response.json({ error: 'Missing fields' }, { status: 400 });
+        }
+
+        if (String(name).length > 200 || String(email).length > 200 || String(service).length > 100 || String(message).length > 5000) {
+            return Response.json({ error: 'Message too long' }, { status: 400 });
         }
 
         const safe = {

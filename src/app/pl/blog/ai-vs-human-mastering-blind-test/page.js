@@ -45,7 +45,7 @@ export const metadata = {
     "czy mastering u człowieka się opłaca",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-06-22",
   },
 };
 
@@ -202,7 +202,7 @@ export default function AiVsHumanMasteringBlindTestPagePl() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Produkcja"
-          date="20 lipca 2026"
+          date="22 czerwca 2026"
           title="AI kontra człowiek: czy usłyszysz różnicę?"
           description="Ten sam utwór dwa razy - raz dokładnie tak, jak wyeksportował go generator AI, raz po sesji masteringowej żywego inżyniera. Wyrównana głośność, anonimowe pliki, zero sztuczek. Posłuchaj w ciemno, zagłosuj, a potem rozłóżmy na części to, co naprawdę je różni."
         />

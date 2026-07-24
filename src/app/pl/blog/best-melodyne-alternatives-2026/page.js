@@ -80,7 +80,7 @@ const articleSchema = {
   headline:
     "Najlepsze alternatywy dla Melodyne w 2026: co naprawdę je zastępuje?",
   inLanguage: "pl-PL",
-  dateModified: "2026-07-17",
+  dateModified: "2026-05-15",
   mainEntityOfPage:
     "https://www.slstudio.pro/pl/blog/best-melodyne-alternatives-2026",
   image: "https://www.slstudio.pro/images/melodyne-alternatives-cover-pl.jpg",
@@ -322,7 +322,7 @@ export default function BestMelodyneAlternativesPagePL() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Review"
-          date="17 lipca 2026"
+          date="15 maja 2026"
           title="Najlepsze alternatywy dla Melodyne w 2026: co naprawdę je zastępuje?"
           description="Najlepsze alternatywy dla Melodyne do ręcznego strojenia wokalu, edycji wysokości dźwięku, korekcji w czasie rzeczywistym i pracy na budżecie — Vovious, RePitch 2, AutoTune Pro, Waves Tune oraz narzędzia wbudowane w DAW."
         />

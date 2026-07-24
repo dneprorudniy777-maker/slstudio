@@ -43,7 +43,7 @@ export const metadata = {
     "restauracja muzyki ai",
   ],
   other: {
-    "article:published_time": "2026-07-19",
+    "article:published_time": "2026-06-13",
   },
 };
 
@@ -201,7 +201,7 @@ export default function WhyAiTracksSoundCheapPagePl() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Produkcja"
-          date="19 lipca 2026"
+          date="13 czerwca 2026"
           title="Dlaczego utwory z AI brzmią tanio — i jak to naprawić"
           description="Słuchacze od 8 do 80 lat rozpoznają utwór z AI w kilka sekund. Oto głęboka naprawa: stemy, prawdziwa perkusja, bas z MIDI, chirurgia wokalu i głębia — ze zrzutami z moich własnych sesji."
         />

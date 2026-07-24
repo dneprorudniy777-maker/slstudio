@@ -44,7 +44,7 @@ export const metadata = {
     "ai music restoration",
   ],
   other: {
-    "article:published_time": "2026-07-19",
+    "article:published_time": "2026-06-13",
   },
 };
 
@@ -202,7 +202,7 @@ export default function WhyAiTracksSoundCheapPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Production"
-          date="July 19, 2026"
+          date="June 13, 2026"
           title="Why AI Tracks Sound Cheap — and How to Fix It"
           description="Listeners from 8 to 80 spot an AI track in seconds. Here's the deep fix: stems, real drums, MIDI bass, vocal surgery and depth — with screenshots from my own sessions."
         />

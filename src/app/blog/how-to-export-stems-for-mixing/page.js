@@ -46,7 +46,7 @@ export const metadata = {
     "stems for mastering",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-07-02",
   },
 };
 
@@ -202,7 +202,7 @@ export default function HowToExportStemsForMixingPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Production"
-          date="July 20, 2026"
+          date="July 2, 2026"
           title="How to Export Stems and Prepare Your Track for Mixing"
           description="A practical, no-gatekeeping guide to sending music to a mixing engineer: formats, headroom, stems from any DAW, file naming and delivery - plus what to do when all you have is a phone recording. Free one-page PDF checklist included."
         />

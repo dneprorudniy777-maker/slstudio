@@ -43,7 +43,7 @@ export const metadata = {
     "suno плохо звучит на spotify",
   ],
   other: {
-    "article:published_time": "2026-07-18",
+    "article:published_time": "2026-06-03",
   },
 };
 
@@ -212,7 +212,7 @@ export default function MasterSunoTrackForSpotifyRuPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Мастеринг"
-          date="18 июля 2026"
+          date="3 июня 2026"
           title="Как замастерить трек из Suno для Spotify"
           description="Почему твой ИИ-трек звучит тихо и плоско рядом с коммерческими релизами — и как это исправить: от бесплатных приёмов до точных настроек, которые я использую в студии."
         />

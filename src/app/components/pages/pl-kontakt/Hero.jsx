@@ -19,6 +19,9 @@ const SERVICE_FROM_QUERY = {
   mastering: "Tylko mastering",
   "mixing-mastering": "Miks i mastering",
   arrangement: "Aranżacja i produkcja",
+  "suno-master": "Suno Master",
+  "suno-finishing": "Suno Finishing",
+  "suno-production": "Suno Full Production",
 };
 
 const TelegramIcon = () => (
@@ -514,6 +517,9 @@ export default function Hero() {
                     <option>Tylko mastering</option>
                     <option>Miks i mastering</option>
                     <option>Aranżacja i produkcja</option>
+                    <option>Suno Master</option>
+                    <option>Suno Finishing</option>
+                    <option>Suno Full Production</option>
                     <option>Poprawa jakości nagrania</option>
                     <option>Jeszcze nie wiem</option>
                   </select>
@@ -679,6 +685,10 @@ export default function Hero() {
               {
                 q: "Mam duży plik — jak go wysłać?",
                 a: "Nie przez formularz — wrzuć link do Google Drive, Dropbox albo WeTransfer. Możesz też skorzystać ze strony darmowego preview, tam jest uploader do 100 MB.",
+              },
+              {
+                q: "Jak wygląda płatność?",
+                a: "30% zaliczki po ustaleniu zakresu prac, reszta po akceptacji finalnego efektu. Wise albo przelew bankowy (polski IBAN); płatności kartą już wkrótce.",
               },
             ].map((f, i) => (
               <FaqItem

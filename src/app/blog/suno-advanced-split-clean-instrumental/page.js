@@ -29,7 +29,7 @@ export const metadata = {
         "split a song into stems",
         "clean backing track",
     ],
-    other: { "article:published_time": "2026-07-16" },
+    other: { "article:published_time": "2026-05-25" },
 };
 
 // ─── FAQ ─────────────────────────────────────────────────────────────────────
@@ -180,7 +180,7 @@ export default function SunoAdvancedSplitPage() {
 
                 <BlogHeader
                     topic="Tutorials"
-                    date="July 16, 2026"
+                    date="May 25, 2026"
                     title="How to Make a Clean Instrumental in Suno with Advanced Split"
                     description="A practical test of Suno Advanced Split: how to rebuild a cleaner instrumental without obvious vocal artifacts, export aligned WAV stems, and finish the track in a DAW."
                 />

@@ -44,7 +44,7 @@ export const metadata = {
     "human mastering worth it",
   ],
   other: {
-    "article:published_time": "2026-07-20",
+    "article:published_time": "2026-06-22",
   },
 };
 
@@ -201,7 +201,7 @@ export default function AiVsHumanMasteringBlindTestPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Production"
-          date="July 20, 2026"
+          date="June 22, 2026"
           title="AI vs Human Mastering: Can You Hear the Difference?"
           description="The same song twice - once exactly as the AI generator exported it, once after a human engineer's mastering session. Loudness-matched, anonymised, no tricks. Listen blind, vote, then let's break down what actually separates them."
         />

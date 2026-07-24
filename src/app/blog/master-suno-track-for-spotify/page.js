@@ -44,7 +44,7 @@ export const metadata = {
     "suno track sounds bad on spotify",
   ],
   other: {
-    "article:published_time": "2026-07-18",
+    "article:published_time": "2026-06-03",
   },
 };
 
@@ -213,7 +213,7 @@ export default function MasterSunoTrackForSpotifyPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Mastering"
-          date="July 18, 2026"
+          date="June 3, 2026"
           title="How to Master a Suno Track for Spotify"
           description="Why your AI track sounds quiet and thin next to commercial releases — and how to fix it, from free tricks to the exact settings I use in my studio."
         />

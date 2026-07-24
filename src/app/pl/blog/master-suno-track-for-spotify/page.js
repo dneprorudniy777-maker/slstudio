@@ -43,7 +43,7 @@ export const metadata = {
     "suno źle brzmi na spotify",
   ],
   other: {
-    "article:published_time": "2026-07-18",
+    "article:published_time": "2026-06-03",
   },
 };
 
@@ -63,7 +63,7 @@ const articleSchema = {
       url: "https://www.slstudio.pro/logo.png",
     },
   },
-  datePublished: "2026-07-18",
+  datePublished: "2026-06-03",
   inLanguage: "pl",
   url: "https://www.slstudio.pro/pl/blog/master-suno-track-for-spotify",
 };
@@ -236,7 +236,7 @@ export default function MasterSunoTrackForSpotifyPlPage() {
       <div className="max-w-3xl mx-auto">
         <BlogHeader
           topic="Mastering"
-          date="18 lipca 2026"
+          date="3 czerwca 2026"
           title="Jak zmasterować utwór z Suno na Spotify"
           description="Dlaczego twój utwór z AI brzmi cicho i płasko obok komercyjnych wydań — i jak to naprawić: od darmowych trików po dokładne ustawienia, których używam w studiu."
         />

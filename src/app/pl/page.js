@@ -233,7 +233,7 @@ const faqLabels = {
         },
         {
             q: "Jak wygląda płatność?",
-            a: "50% z góry, reszta po akceptacji efektu. PayPal i przelew bankowy — pracuję z klientami z całego świata.",
+            a: "30% zaliczki po ustaleniu zakresu prac, pozostałe 70% po akceptacji finalnego efektu. Wise albo zwykły przelew bankowy (polski IBAN — PLN, EUR lub USD); płatności kartą na stronie już wkrótce.",
         },
     ],
 };
